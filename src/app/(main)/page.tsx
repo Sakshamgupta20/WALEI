@@ -1,46 +1,32 @@
 import {
   HeroSection,
-  TaglineSection,
-  CategoryPreview,
-  FeaturedLeaders,
-  LatestArticles,
-  CTASection,
+  LatestNews,
+  FeaturedScientist,
+  NotesToLeadersSection,
+  UpcomingSpeakers,
+  Newsletter,
 } from "@/components/sections";
 
 export default function HomePage() {
   return (
     <>
-      {/* Hero Section with Featured Interview */}
-      <HeroSection
-        title="Experiences that inspire"
-        subtitle="Conversations with visionary leaders shaping tomorrow's world"
-        quote={{
-          text: "Innovation is not about having all the answers. It's about asking the right questions and having the courage to pursue them.",
-          author: "Prof. V Ramgopal Rao",
-          role: "Former Director, IIT Delhi",
-        }}
-        cta={{
-          label: "Read Featured Interview",
-          href: "/notes-of-future/featured",
-        }}
-        overlay="gradient"
-        height="large"
-      />
+      {/* Hero Section */}
+      <HeroSection />
 
-      {/* Mission / Tagline Section */}
-      <TaglineSection />
+      {/* Latest News */}
+      <LatestNews />
 
-      {/* Category Previews */}
-      <CategoryPreview />
+      {/* Featured Scientist */}
+      <FeaturedScientist />
 
-      {/* Featured Leaders */}
-      <FeaturedLeaders />
+      {/* Notes to Leaders */}
+      <NotesToLeadersSection />
 
-      {/* Latest Articles Grid */}
-      <LatestArticles />
+      {/* Upcoming Speakers */}
+      <UpcomingSpeakers />
 
-      {/* Call to Action */}
-      <CTASection />
+      {/* Newsletter Signup */}
+      <Newsletter />
     </>
   );
 }

@@ -4,26 +4,70 @@
 
 @layer base {
   :root {
-    --background: 255 254 249;
-    --foreground: 13 12 12;
+    --gold: #B8860B;
+    --teal: #007A8C;
+    --teal-dark: #005f6b;
+    --dark: #1A1A1A;
+    --light: #F8F8F8;
+    --white: #FFFFFF;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
 
   html {
     scroll-behavior: smooth;
+    font-size: 16px;
   }
 
   body {
-    @apply bg-walei-ivory text-gray-900 antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--dark);
+    line-height: 1.7;
+    background: white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.01em;
   }
 
-  /* Typography refinements */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 300;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5em;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  h2 {
+    font-size: 2.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    margin-bottom: 1.25rem;
   }
 
   /* Focus styles for accessibility */
   :focus-visible {
-    @apply outline-none ring-2 ring-walei-blue-500 ring-offset-2;
+    @apply outline-none ring-2 ring-teal ring-offset-2;
   }
 
   /* Skip link styles */
@@ -34,21 +78,66 @@
 
 @layer components {
   .container-default {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-[1400px] mx-auto px-6 md:px-8 lg:px-12;
   }
 
   /* Text styles */
   .text-overline {
-    @apply text-xs font-medium uppercase tracking-widest;
+    @apply text-xs font-bold uppercase tracking-[0.2em] mb-4;
+    letter-spacing: 0.15em;
   }
 
   /* Prose customization for articles */
   .prose-walei {
-    @apply prose prose-lg prose-gray max-w-none;
-    @apply prose-headings:font-serif prose-headings:text-gray-900;
-    @apply prose-a:text-walei-blue-600 prose-a:no-underline hover:prose-a:underline;
-    @apply prose-blockquote:border-walei-gold prose-blockquote:italic;
-    @apply prose-img:rounded-lg;
+    @apply text-lg text-gray-700;
+    line-height: 1.8;
+  }
+
+  .prose-walei p {
+    @apply mb-8;
+  }
+
+  .prose-walei a {
+    @apply text-teal hover:underline;
+  }
+
+  .prose-walei blockquote {
+    @apply border-l-4 border-gold pl-8 py-6 italic text-2xl text-gray-800;
+    line-height: 1.6;
+    margin: 2.5rem 0;
+  }
+
+  /* Button styles matching Figma */
+  .btn-primary {
+    @apply inline-block px-12 py-5 text-white rounded-lg font-semibold text-lg hover:opacity-90 transition-all shadow-lg;
+    background-color: var(--gold);
+    letter-spacing: 0.01em;
+  }
+
+  .btn-secondary {
+    @apply inline-block px-12 py-5 border-2 rounded-lg font-semibold text-lg transition-all;
+    border-color: var(--teal);
+    color: var(--teal);
+    letter-spacing: 0.01em;
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--teal);
+    color: white;
+  }
+
+  .btn-outline-white {
+    @apply px-12 py-5 text-white border-2 border-white rounded-lg font-semibold text-lg hover:bg-white hover:bg-opacity-10 transition-all;
+    letter-spacing: 0.01em;
+  }
+
+  /* Section spacing */
+  .section-spacing {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+
+  .section-spacing-sm {
+    @apply py-12 md:py-16 lg:py-20;
   }
 }
 
@@ -71,6 +160,15 @@
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+  }
+
+  /* Spacing utilities */
+  .mb-section {
+    @apply mb-12 md:mb-16 lg:mb-20;
+  }
+
+  .mb-content {
+    @apply mb-6 md:mb-8 lg:mb-10;
   }
 }
 

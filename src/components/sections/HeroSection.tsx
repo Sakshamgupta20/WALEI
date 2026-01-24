@@ -1,111 +1,50 @@
 import Link from "next/link";
-import { cn } from "@/lib/utils/cn";
-import { Container } from "@/components/ui/Container";
-import { Button } from "@/components/ui/Button";
 
-interface HeroSectionProps {
-  title: string;
-  subtitle?: string;
-  quote?: {
-    text: string;
-    author: string;
-    role?: string;
-  };
-  cta?: {
-    label: string;
-    href: string;
-  };
-  backgroundImage?: string;
-  overlay?: "dark" | "gradient";
-  height?: "full" | "large" | "medium";
-  centered?: boolean;
-}
-
-export function HeroSection({
-  title,
-  subtitle,
-  quote,
-  cta,
-  backgroundImage,
-  overlay = "gradient",
-  height = "large",
-  centered = true,
-}: HeroSectionProps) {
+export function HeroSection() {
   return (
-    <section
-      className={cn(
-        "relative flex items-center",
-        height === "full" && "min-h-screen",
-        height === "large" && "min-h-[80vh]",
-        height === "medium" && "min-h-[60vh]"
-      )}
-    >
-      {/* Background */}
-      {backgroundImage ? (
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${backgroundImage})` }}
-        />
-      ) : (
-        <div className="absolute inset-0 bg-gradient-to-br from-walei-blue-600 via-walei-blue-700 to-walei-blue-900" />
-      )}
+    <section className="relative bg-gradient-to-br from-[#1a1a1a] via-[#2d2d2d] to-[#1a1a1a] overflow-hidden">
+      <div className="absolute inset-0 bg-black opacity-20"></div>
 
-      {/* Overlay */}
-      <div
-        className={cn(
-          "absolute inset-0",
-          overlay === "dark" && "bg-gray-900/70",
-          overlay === "gradient" &&
-            "bg-gradient-to-t from-gray-900/80 via-gray-900/40 to-gray-900/20"
-        )}
-      />
+      <div className="relative max-w-[1400px] mx-auto px-6 md:px-8 lg:px-12 py-20 md:py-28 lg:py-36">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="inline-block mb-8">
+            <span
+              className="text-xs uppercase tracking-[0.2em] font-bold px-4 py-2 rounded-full bg-white bg-opacity-10 backdrop-blur-sm"
+              style={{ color: "var(--gold)" }}
+            >
+              Amplifying Scientific Voices
+            </span>
+          </div>
 
-      {/* Content */}
-      <Container className={cn("relative z-10 py-20", centered && "text-center")}>
-        <div className={cn("max-w-4xl", centered && "mx-auto")}>
-          {/* Title */}
-          <h1 className="font-serif text-display-2 md:text-display-1 text-white leading-tight">
-            {title}
-          </h1>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light text-white mb-6 leading-tight" style={{ letterSpacing: "-0.02em" }}>
+            Evidence-Based Statements
+            <br className="hidden sm:block" />
+            to World Leaders
+          </h2>
 
-          {/* Subtitle */}
-          {subtitle && (
-            <p className="mt-6 text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
-              {subtitle}
-            </p>
-          )}
+          <p className="text-base md:text-lg lg:text-xl text-gray-300 mb-10 max-w-3xl mx-auto" style={{ lineHeight: "1.7" }}>
+            Join scientists and researchers from around the globe in delivering
+            critical insights to policymakers and shaping the future of
+            evidence-based decision making.
+          </p>
 
-          {/* Quote */}
-          {quote && (
-            <blockquote className="mt-10 pt-10 border-t border-white/20">
-              <p className="text-xl md:text-2xl text-white/90 italic font-serif leading-relaxed">
-                &ldquo;{quote.text}&rdquo;
-              </p>
-              <footer className="mt-4">
-                <cite className="not-italic">
-                  <span className="text-walei-gold font-semibold">
-                    {quote.author}
-                  </span>
-                  {quote.role && (
-                    <span className="text-gray-300 ml-2">— {quote.role}</span>
-                  )}
-                </cite>
-              </footer>
-            </blockquote>
-          )}
-
-          {/* CTA */}
-          {cta && (
-            <div className="mt-10">
-              <Link href={cta.href}>
-                <Button variant="gold" size="xl">
-                  {cta.label}
-                </Button>
-              </Link>
-            </div>
-          )}
+          <div className="flex flex-col sm:flex-row gap-5 justify-center">
+            <Link
+              href="/publish"
+              className="px-12 py-5 text-white rounded-lg font-semibold text-lg hover:opacity-90 transition-all shadow-lg"
+              style={{ backgroundColor: "var(--gold)" }}
+            >
+              Contribute Now
+            </Link>
+            <Link
+              href="/about"
+              className="px-12 py-5 text-white border-2 border-white rounded-lg font-semibold text-lg hover:bg-white hover:bg-opacity-10 transition-all"
+            >
+              Learn More
+            </Link>
+          </div>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

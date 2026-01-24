@@ -9,7 +9,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Primary - WALEI Blue
+        // Primary brand colors from Figma design
+        gold: {
+          DEFAULT: "#B8860B",
+          light: "#D4A21A",
+          dark: "#8B6508",
+        },
+        teal: {
+          DEFAULT: "#007A8C",
+          dark: "#005F6B",
+          light: "#009AAD",
+        },
+        dark: "#1A1A1A",
+        light: "#F8F8F8",
+
+        // Legacy WALEI colors (kept for compatibility)
         "walei-blue": {
           50: "#e6f1fc",
           100: "#cce3f9",
@@ -22,25 +36,29 @@ const config: Config = {
           800: "#024484",
           900: "#012d5a",
         },
-        // Accent - Nobel Gold
-        "walei-gold": {
-          DEFAULT: "#c9a227",
-          light: "#d4b54a",
-          dark: "#a8871f",
-        },
-        // Neutrals (warm, sophisticated)
+        "walei-gold": "#B8860B",
         "walei-smoke": "#f9f5ed",
         "walei-pale": "#f2f0ee",
-        "walei-ivory": "#fffef9",
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        serif: ["var(--font-source-serif)", "Georgia", "serif"],
+        serif: ["Georgia", "Times New Roman", "serif"],
+        sans: [
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "Roboto",
+          "Helvetica Neue",
+          "Arial",
+          "sans-serif",
+        ],
       },
       fontSize: {
         "display-1": ["4rem", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
         "display-2": ["3rem", { lineHeight: "1.15", letterSpacing: "-0.01em" }],
         headline: ["2rem", { lineHeight: "1.25" }],
+      },
+      maxWidth: {
+        container: "1400px",
       },
       boxShadow: {
         natural: "0 1px 3px rgba(0,0,0,0.08)",
@@ -49,10 +67,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [
-    require("@tailwindcss/typography"),
-    require("@tailwindcss/forms"),
-  ],
+  plugins: [],
 };
 
 export default config;

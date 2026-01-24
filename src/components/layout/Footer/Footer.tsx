@@ -1,108 +1,135 @@
 import Link from "next/link";
-import { Linkedin, Twitter } from "lucide-react";
-import { Container } from "@/components/ui/Container";
-import { Logo } from "../Header/Logo";
-import { navigation } from "@/lib/constants/navigation";
+import { Mail, Facebook, Twitter, Linkedin, Youtube } from "lucide-react";
+
+const footerLinks = {
+  about: [
+    { label: "About the Initiative", href: "/about" },
+    { label: "Our Mission", href: "/about#mission" },
+    { label: "Leadership", href: "/leaders" },
+    { label: "Partners", href: "/partners" },
+  ],
+  resources: [
+    { label: "Notes of Future", href: "/notes-of-future" },
+    { label: "Notes of Challenges", href: "/notes-of-challenges" },
+    { label: "Research Archive", href: "/archive" },
+    { label: "Media Kit", href: "/media" },
+  ],
+  connect: [
+    { label: "Contact Us", href: "/contact" },
+    { label: "FAQ", href: "/faq" },
+    { label: "Privacy Policy", href: "/privacy" },
+    { label: "Terms of Use", href: "/terms" },
+  ],
+};
+
+const socialLinks = [
+  { Icon: Facebook, href: "#", label: "Facebook" },
+  { Icon: Twitter, href: "#", label: "Twitter" },
+  { Icon: Linkedin, href: "#", label: "LinkedIn" },
+  { Icon: Youtube, href: "#", label: "YouTube" },
+];
 
 export function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
-    <footer className="bg-gray-900 text-white" role="contentinfo">
-      <Container className="py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
-          {/* Brand Column */}
-          <div className="lg:col-span-1">
-            <Logo variant="white" />
-            <p className="mt-4 text-gray-400 text-sm leading-relaxed">
-              Experiences that inspire. A thought leadership platform featuring
-              conversations with visionary leaders shaping our future.
+    <footer className="py-16 md:py-20 lg:py-24" style={{ backgroundColor: "var(--dark)", color: "white" }}>
+      <div className="max-w-[1400px] mx-auto px-6 md:px-8 lg:px-12">
+        {/* Main Footer Content */}
+        <div className="grid md:grid-cols-12 gap-10 mb-12 pb-12 border-b border-gray-700">
+          {/* Brand */}
+          <div className="md:col-span-5">
+            <h3 className="text-5xl font-light mb-3" style={{ color: "var(--gold)" }}>
+              WALEI
+            </h3>
+            <p className="text-sm italic text-gray-400 mb-8">Making Statements</p>
+            <p className="text-lg text-gray-300 leading-relaxed mb-8">
+              Amplifying scientific voices and delivering evidence-based statements to world
+              leaders and policymakers. Building a future guided by research and reason.
             </p>
-            {/* Social Links */}
-            <div className="flex gap-4 mt-6">
+          </div>
+
+          {/* About Links */}
+          <div className="md:col-span-2 md:col-start-7">
+            <h4 className="text-lg font-semibold mb-6">About</h4>
+            <ul className="space-y-4">
+              {footerLinks.about.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-gray-300 hover:text-[var(--gold)] transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div className="md:col-span-2">
+            <h4 className="text-lg font-semibold mb-6">Resources</h4>
+            <ul className="space-y-4">
+              {footerLinks.resources.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-gray-300 hover:text-[var(--gold)] transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Connect */}
+          <div className="md:col-span-3">
+            <h4 className="text-lg font-semibold mb-6">Connect</h4>
+            <ul className="space-y-4">
+              {footerLinks.connect.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-gray-300 hover:text-[var(--gold)] transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Social Media */}
+        <div className="mb-12 pb-12 border-b border-gray-700">
+          <h4 className="text-lg font-semibold mb-6">Follow Us</h4>
+          <div className="flex gap-5">
+            {socialLinks.map(({ Icon, href, label }) => (
               <a
-                href="https://linkedin.com/company/walei"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
-                aria-label="Follow us on LinkedIn"
+                key={label}
+                href={href}
+                aria-label={label}
+                className="w-14 h-14 rounded-full bg-white bg-opacity-10 hover:bg-opacity-20 flex items-center justify-center transition-all hover:scale-110"
               >
-                <Linkedin className="h-5 w-5" />
+                <Icon size={22} />
               </a>
-              <a
-                href="https://twitter.com/walei"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
-                aria-label="Follow us on Twitter"
-              >
-                <Twitter className="h-5 w-5" />
-              </a>
-            </div>
-          </div>
-
-          {/* Categories Column */}
-          <div>
-            <h4 className="text-overline text-gray-400 mb-4">Categories</h4>
-            <ul className="space-y-3">
-              {navigation.footer.categories.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="text-gray-300 hover:text-white transition-colors text-sm"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Company Column */}
-          <div>
-            <h4 className="text-overline text-gray-400 mb-4">Company</h4>
-            <ul className="space-y-3">
-              {navigation.footer.company.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="text-gray-300 hover:text-white transition-colors text-sm"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Legal Column */}
-          <div>
-            <h4 className="text-overline text-gray-400 mb-4">Legal</h4>
-            <ul className="space-y-3">
-              {navigation.footer.legal.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="text-gray-300 hover:text-white transition-colors text-sm"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            ))}
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-500 text-sm">
-            &copy; {currentYear} WALEI. All rights reserved.
-          </p>
-          <p className="text-gray-600 text-xs">
-            Built with purpose. Designed to inspire.
-          </p>
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-gray-400">
+          <p className="text-sm">&copy; 2026 WALEI. All rights reserved.</p>
+          <div className="flex items-center gap-3">
+            <Mail size={18} />
+            <a
+              href="mailto:walei.office@gmail.com"
+              className="hover:text-[var(--gold)] transition-colors"
+            >
+              walei.office@gmail.com
+            </a>
+          </div>
         </div>
-      </Container>
+      </div>
     </footer>
   );
 }

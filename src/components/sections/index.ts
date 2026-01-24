@@ -1,6 +1,6 @@
 export { HeroSection } from "./HeroSection";
-export { TaglineSection } from "./TaglineSection";
-export { CategoryPreview } from "./CategoryPreview";
-export { FeaturedLeaders } from "./FeaturedLeaders";
-export { LatestArticles } from "./LatestArticles";
-export { CTASection } from "./CTASection";
+export { LatestNews } from "./LatestNews";
+export { FeaturedScientist } from "./FeaturedScientist";
+export { NotesToLeadersSection } from "./NotesToLeadersSection";
+export { UpcomingSpeakers } from "./UpcomingSpeakers";
+export { Newsletter } from "./Newsletter";

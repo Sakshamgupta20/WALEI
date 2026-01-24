@@ -1,134 +1,101 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { Menu, X, Search } from "lucide-react";
-import { cn } from "@/lib/utils/cn";
-import { Container } from "@/components/ui/Container";
-import { Button } from "@/components/ui/Button";
-import { Logo } from "./Logo";
-import { navigation } from "@/lib/constants/navigation";
 
-interface HeaderProps {
-  transparent?: boolean;
-}
+const navItems = [
+  { name: "Home", href: "/" },
+  { name: "Notes to Leaders", href: "/notes-to-leaders" },
+  { name: "Notes of Future", href: "/notes-of-future" },
+  { name: "Notes of Challenges", href: "/notes-of-challenges" },
+  { name: "About Us", href: "/about" },
+  { name: "Publish", href: "/publish" },
+];
 
-export function Header({ transparent = false }: HeaderProps) {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const showBackground = isScrolled || !transparent;
+export function Header() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        showBackground
-          ? "bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-natural"
-          : "bg-transparent"
-      )}
-    >
-      <Container>
-        <nav className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-          <Logo variant={!showBackground && transparent ? "white" : "default"} />
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-1">
-            {navigation.main.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={cn(
-                  "px-4 py-2 text-sm font-medium rounded-md transition-colors",
-                  !showBackground && transparent
-                    ? "text-white/90 hover:text-white hover:bg-white/10"
-                    : "text-gray-700 hover:text-gray-900 hover:bg-gray-50"
-                )}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
-
-          {/* Actions */}
-          <div className="flex items-center gap-2">
-            {/* Search Button */}
-            <Button
-              variant="ghost"
-              size="sm"
-              className={cn(
-                !showBackground && transparent && "text-white hover:bg-white/10"
-              )}
-              aria-label="Search"
+    <header className="bg-white border-b border-gray-200">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-8 lg:px-12">
+        {/* Logo */}
+        <div className="text-center py-10 md:py-12 border-b border-gray-100">
+          <Link href="/" className="inline-block group">
+            <h1
+              className="text-[3rem] md:text-[3.75rem] lg:text-[4.5rem] mb-2 transition-opacity group-hover:opacity-80"
+              style={{
+                color: "var(--gold)",
+                fontWeight: 300,
+                letterSpacing: "0.05em",
+                lineHeight: 1
+              }}
             >
-              <Search className="h-5 w-5" />
-            </Button>
+              WALEI
+            </h1>
+            <p className="text-sm md:text-base text-gray-600 italic" style={{ letterSpacing: "0.1em" }}>
+              Making Statements
+            </p>
+          </Link>
+        </div>
 
-            {/* Publish CTA (Desktop) */}
-            <Link href="/publish" className="hidden md:block">
-              <Button variant="primary" size="sm">
-                Publish
-              </Button>
-            </Link>
-
-            {/* Mobile Menu Toggle */}
-            <Button
-              variant="ghost"
-              size="sm"
-              className={cn(
-                "md:hidden",
-                !showBackground && transparent && "text-white hover:bg-white/10"
-              )}
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-              aria-expanded={isMobileMenuOpen}
-            >
-              {isMobileMenuOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
-            </Button>
-          </div>
-        </nav>
-      </Container>
-
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100">
-          <Container className="py-4">
-            <div className="flex flex-col gap-1">
-              {navigation.main.map((item) => (
+        {/* Desktop Navigation */}
+        <nav className="hidden lg:block py-6">
+          <ul className="flex items-center justify-center gap-8 xl:gap-10">
+            {navItems.map((item) => (
+              <li key={item.name}>
                 <Link
-                  key={item.name}
                   href={item.href}
-                  className="px-4 py-3 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-sm font-semibold text-gray-700 hover:text-[var(--teal)] transition-colors"
+                  style={{ letterSpacing: "0.02em" }}
                 >
                   {item.name}
                 </Link>
-              ))}
-              <div className="pt-4 mt-4 border-t border-gray-100">
-                <Link href="/publish" onClick={() => setIsMobileMenuOpen(false)}>
-                  <Button variant="primary" size="lg" className="w-full">
-                    Publish Your Story
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </Container>
+              </li>
+            ))}
+            <li>
+              <button
+                className="text-gray-800 hover:text-[var(--teal)] transition-colors"
+                aria-label="Search"
+              >
+                <Search size={20} />
+              </button>
+            </li>
+          </ul>
+        </nav>
+
+        {/* Mobile Navigation */}
+        <div className="lg:hidden py-6 flex items-center justify-between">
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileMenuOpen}
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+          <button aria-label="Search">
+            <Search size={20} />
+          </button>
         </div>
-      )}
+
+        {mobileMenuOpen && (
+          <div className="lg:hidden pb-6 border-t border-gray-100">
+            <ul className="space-y-4 pt-6">
+              {navItems.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    className="block text-sm font-medium text-gray-800"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
     </header>
   );
 }
