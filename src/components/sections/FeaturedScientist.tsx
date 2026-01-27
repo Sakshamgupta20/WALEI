@@ -2,16 +2,16 @@ import Link from "next/link";
 
 export function FeaturedScientist() {
   return (
-    <section className="section-spacing" style={{ backgroundColor: "var(--light)" }}>
-      <div className="max-w-[1400px] mx-auto px-6 md:px-8 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 xl:gap-20 items-center">
+    <section className="py-14 md:py-20" style={{ backgroundColor: "var(--light)" }}>
+      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
           {/* Image */}
           <div className="order-2 lg:order-1">
-            <div className="aspect-[4/5] bg-gradient-to-br from-gray-300 to-gray-400 rounded-xl overflow-hidden shadow-2xl">
+            <div className="aspect-[4/5] bg-gradient-to-br from-gray-300 to-gray-400 rounded-lg overflow-hidden shadow-xl">
               <div className="w-full h-full flex items-center justify-center">
                 <div className="text-center text-gray-500">
-                  <div className="w-40 h-40 bg-gray-500 rounded-full mx-auto mb-4" />
-                  <p className="text-sm font-medium">Scientist Portrait</p>
+                  <div className="w-32 h-32 bg-gray-500 rounded-full mx-auto mb-3" />
+                  <p className="text-xs">Scientist Portrait</p>
                 </div>
               </div>
             </div>
@@ -19,46 +19,45 @@ export function FeaturedScientist() {
 
           {/* Content */}
           <div className="order-1 lg:order-2">
-            <span
-              className="text-overline"
-              style={{ color: "var(--teal)" }}
-            >
+            <span className="text-overline" style={{ color: "var(--teal)" }}>
               Featured Scientist
             </span>
 
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-4" style={{ letterSpacing: "-0.02em" }}>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-light mb-3">
               Prof. V. Ramgopal Rao
             </h2>
 
-            <p className="text-base md:text-lg text-gray-600 mb-8" style={{ lineHeight: "1.6" }}>
-              Director, IIT Delhi | Former Director, IIT Bombay
+            <p className="text-sm text-gray-500 mb-6">
+              Vice Chancellor, BITS Pilani | Former Director, IIT Delhi
             </p>
 
-            <h3 className="text-xl md:text-2xl font-light mb-4" style={{ letterSpacing: "-0.01em" }}>
-              Electrons Into Order
+            <h3 className="text-lg md:text-xl font-light mb-3 italic">
+              Electrons Into Order: India&apos;s Semiconductor Future
             </h3>
 
-            <p className="text-sm md:text-base text-gray-700 mb-8" style={{ lineHeight: "1.7" }}>
-              Exploring the intersection of semiconductor technology, artificial
-              intelligence, and policy frameworks that will shape India&apos;s
-              technological sovereignty in the coming decades. Professor Rao
-              discusses the critical need for strategic thinking in research and
-              development.
+            <p className="text-sm text-gray-600 mb-6 leading-relaxed">
+              In this exclusive conversation, Professor Rao discusses how India
+              can build a world-class semiconductor ecosystem. From the
+              challenges of chip fabrication to the opportunities in VLSI design,
+              he outlines a roadmap for India&apos;s technological sovereignty.
+              Drawing from his decades of experience in nanoelectronics and
+              his leadership of two premier institutions, he argues for a
+              strategic approach combining policy, academia, and industry.
             </p>
 
             <blockquote
-              className="border-l-4 pl-6 py-4 mb-8 italic text-lg md:text-xl text-gray-800"
-              style={{ borderColor: "var(--gold)", lineHeight: "1.6" }}
+              className="border-l-3 pl-5 py-3 mb-6 italic text-base text-gray-700"
+              style={{ borderLeft: "3px solid var(--gold)", lineHeight: "1.6" }}
             >
-              &ldquo;Technology alone cannot solve problems. We need the right
-              policy framework and the will to execute. That&apos;s where the
-              bridge between science and governance becomes critical.&rdquo;
+              &ldquo;India doesn&apos;t need to build everything from scratch. We need
+              strategic partnerships, a strong design ecosystem, and the
+              political will to invest in deep tech for the long term.&rdquo;
             </blockquote>
 
             <Link
               href="/leaders/v-ramgopal-rao"
-              className="inline-block px-10 py-4 border-2 rounded-lg font-semibold hover:bg-[var(--teal)] hover:text-white transition-all text-base"
-              style={{ borderColor: "var(--teal)", color: "var(--teal)", letterSpacing: "0.01em" }}
+              className="inline-block px-6 py-2.5 border rounded-md font-semibold text-sm hover:bg-[var(--teal)] hover:text-white hover:border-[var(--teal)] transition-all"
+              style={{ borderColor: "var(--teal)", color: "var(--teal)" }}
             >
               Read Full Interview
             </Link>

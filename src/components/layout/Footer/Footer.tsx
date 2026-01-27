@@ -31,31 +31,31 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="py-16 md:py-20 lg:py-24" style={{ backgroundColor: "var(--dark)", color: "white" }}>
-      <div className="max-w-[1400px] mx-auto px-6 md:px-8 lg:px-12">
+    <footer className="py-12 md:py-16" style={{ backgroundColor: "var(--dark)", color: "white" }}>
+      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
         {/* Main Footer Content */}
-        <div className="grid md:grid-cols-12 gap-10 mb-12 pb-12 border-b border-gray-700">
+        <div className="grid md:grid-cols-12 gap-8 mb-10 pb-10 border-b border-gray-700">
           {/* Brand */}
-          <div className="md:col-span-5">
-            <h3 className="text-5xl font-light mb-3" style={{ color: "var(--gold)" }}>
+          <div className="md:col-span-4">
+            <h3 className="text-3xl font-light mb-2" style={{ color: "var(--gold)" }}>
               WALEI
             </h3>
-            <p className="text-sm italic text-gray-400 mb-8">Making Statements</p>
-            <p className="text-lg text-gray-300 leading-relaxed mb-8">
+            <p className="text-xs italic text-gray-400 mb-5">Making Statements</p>
+            <p className="text-sm text-gray-300 leading-relaxed">
               Amplifying scientific voices and delivering evidence-based statements to world
               leaders and policymakers. Building a future guided by research and reason.
             </p>
           </div>
 
           {/* About Links */}
-          <div className="md:col-span-2 md:col-start-7">
-            <h4 className="text-lg font-semibold mb-6">About</h4>
-            <ul className="space-y-4">
+          <div className="md:col-span-2 md:col-start-6">
+            <h4 className="text-sm font-semibold mb-4">About</h4>
+            <ul className="space-y-2.5">
               {footerLinks.about.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-[var(--gold)] transition-colors"
+                    className="text-sm text-gray-300 hover:text-[var(--gold)] transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -66,13 +66,13 @@ export function Footer() {
 
           {/* Resources */}
           <div className="md:col-span-2">
-            <h4 className="text-lg font-semibold mb-6">Resources</h4>
-            <ul className="space-y-4">
+            <h4 className="text-sm font-semibold mb-4">Resources</h4>
+            <ul className="space-y-2.5">
               {footerLinks.resources.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-[var(--gold)] transition-colors"
+                    className="text-sm text-gray-300 hover:text-[var(--gold)] transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -82,14 +82,14 @@ export function Footer() {
           </div>
 
           {/* Connect */}
-          <div className="md:col-span-3">
-            <h4 className="text-lg font-semibold mb-6">Connect</h4>
-            <ul className="space-y-4">
+          <div className="md:col-span-2">
+            <h4 className="text-sm font-semibold mb-4">Connect</h4>
+            <ul className="space-y-2.5">
               {footerLinks.connect.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-[var(--gold)] transition-colors"
+                    className="text-sm text-gray-300 hover:text-[var(--gold)] transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -100,30 +100,30 @@ export function Footer() {
         </div>
 
         {/* Social Media */}
-        <div className="mb-12 pb-12 border-b border-gray-700">
-          <h4 className="text-lg font-semibold mb-6">Follow Us</h4>
-          <div className="flex gap-5">
+        <div className="mb-10 pb-10 border-b border-gray-700">
+          <h4 className="text-sm font-semibold mb-4">Follow Us</h4>
+          <div className="flex gap-3">
             {socialLinks.map(({ Icon, href, label }) => (
               <a
                 key={label}
                 href={href}
                 aria-label={label}
-                className="w-14 h-14 rounded-full bg-white bg-opacity-10 hover:bg-opacity-20 flex items-center justify-center transition-all hover:scale-110"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all"
               >
-                <Icon size={22} />
+                <Icon size={16} />
               </a>
             ))}
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-gray-400">
-          <p className="text-sm">&copy; 2026 WALEI. All rights reserved.</p>
-          <div className="flex items-center gap-3">
-            <Mail size={18} />
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-gray-400">
+          <p className="text-xs">&copy; 2026 WALEI. All rights reserved.</p>
+          <div className="flex items-center gap-2">
+            <Mail size={14} />
             <a
               href="mailto:walei.office@gmail.com"
-              className="hover:text-[var(--gold)] transition-colors"
+              className="text-sm hover:text-[var(--gold)] transition-colors"
             >
               walei.office@gmail.com
             </a>

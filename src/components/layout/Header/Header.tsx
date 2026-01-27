@@ -18,35 +18,30 @@ export function Header() {
 
   return (
     <header className="bg-white border-b border-gray-200">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-8 lg:px-12">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
         {/* Logo */}
-        <div className="text-center py-10 md:py-12 border-b border-gray-100">
+        <div className="text-center py-8 border-b border-gray-100">
           <Link href="/" className="inline-block group">
             <h1
-              className="text-[3rem] md:text-[3.75rem] lg:text-[4.5rem] mb-2 transition-opacity group-hover:opacity-80"
-              style={{
-                color: "var(--gold)",
-                fontWeight: 300,
-                letterSpacing: "0.05em",
-                lineHeight: 1
-              }}
+              className="text-[2.5rem] md:text-[3rem] mb-1 transition-opacity group-hover:opacity-80"
+              style={{ color: "var(--gold)", fontWeight: 300, letterSpacing: "0.06em", lineHeight: 1 }}
             >
               WALEI
             </h1>
-            <p className="text-sm md:text-base text-gray-600 italic" style={{ letterSpacing: "0.1em" }}>
+            <p className="text-xs text-gray-500 italic" style={{ letterSpacing: "0.08em" }}>
               Making Statements
             </p>
           </Link>
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:block py-6">
-          <ul className="flex items-center justify-center gap-8 xl:gap-10">
+        <nav className="hidden lg:block py-4">
+          <ul className="flex items-center justify-center gap-7">
             {navItems.map((item) => (
               <li key={item.name}>
                 <Link
                   href={item.href}
-                  className="text-sm font-semibold text-gray-700 hover:text-[var(--teal)] transition-colors"
+                  className="text-[13px] font-semibold text-gray-600 hover:text-[var(--teal)] transition-colors"
                   style={{ letterSpacing: "0.02em" }}
                 >
                   {item.name}
@@ -55,37 +50,37 @@ export function Header() {
             ))}
             <li>
               <button
-                className="text-gray-800 hover:text-[var(--teal)] transition-colors"
+                className="text-gray-600 hover:text-[var(--teal)] transition-colors"
                 aria-label="Search"
               >
-                <Search size={20} />
+                <Search size={16} />
               </button>
             </li>
           </ul>
         </nav>
 
         {/* Mobile Navigation */}
-        <div className="lg:hidden py-6 flex items-center justify-between">
+        <div className="lg:hidden py-4 flex items-center justify-between">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
           >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
           <button aria-label="Search">
-            <Search size={20} />
+            <Search size={18} />
           </button>
         </div>
 
         {mobileMenuOpen && (
-          <div className="lg:hidden pb-6 border-t border-gray-100">
-            <ul className="space-y-4 pt-6">
+          <div className="lg:hidden pb-4 border-t border-gray-100">
+            <ul className="space-y-3 pt-4">
               {navItems.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="block text-sm font-medium text-gray-800"
+                    className="block text-sm text-gray-700"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}

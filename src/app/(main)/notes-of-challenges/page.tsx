@@ -1,7 +1,5 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { Container } from "@/components/ui/Container";
-import { Badge } from "@/components/ui/Badge";
 
 export const metadata: Metadata = {
   title: "Notes of Challenges",
@@ -9,51 +7,50 @@ export const metadata: Metadata = {
     "Learning from obstacles and discovering how leaders turn their greatest challenges into opportunities for growth.",
 };
 
-// Placeholder articles - will be replaced with Sanity data
 const articles = [
   {
     id: "1",
-    title: "Building Resilience: Lessons from Entrepreneurial Journeys",
+    title: "Water Scarcity in Urban India: Engineering Solutions at Scale",
     excerpt:
-      "Founders share their experiences of navigating uncertainty and building companies that stand the test of time.",
-    date: "Jan 16, 2026",
+      "With 21 Indian cities expected to run out of groundwater, researchers and civic leaders discuss scalable solutions from rainwater harvesting to desalination.",
+    date: "Jan 20, 2026",
     author: "Dr. Shantanu Pathak",
     featured: true,
   },
   {
     id: "2",
-    title: "Navigating Uncertainty in Startups",
+    title: "Bridging the Rural-Urban Healthcare Gap",
     excerpt:
-      "How successful entrepreneurs learned to embrace ambiguity and turn it into their greatest advantage.",
-    date: "Jan 14, 2026",
-    author: "Vikram Sharma",
+      "How telemedicine startups and ASHA workers are collaborating to bring specialist care to 600,000 villages across India.",
+    date: "Jan 16, 2026",
+    author: "Dr. Gagandeep Kang",
     featured: false,
   },
   {
     id: "3",
-    title: "The Pivot That Saved Our Company",
+    title: "The Brain Drain Dilemma: Can India Retain Its Best Researchers?",
     excerpt:
-      "A candid conversation about recognizing when to change direction and having the courage to do it.",
-    date: "Jan 11, 2026",
-    author: "Meera Krishnan",
+      "An honest conversation about why top scientists leave India and what systemic changes could reverse the trend.",
+    date: "Jan 12, 2026",
+    author: "Prof. Ashutosh Sharma",
     featured: false,
   },
   {
     id: "4",
-    title: "Leading Through Crisis: A CEO's Perspective",
+    title: "Climate Adaptation: Protecting Coastal Communities from Rising Seas",
     excerpt:
-      "Lessons learned from guiding a team through unprecedented challenges and emerging stronger.",
+      "Mumbai, Chennai, and Kolkata face existential flooding risks. Scientists map out survival strategies for 40 million coastal residents.",
     date: "Jan 8, 2026",
-    author: "Arjun Reddy",
+    author: "Dr. Roxy Mathew Koll",
     featured: false,
   },
   {
     id: "5",
-    title: "From Failure to Fortune: Rebuilding After Setback",
+    title: "Antibiotic Resistance: India's Ticking Health Time Bomb",
     excerpt:
-      "The story of how one entrepreneur turned their biggest failure into their greatest success.",
+      "With over 58,000 newborns dying annually from drug-resistant infections, microbiologists urge immediate policy action.",
     date: "Jan 5, 2026",
-    author: "Priya Malhotra",
+    author: "Prof. Dipankar Chatterji",
     featured: false,
   },
 ];
@@ -65,50 +62,49 @@ export default function NotesOfChallengesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-12 md:pt-40 md:pb-16 bg-gradient-to-b from-amber-50 to-white">
-        <Container>
+      <section className="pt-16 pb-10 md:pt-20 md:pb-14" style={{ backgroundColor: "var(--light)" }}>
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <div className="max-w-3xl">
-            <Badge variant="gold" size="lg" className="mb-4">
+            <span className="text-overline" style={{ color: "var(--gold)" }}>
               Notes of Challenges
-            </Badge>
-            <h1 className="font-serif text-display-2 md:text-display-1 text-gray-900">
-              Learning from Obstacles
+            </span>
+            <h1 className="text-3xl md:text-4xl font-light text-gray-900">
+              Confronting Hard Problems
             </h1>
-            <p className="mt-6 text-xl text-gray-600 max-w-2xl">
-              Discover how leaders turn their greatest challenges into
-              opportunities for growth, innovation, and transformation.
+            <p className="mt-4 text-sm md:text-base text-gray-500 max-w-2xl">
+              Discover how scientists and leaders tackle India&apos;s most pressing
+              challenges — from water scarcity and public health to climate
+              adaptation and research funding.
             </p>
           </div>
-        </Container>
+        </div>
       </section>
 
       {/* Featured Article */}
       {featuredArticle && (
         <section className="py-8 bg-white">
-          <Container>
+          <div className="max-w-[1200px] mx-auto px-5 md:px-8">
             <Link
               href={`/notes-of-challenges/${featuredArticle.id}`}
               className="group block"
             >
-              <article className="bg-amber-50 rounded-2xl overflow-hidden md:flex">
-                <div className="h-64 md:h-auto md:w-1/2 bg-gradient-to-br from-amber-200 to-amber-300 relative">
+              <article className="rounded-lg overflow-hidden md:flex" style={{ backgroundColor: "var(--light)" }}>
+                <div className="h-48 md:h-auto md:w-1/2 bg-gradient-to-br from-gray-300 to-gray-400 relative">
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-white text-8xl font-serif opacity-30">
-                      W
-                    </span>
+                    <span className="text-white text-6xl opacity-30">W</span>
                   </div>
                 </div>
-                <div className="p-8 md:p-12 md:w-1/2 flex flex-col justify-center">
-                  <Badge variant="gold" size="sm" className="self-start mb-4">
+                <div className="p-6 md:p-10 md:w-1/2 flex flex-col justify-center">
+                  <span className="text-overline" style={{ color: "var(--gold)" }}>
                     Featured
-                  </Badge>
-                  <h2 className="font-serif text-2xl md:text-3xl font-semibold text-gray-900 group-hover:text-walei-gold-dark transition-colors">
+                  </span>
+                  <h2 className="text-xl md:text-2xl font-light text-gray-900 group-hover:text-[var(--teal)] transition-colors">
                     {featuredArticle.title}
                   </h2>
-                  <p className="mt-4 text-gray-600 text-lg">
+                  <p className="mt-3 text-sm text-gray-600 leading-relaxed">
                     {featuredArticle.excerpt}
                   </p>
-                  <div className="mt-6 flex items-center gap-4 text-sm text-gray-500">
+                  <div className="mt-4 flex items-center gap-3 text-sm text-gray-500">
                     <span className="font-medium text-gray-700">
                       {featuredArticle.author}
                     </span>
@@ -118,54 +114,52 @@ export default function NotesOfChallengesPage() {
                 </div>
               </article>
             </Link>
-          </Container>
+          </div>
         </section>
       )}
 
       {/* Article Grid */}
-      <section className="py-12 md:py-16 bg-white">
-        <Container>
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="font-serif text-xl font-semibold text-gray-900">
+      <section className="py-10 md:py-14 bg-white">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-lg font-normal text-gray-900">
               All Articles
             </h2>
-            <p className="text-sm text-gray-500">{articles.length} articles</p>
+            <p className="text-xs text-gray-500">{articles.length} articles</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {otherArticles.map((article) => (
               <Link
                 key={article.id}
                 href={`/notes-of-challenges/${article.id}`}
                 className="group"
               >
-                <article className="bg-walei-pale rounded-xl overflow-hidden hover:shadow-deep transition-shadow">
-                  <div className="h-40 bg-gradient-to-br from-amber-100 to-amber-200 relative">
+                <article className="rounded-lg overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow">
+                  <div className="h-36 bg-gradient-to-br from-gray-200 to-gray-300 relative">
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="text-amber-300 text-5xl font-serif">
-                        W
-                      </span>
+                      <span className="text-gray-400 text-4xl">W</span>
                     </div>
                   </div>
-                  <div className="p-6">
-                    <h3 className="font-serif text-lg font-semibold text-gray-900 group-hover:text-walei-gold-dark transition-colors line-clamp-2">
+                  <div className="p-5">
+                    <h3 className="text-base font-normal text-gray-900 group-hover:text-[var(--teal)] transition-colors line-clamp-2">
                       {article.title}
                     </h3>
-                    <p className="mt-2 text-gray-600 text-sm line-clamp-2">
+                    <p className="mt-2 text-sm text-gray-500 line-clamp-2">
                       {article.excerpt}
                     </p>
-                    <div className="mt-4 flex items-center justify-between text-sm">
+                    <div className="mt-3 flex items-center justify-between text-xs">
                       <span className="text-gray-700 font-medium">
                         {article.author}
                       </span>
-                      <time className="text-gray-500">{article.date}</time>
+                      <time className="text-gray-400">{article.date}</time>
                     </div>
                   </div>
                 </article>
               </Link>
             ))}
           </div>
-        </Container>
+        </div>
       </section>
     </>
   );

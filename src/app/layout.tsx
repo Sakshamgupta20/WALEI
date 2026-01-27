@@ -1,20 +1,21 @@
 import type { Metadata } from "next";
-import { inter, sourceSerif } from "@/styles/fonts";
+import { mukta, playfair } from "@/styles/fonts";
 import "@/styles/globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "WALEI - Experiences that inspire",
+    default: "WALEI - Making Statements",
     template: "%s | WALEI",
   },
   description:
-    "A thought leadership platform featuring conversations with visionary leaders. Explore insights on future trends, challenges, and leadership wisdom.",
+    "Amplifying scientific voices and delivering evidence-based statements to world leaders. Explore insights on future trends, challenges, and leadership wisdom.",
   keywords: [
+    "science policy",
     "thought leadership",
-    "interviews",
+    "evidence-based policy",
+    "scientific research",
+    "world leaders",
     "innovation",
-    "leadership",
-    "future trends",
   ],
   authors: [{ name: "WALEI" }],
   openGraph: {
@@ -22,15 +23,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://walei.org",
     siteName: "WALEI",
-    title: "WALEI - Experiences that inspire",
+    title: "WALEI - Making Statements",
     description:
-      "A thought leadership platform featuring conversations with visionary leaders.",
+      "Amplifying scientific voices and delivering evidence-based statements to world leaders.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "WALEI - Experiences that inspire",
+    title: "WALEI - Making Statements",
     description:
-      "A thought leadership platform featuring conversations with visionary leaders.",
+      "Amplifying scientific voices and delivering evidence-based statements to world leaders.",
   },
   robots: {
     index: true,
@@ -44,7 +45,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${sourceSerif.variable}`}>
+    <html lang="en" className={`${mukta.variable} ${playfair.variable}`}>
       <body className="font-sans">
         {/* Skip Links for Accessibility */}
         <a href="#main-content" className="skip-link">

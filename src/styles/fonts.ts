@@ -1,14 +1,16 @@
-import { Inter, Source_Serif_4 } from "next/font/google";
+import { Mukta, Playfair_Display } from "next/font/google";
 
-export const inter = Inter({
-  subsets: ["latin"],
+export const mukta = Mukta({
+  subsets: ["latin", "devanagari"],
   display: "swap",
-  variable: "--font-inter",
+  variable: "--font-mukta",
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
 });
 
-export const sourceSerif = Source_Serif_4({
+export const playfair = Playfair_Display({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-source-serif",
-  weight: ["400", "600", "700"],
+  variable: "--font-playfair",
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
 });
