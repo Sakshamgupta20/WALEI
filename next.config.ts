@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
-const isGitHubPages = process.env.GITHUB_PAGES === "true";
-const basePath = isGitHubPages ? "/WALEI" : "";
+// Always use basePath for GitHub Pages deployment
+const basePath = "/WALEI";
 
 const nextConfig: NextConfig = {
   // Enable static export for GitHub Pages
@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
 
   // Set basePath for GitHub Pages
   basePath: basePath,
-  assetPrefix: basePath ? `${basePath}/` : "",
+  assetPrefix: `${basePath}/`,
 
   // Expose basePath to client components
   env: {
