@@ -2,6 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const perspectives = [
   {
     id: "1",
@@ -61,7 +63,7 @@ export function PerspectivesSection() {
               {/* Image */}
               <div className="aspect-[16/10] relative overflow-hidden">
                 <Image
-                  src={item.image}
+                  src={`${basePath}${item.image}`}
                   alt={item.author}
                   fill
                   className="object-cover object-top group-hover:scale-105 transition-transform duration-700"

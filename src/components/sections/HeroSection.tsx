@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 export function HeroSection() {
   return (
     <section className="relative bg-[var(--dark)] overflow-hidden min-h-[85vh] flex items-center">
@@ -96,7 +98,7 @@ export function HeroSection() {
                 <div className="flex items-start gap-4 mb-6">
                   <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 border-2 border-white/20">
                     <Image
-                      src="/images/scientists/scientist-3.png"
+                      src={`${basePath}/images/scientists/scientist-3.png`}
                       alt="Prof. Suman Chakraborty"
                       width={64}
                       height={64}

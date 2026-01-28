@@ -2,6 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Linkedin } from "lucide-react";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 export function FeaturedScientist() {
   return (
     <section className="py-20 md:py-28 bg-white">
@@ -32,7 +34,7 @@ export function FeaturedScientist() {
               {/* Main image */}
               <div className="relative aspect-[4/5] rounded-lg overflow-hidden">
                 <Image
-                  src="/images/scientists/scientist-1.png"
+                  src={`${basePath}/images/scientists/scientist-1.png`}
                   alt="Prof. Dipankar Chatterji"
                   fill
                   className="object-cover"

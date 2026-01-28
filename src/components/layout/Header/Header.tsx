@@ -5,6 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const notesCategories = [
   {
     name: "Notes of Future",
@@ -62,7 +64,7 @@ export function Header() {
             {/* Logo mark */}
             <div className="relative w-8 h-8 md:w-9 md:h-9 transition-transform group-hover:scale-105">
               <Image
-                src="/logo.png"
+                src={`${basePath}/logo.png`}
                 alt="WALEI"
                 fill
                 className="object-contain"

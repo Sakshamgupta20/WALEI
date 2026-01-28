@@ -3,6 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Calendar, User } from "lucide-react";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 export const metadata: Metadata = {
   title: "Notes of Challenges",
   description:
@@ -101,7 +103,7 @@ export default function NotesOfChallengesPage() {
                 <div className="h-56 md:h-auto md:w-1/2 relative overflow-hidden">
                   {featuredArticle.image ? (
                     <Image
-                      src={featuredArticle.image}
+                      src={`${basePath}${featuredArticle.image}`}
                       alt={featuredArticle.author}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"

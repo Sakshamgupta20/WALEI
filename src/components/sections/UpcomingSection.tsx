@@ -2,6 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const upcomingNotes = [
   {
     category: "Notes of Future",
@@ -78,7 +80,7 @@ export function UpcomingSection() {
                     {/* Photo */}
                     <div className="w-36 h-36 md:w-48 md:h-48 rounded-full border-4 border-white shadow-2xl overflow-hidden group-hover:scale-105 transition-transform duration-500">
                       <Image
-                        src={note.image}
+                        src={`${basePath}${note.image}`}
                         alt={note.speaker}
                         width={192}
                         height={192}

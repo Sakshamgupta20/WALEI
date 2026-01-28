@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { mukta, playfair } from "@/styles/fonts";
 import "@/styles/globals.css";
 
+// Get basePath for GitHub Pages deployment
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 export const metadata: Metadata = {
   title: {
     default: "WALEI - Vision · Insight · Action",
@@ -20,9 +23,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "WALEI" }],
   icons: {
-    icon: "/logo.png",
-    shortcut: "/logo.png",
-    apple: "/logo.png",
+    icon: `${basePath}/logo.png`,
+    shortcut: `${basePath}/logo.png`,
+    apple: `${basePath}/logo.png`,
   },
   openGraph: {
     type: "website",
@@ -34,7 +37,7 @@ export const metadata: Metadata = {
       "Amplifying scientific voices and delivering evidence-based statements to world leaders.",
     images: [
       {
-        url: "/logo.png",
+        url: `${basePath}/logo.png`,
         width: 512,
         height: 512,
         alt: "WALEI Logo",
