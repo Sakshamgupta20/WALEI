@@ -1,9 +1,10 @@
 import {
   HeroSection,
-  LatestNews,
+  PerspectivesSection,
+  UpcomingSection,
+  NotesSeriesSection,
+  AboutWaleiSection,
   FeaturedScientist,
-  NotesToLeadersSection,
-  UpcomingSpeakers,
   Newsletter,
 } from "@/components/sections";
 
@@ -13,17 +14,20 @@ export default function HomePage() {
       {/* Hero Section */}
       <HeroSection />
 
-      {/* Latest News */}
-      <LatestNews />
+      {/* Perspectives - ETH Zurich style news cards */}
+      <PerspectivesSection />
 
-      {/* Featured Scientist */}
+      {/* Upcoming Notes - Two column with circular photos */}
+      <UpcomingSection />
+
+      {/* Notes Series Overview - Three columns */}
+      <NotesSeriesSection />
+
+      {/* Featured Scientist Interview */}
       <FeaturedScientist />
 
-      {/* Notes to Leaders */}
-      <NotesToLeadersSection />
-
-      {/* Upcoming Speakers */}
-      <UpcomingSpeakers />
+      {/* About WALEI Stats */}
+      <AboutWaleiSection />
 
       {/* Newsletter Signup */}
       <Newsletter />

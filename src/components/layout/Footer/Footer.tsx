@@ -2,23 +2,22 @@ import Link from "next/link";
 import { Mail, Facebook, Twitter, Linkedin, Youtube } from "lucide-react";
 
 const footerLinks = {
-  about: [
-    { label: "About the Initiative", href: "/about" },
-    { label: "Our Mission", href: "/about#mission" },
-    { label: "Leadership", href: "/leaders" },
-    { label: "Partners", href: "/partners" },
-  ],
-  resources: [
+  notes: [
     { label: "Notes of Future", href: "/notes-of-future" },
     { label: "Notes of Challenges", href: "/notes-of-challenges" },
-    { label: "Research Archive", href: "/archive" },
-    { label: "Media Kit", href: "/media" },
+    { label: "Notes of Moments", href: "/notes-of-moments" },
+  ],
+  explore: [
+    { label: "News", href: "/news" },
+    { label: "Patents", href: "/patents" },
+    { label: "Products", href: "/products" },
+    { label: "Sponsors", href: "/sponsors" },
   ],
   connect: [
-    { label: "Contact Us", href: "/contact" },
-    { label: "FAQ", href: "/faq" },
-    { label: "Privacy Policy", href: "/privacy" },
-    { label: "Terms of Use", href: "/terms" },
+    { label: "About Us", href: "/about" },
+    { label: "Team", href: "/team" },
+    { label: "Contact", href: "/contact" },
+    { label: "Publish", href: "/publish" },
   ],
 };
 
@@ -40,18 +39,22 @@ export function Footer() {
             <h3 className="text-3xl font-light mb-2" style={{ color: "var(--gold)" }}>
               WALEI
             </h3>
-            <p className="text-xs italic text-gray-400 mb-5">Making Statements</p>
-            <p className="text-sm text-gray-300 leading-relaxed">
-              Amplifying scientific voices and delivering evidence-based statements to world
-              leaders and policymakers. Building a future guided by research and reason.
+            <p className="text-xs italic text-gray-400 mb-2">Vision · Insight · Action</p>
+            <p className="text-sm text-gray-300 leading-relaxed mb-4">
+              A digital infrastructure at stage 1 of science and innovation.
+              Building the future with sheer efforts by top minds.
             </p>
+            <div className="flex gap-4 text-sm text-gray-400">
+              <span><strong className="text-white">349</strong> Cities</span>
+              <span><strong className="text-white">54</strong> Countries</span>
+            </div>
           </div>
 
-          {/* About Links */}
+          {/* Notes Series */}
           <div className="md:col-span-2 md:col-start-6">
-            <h4 className="text-sm font-semibold mb-4">About</h4>
+            <h4 className="text-sm font-semibold mb-4">Notes Series</h4>
             <ul className="space-y-2.5">
-              {footerLinks.about.map((link) => (
+              {footerLinks.notes.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
@@ -64,11 +67,11 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Resources */}
+          {/* Explore */}
           <div className="md:col-span-2">
-            <h4 className="text-sm font-semibold mb-4">Resources</h4>
+            <h4 className="text-sm font-semibold mb-4">Explore</h4>
             <ul className="space-y-2.5">
-              {footerLinks.resources.map((link) => (
+              {footerLinks.explore.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}

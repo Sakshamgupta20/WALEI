@@ -9,7 +9,7 @@ export default function MainLayout({
   return (
     <>
       <Header />
-      <main id="main-content" role="main" className="min-h-screen">
+      <main id="main-content" role="main" className="min-h-screen pt-16 md:pt-20">
         {children}
       </main>
       <Footer />

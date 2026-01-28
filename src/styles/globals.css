@@ -10,6 +10,11 @@
     --dark: #1A1A1A;
     --light: #F8F6F1;
     --white: #FFFFFF;
+
+    /* Category accent colors (from PDF) */
+    --accent-future: #D4A853;     /* Gold/Yellow for Notes of Future */
+    --accent-challenges: #C54B4B; /* Red for Notes of Challenges */
+    --accent-moments: #6B5B95;    /* Purple for Notes of Moments */
   }
 
   * {

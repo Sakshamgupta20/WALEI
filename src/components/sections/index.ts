@@ -4,3 +4,7 @@ export { FeaturedScientist } from "./FeaturedScientist";
 export { NotesToLeadersSection } from "./NotesToLeadersSection";
 export { UpcomingSpeakers } from "./UpcomingSpeakers";
 export { Newsletter } from "./Newsletter";
+export { UpcomingSection } from "./UpcomingSection";
+export { NotesSeriesSection } from "./NotesSeriesSection";
+export { AboutWaleiSection } from "./AboutWaleiSection";
+export { PerspectivesSection } from "./PerspectivesSection";

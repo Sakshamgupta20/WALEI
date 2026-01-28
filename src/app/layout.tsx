@@ -4,7 +4,7 @@ import "@/styles/globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "WALEI - Making Statements",
+    default: "WALEI - Vision · Insight · Action",
     template: "%s | WALEI",
   },
   description:
@@ -16,20 +16,34 @@ export const metadata: Metadata = {
     "scientific research",
     "world leaders",
     "innovation",
+    "WALEI",
   ],
   authors: [{ name: "WALEI" }],
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://walei.org",
     siteName: "WALEI",
-    title: "WALEI - Making Statements",
+    title: "WALEI - Vision · Insight · Action",
     description:
       "Amplifying scientific voices and delivering evidence-based statements to world leaders.",
+    images: [
+      {
+        url: "/logo.png",
+        width: 512,
+        height: 512,
+        alt: "WALEI Logo",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "WALEI - Making Statements",
+    title: "WALEI - Vision · Insight · Action",
     description:
       "Amplifying scientific voices and delivering evidence-based statements to world leaders.",
   },
