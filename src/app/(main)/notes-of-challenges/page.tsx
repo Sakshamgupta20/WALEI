@@ -1,5 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
+import { ArrowRight, Calendar, User } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Notes of Challenges",
@@ -12,16 +14,17 @@ const articles = [
     id: "1",
     title: "Water Scarcity in Urban India: Engineering Solutions at Scale",
     excerpt:
-      "With 21 Indian cities expected to run out of groundwater, researchers and civic leaders discuss scalable solutions from rainwater harvesting to desalination.",
+      "With 21 Indian cities expected to run out of groundwater, researchers and civic leaders discuss scalable solutions.",
     date: "Jan 20, 2026",
     author: "Dr. Shantanu Pathak",
+    image: "/images/scientists/scientist-1.png",
     featured: true,
   },
   {
     id: "2",
     title: "Bridging the Rural-Urban Healthcare Gap",
     excerpt:
-      "How telemedicine startups and ASHA workers are collaborating to bring specialist care to 600,000 villages across India.",
+      "How telemedicine startups and ASHA workers are collaborating to bring specialist care to 600,000 villages.",
     date: "Jan 16, 2026",
     author: "Dr. Gagandeep Kang",
     featured: false,
@@ -37,9 +40,9 @@ const articles = [
   },
   {
     id: "4",
-    title: "Climate Adaptation: Protecting Coastal Communities from Rising Seas",
+    title: "Climate Adaptation: Protecting Coastal Communities",
     excerpt:
-      "Mumbai, Chennai, and Kolkata face existential flooding risks. Scientists map out survival strategies for 40 million coastal residents.",
+      "Mumbai, Chennai, and Kolkata face existential flooding risks. Scientists map out survival strategies.",
     date: "Jan 8, 2026",
     author: "Dr. Roxy Mathew Koll",
     featured: false,
@@ -48,12 +51,14 @@ const articles = [
     id: "5",
     title: "Antibiotic Resistance: India's Ticking Health Time Bomb",
     excerpt:
-      "With over 58,000 newborns dying annually from drug-resistant infections, microbiologists urge immediate policy action.",
+      "With over 58,000 newborns dying annually from drug-resistant infections, microbiologists urge immediate action.",
     date: "Jan 5, 2026",
     author: "Prof. Dipankar Chatterji",
     featured: false,
   },
 ];
+
+const accentColor = "var(--accent-challenges)";
 
 export default function NotesOfChallengesPage() {
   const featuredArticle = articles.find((a) => a.featured);
@@ -62,54 +67,73 @@ export default function NotesOfChallengesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-16 pb-10 md:pt-20 md:pb-14" style={{ backgroundColor: "var(--light)" }}>
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
-          <div className="max-w-3xl">
-            <span className="text-overline" style={{ color: "var(--gold)" }}>
+      <section className="relative bg-[var(--dark)] py-12 md:py-16 overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-10 right-10 w-64 h-64 rounded-full border border-white/5" />
+          <div className="absolute bottom-10 left-10 w-48 h-48 rounded-full border border-white/5" />
+        </div>
+        <div className="relative max-w-[1200px] mx-auto px-5 md:px-8">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-8 h-[2px]" style={{ background: `linear-gradient(to right, transparent, ${accentColor})` }} />
+            <span className="text-[11px] uppercase tracking-[0.2em] font-semibold" style={{ color: accentColor }}>
               Notes of Challenges
             </span>
-            <h1 className="text-3xl md:text-4xl font-light text-gray-900">
-              Confronting Hard Problems
-            </h1>
-            <p className="mt-4 text-sm md:text-base text-gray-500 max-w-2xl">
-              Discover how scientists and leaders tackle India&apos;s most pressing
-              challenges — from water scarcity and public health to climate
-              adaptation and research funding.
-            </p>
           </div>
+          <h1 className="text-3xl md:text-4xl font-light text-white mb-4">
+            Confronting Hard Problems
+          </h1>
+          <p className="text-base text-gray-400 max-w-2xl">
+            Discover how scientists and leaders tackle India&apos;s most pressing
+            challenges — from water scarcity and public health to climate adaptation.
+          </p>
         </div>
       </section>
 
       {/* Featured Article */}
       {featuredArticle && (
-        <section className="py-8 bg-white">
+        <section className="py-10 bg-white">
           <div className="max-w-[1200px] mx-auto px-5 md:px-8">
             <Link
               href={`/notes-of-challenges/${featuredArticle.id}`}
               className="group block"
             >
-              <article className="rounded-lg overflow-hidden md:flex" style={{ backgroundColor: "var(--light)" }}>
-                <div className="h-48 md:h-auto md:w-1/2 bg-gradient-to-br from-gray-300 to-gray-400 relative">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-white text-6xl opacity-30">W</span>
-                  </div>
+              <article className="rounded-2xl overflow-hidden md:flex bg-[var(--light)] hover:shadow-xl transition-shadow">
+                <div className="h-56 md:h-auto md:w-1/2 relative overflow-hidden">
+                  {featuredArticle.image ? (
+                    <Image
+                      src={featuredArticle.image}
+                      alt={featuredArticle.author}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-[#C54B4B]/20 to-[#C54B4B]/40" />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                 </div>
-                <div className="p-6 md:p-10 md:w-1/2 flex flex-col justify-center">
-                  <span className="text-overline" style={{ color: "var(--gold)" }}>
+
+                <div className="p-6 md:p-8 md:w-1/2 flex flex-col justify-center">
+                  <span
+                    className="text-[10px] uppercase tracking-wider font-bold px-3 py-1 rounded-full w-fit mb-4"
+                    style={{ backgroundColor: `${accentColor}20`, color: accentColor }}
+                  >
                     Featured
                   </span>
-                  <h2 className="text-xl md:text-2xl font-light text-gray-900 group-hover:text-[var(--teal)] transition-colors">
+                  <h2 className="text-xl md:text-2xl font-light text-gray-900 group-hover:text-[var(--teal)] transition-colors mb-3">
                     {featuredArticle.title}
                   </h2>
-                  <p className="mt-3 text-sm text-gray-600 leading-relaxed">
+                  <p className="text-sm text-gray-600 leading-relaxed mb-4">
                     {featuredArticle.excerpt}
                   </p>
-                  <div className="mt-4 flex items-center gap-3 text-sm text-gray-500">
-                    <span className="font-medium text-gray-700">
+                  <div className="flex items-center gap-4 text-sm text-gray-500">
+                    <span className="flex items-center gap-1.5">
+                      <User size={12} />
                       {featuredArticle.author}
                     </span>
-                    <span>&middot;</span>
-                    <time>{featuredArticle.date}</time>
+                    <span className="flex items-center gap-1.5">
+                      <Calendar size={12} />
+                      {featuredArticle.date}
+                    </span>
                   </div>
                 </div>
               </article>
@@ -119,12 +143,10 @@ export default function NotesOfChallengesPage() {
       )}
 
       {/* Article Grid */}
-      <section className="py-10 md:py-14 bg-white">
+      <section className="py-12 md:py-16 bg-white">
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-lg font-normal text-gray-900">
-              All Articles
-            </h2>
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-lg font-medium text-gray-900">All Articles</h2>
             <p className="text-xs text-gray-500">{articles.length} articles</p>
           </div>
 
@@ -135,29 +157,44 @@ export default function NotesOfChallengesPage() {
                 href={`/notes-of-challenges/${article.id}`}
                 className="group"
               >
-                <article className="rounded-lg overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow">
-                  <div className="h-36 bg-gradient-to-br from-gray-200 to-gray-300 relative">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="text-gray-400 text-4xl">W</span>
+                <article className="rounded-xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all hover:-translate-y-1">
+                  <div
+                    className="h-32 relative"
+                    style={{ background: `linear-gradient(135deg, ${accentColor}15 0%, ${accentColor}30 100%)` }}
+                  >
+                    <div
+                      className="absolute top-3 left-3 px-2 py-1 rounded-full text-[9px] font-bold uppercase text-white"
+                      style={{ backgroundColor: accentColor }}
+                    >
+                      Challenge
                     </div>
                   </div>
+
                   <div className="p-5">
-                    <h3 className="text-base font-normal text-gray-900 group-hover:text-[var(--teal)] transition-colors line-clamp-2">
+                    <h3 className="text-sm font-medium text-gray-900 group-hover:text-[var(--teal)] transition-colors line-clamp-2 mb-2">
                       {article.title}
                     </h3>
-                    <p className="mt-2 text-sm text-gray-500 line-clamp-2">
+                    <p className="text-xs text-gray-500 line-clamp-2 mb-3">
                       {article.excerpt}
                     </p>
-                    <div className="mt-3 flex items-center justify-between text-xs">
-                      <span className="text-gray-700 font-medium">
-                        {article.author}
-                      </span>
-                      <time className="text-gray-400">{article.date}</time>
+                    <div className="flex items-center justify-between text-xs text-gray-400">
+                      <span>{article.author}</span>
+                      <span>{article.date}</span>
                     </div>
                   </div>
                 </article>
               </Link>
             ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <Link
+              href="/notes-of-challenges"
+              className="inline-flex items-center gap-2 text-sm font-medium hover:gap-3 transition-all"
+              style={{ color: accentColor }}
+            >
+              Load more articles <ArrowRight size={14} />
+            </Link>
           </div>
         </div>
       </section>

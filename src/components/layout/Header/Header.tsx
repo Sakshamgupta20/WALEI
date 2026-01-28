@@ -56,11 +56,11 @@ export function Header() {
       }`}
     >
       <div className="max-w-[1400px] mx-auto px-5 md:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-14 md:h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center gap-2.5 group">
             {/* Logo mark */}
-            <div className="relative w-10 h-10 md:w-12 md:h-12 transition-transform group-hover:scale-105">
+            <div className="relative w-8 h-8 md:w-9 md:h-9 transition-transform group-hover:scale-105">
               <Image
                 src="/logo.png"
                 alt="WALEI"
@@ -72,13 +72,13 @@ export function Header() {
             {/* Logo text */}
             <div className="hidden sm:block">
               <h1
-                className="text-xl font-medium tracking-wide transition-colors"
+                className="text-lg font-medium tracking-wide transition-colors leading-tight"
                 style={{ color: "var(--dark)" }}
               >
                 WALEI
               </h1>
               <p
-                className="text-[9px] uppercase tracking-[0.2em] -mt-0.5"
+                className="text-[8px] uppercase tracking-[0.15em] -mt-0.5"
                 style={{ color: "var(--gold)" }}
               >
                 Vision · Insight · Action
@@ -87,17 +87,17 @@ export function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-0.5">
             {/* Notes Series Dropdown */}
             <div
               className="relative"
               onMouseEnter={() => setNotesDropdownOpen(true)}
               onMouseLeave={() => setNotesDropdownOpen(false)}
             >
-              <button className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-gray-700 hover:text-[var(--teal)] transition-colors rounded-lg hover:bg-gray-50">
+              <button className="flex items-center gap-1 px-3 py-1.5 text-[13px] font-medium text-gray-700 hover:text-[var(--teal)] transition-colors rounded-md hover:bg-gray-50">
                 Notes Series
                 <ChevronDown
-                  size={14}
+                  size={12}
                   className={`transition-transform duration-200 ${
                     notesDropdownOpen ? "rotate-180" : ""
                   }`}
@@ -106,28 +106,28 @@ export function Header() {
 
               {/* Dropdown */}
               <div
-                className={`absolute top-full left-0 pt-2 transition-all duration-200 ${
+                className={`absolute top-full left-0 pt-1.5 transition-all duration-200 ${
                   notesDropdownOpen
                     ? "opacity-100 visible translate-y-0"
                     : "opacity-0 invisible -translate-y-2"
                 }`}
               >
-                <div className="bg-white rounded-xl shadow-xl border border-gray-100 p-2 min-w-[280px]">
+                <div className="bg-white rounded-lg shadow-xl border border-gray-100 p-1.5 min-w-[260px]">
                   {notesCategories.map((category) => (
                     <Link
                       key={category.name}
                       href={category.href}
-                      className="flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group/item"
+                      className="flex items-start gap-2.5 p-2.5 rounded-md hover:bg-gray-50 transition-colors group/item"
                     >
                       <span
-                        className="w-2 h-2 rounded-full mt-1.5 flex-shrink-0"
+                        className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0"
                         style={{ backgroundColor: category.color }}
                       />
                       <div>
-                        <span className="text-sm font-medium text-gray-800 group-hover/item:text-[var(--teal)] transition-colors">
+                        <span className="text-[13px] font-medium text-gray-800 group-hover/item:text-[var(--teal)] transition-colors">
                           {category.name}
                         </span>
-                        <p className="text-xs text-gray-500 mt-0.5">
+                        <p className="text-[11px] text-gray-500 mt-0.5">
                           {category.description}
                         </p>
                       </div>
@@ -142,7 +142,7 @@ export function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-[var(--teal)] transition-colors rounded-lg hover:bg-gray-50"
+                className="px-3 py-1.5 text-[13px] font-medium text-gray-600 hover:text-[var(--teal)] transition-colors rounded-md hover:bg-gray-50"
               >
                 {item.name}
               </Link>
@@ -151,11 +151,11 @@ export function Header() {
             {/* CTA Button */}
             <Link
               href="/contact"
-              className="ml-4 px-5 py-2.5 text-sm font-semibold text-white rounded-lg flex items-center gap-2 hover:opacity-90 transition-all"
+              className="ml-3 px-4 py-2 text-[13px] font-semibold text-white rounded-md flex items-center gap-1.5 hover:opacity-90 transition-all"
               style={{ backgroundColor: "var(--teal)" }}
             >
               Get in Touch
-              <ArrowRight size={14} />
+              <ArrowRight size={12} />
             </Link>
           </nav>
 

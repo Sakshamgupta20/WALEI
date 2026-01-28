@@ -45,7 +45,7 @@ export default function SponsorsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-[var(--dark)] py-20 md:py-28 overflow-hidden">
+      <section className="relative bg-[var(--dark)] py-12 md:py-16 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-10 right-10 w-64 h-64 rounded-full border border-white/5" />
           <div className="absolute bottom-10 left-10 w-48 h-48 rounded-full border border-white/5" />

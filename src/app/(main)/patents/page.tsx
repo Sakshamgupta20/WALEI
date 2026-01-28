@@ -59,7 +59,7 @@ export default function PatentsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-[var(--dark)] py-20 md:py-28 overflow-hidden">
+      <section className="relative bg-[var(--dark)] py-12 md:py-16 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-10 right-10 w-64 h-64 rounded-full border border-white/5" />
           <div className="absolute bottom-10 left-10 w-48 h-48 rounded-full border border-white/5" />
@@ -82,7 +82,7 @@ export default function PatentsPage() {
       </section>
 
       {/* Filters */}
-      <section className="py-6 bg-[var(--light)] border-b border-gray-200 sticky top-16 md:top-20 z-40">
+      <section className="py-4 bg-[var(--light)] border-b border-gray-200 sticky top-14 md:top-16 z-40">
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <div className="flex flex-col md:flex-row gap-4 items-start md:items-center">
             {/* Search */}
