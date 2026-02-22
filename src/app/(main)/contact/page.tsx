@@ -1,9 +1,9 @@
 "use client";
 
 import { useState, FormEvent } from "react";
-import { Mail, Users, Globe, Send, CheckCircle } from "lucide-react";
+import { Mail, Users, Globe, Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 
-const MAILTO_ADDRESS = "walei.office@gmail.com";
+const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "";
 
 const SUBJECT_OPTIONS: { value: string; label: string }[] = [
   { value: "partnership", label: "Partnership Inquiry" },
@@ -13,7 +13,7 @@ const SUBJECT_OPTIONS: { value: string; label: string }[] = [
   { value: "general", label: "General Question" },
 ];
 
-type FormStatus = "idle" | "success";
+type FormStatus = "idle" | "submitting" | "success" | "error";
 
 export default function ContactPage() {
   const [name, setName] = useState("");
@@ -22,24 +22,41 @@ export default function ContactPage() {
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<FormStatus>("idle");
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setStatus("submitting");
 
     const subjectLabel =
       SUBJECT_OPTIONS.find((opt) => opt.value === subject)?.label ?? subject;
-    const mailSubject = encodeURIComponent(`[WALEI Contact] ${subjectLabel}`);
-    const mailBody = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nSubject: ${subjectLabel}\n\n${message}`
-    );
-    const mailtoLink = `mailto:${MAILTO_ADDRESS}?subject=${mailSubject}&body=${mailBody}`;
 
-    window.open(mailtoLink, "_blank");
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          name,
+          email,
+          subject: `[WALEI Contact] ${subjectLabel}`,
+          message,
+          from_name: "WALEI Contact Form",
+        }),
+      });
 
-    setStatus("success");
-    setName("");
-    setEmail("");
-    setSubject("");
-    setMessage("");
+      const data = await response.json();
+
+      if (data.success) {
+        setStatus("success");
+        setName("");
+        setEmail("");
+        setSubject("");
+        setMessage("");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
@@ -185,9 +202,18 @@ export default function ContactPage() {
                     style={{ color: "var(--gold)" }}
                   />
                   <p className="text-sm" style={{ color: "var(--gold)" }}>
-                    Your email client should have opened with the message. If not, please email us directly at{" "}
-                    <a href={`mailto:${MAILTO_ADDRESS}`} className="underline font-medium">
-                      {MAILTO_ADDRESS}
+                    Your message has been sent successfully! We&apos;ll get back to you soon.
+                  </p>
+                </div>
+              )}
+
+              {status === "error" && (
+                <div className="flex items-start gap-3 p-4 rounded-xl mb-6 bg-red-50 border border-red-200">
+                  <AlertCircle size={20} className="flex-shrink-0 mt-0.5 text-red-500" />
+                  <p className="text-sm text-red-600">
+                    Something went wrong. Please try again or email us directly at{" "}
+                    <a href="mailto:walei.office@gmail.com" className="underline font-medium">
+                      walei.office@gmail.com
                     </a>
                   </p>
                 </div>
@@ -278,10 +304,18 @@ export default function ContactPage() {
 
                 <button
                   type="submit"
-                  className="w-full px-6 py-4 bg-[var(--gold)] text-white font-semibold rounded-xl hover:opacity-90 transition-all flex items-center justify-center gap-2"
+                  disabled={status === "submitting"}
+                  className="w-full px-6 py-4 bg-[var(--gold)] text-white font-semibold rounded-xl hover:opacity-90 transition-all flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  Send Message
-                  <Send size={18} />
+                  {status === "submitting" ? (
+                    <>
+                      Sending... <Loader2 size={18} className="animate-spin" />
+                    </>
+                  ) : (
+                    <>
+                      Send Message <Send size={18} />
+                    </>
+                  )}
                 </button>
               </form>
             </div>

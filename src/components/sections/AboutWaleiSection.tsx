@@ -49,7 +49,7 @@ export function AboutWaleiSection() {
 
           {/* Right - 4 Colored Boxes (2x2) */}
           <div className="lg:col-span-7">
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               {/* Presence - Gold */}
               <div className="rounded-xl p-6 border" style={{ backgroundColor: "rgba(212, 168, 83, 0.1)", borderColor: "rgba(212, 168, 83, 0.25)" }}>
                 <div className="flex items-center gap-3 mb-4">
@@ -61,12 +61,12 @@ export function AboutWaleiSection() {
                   </span>
                 </div>
                 <div className="flex items-baseline gap-2">
-                  <span className="text-4xl md:text-5xl font-light">349</span>
+                  <span className="text-3xl sm:text-4xl md:text-5xl font-light">349</span>
                   <span className="text-gray-500 text-sm">Cities</span>
                 </div>
                 <div className="flex items-baseline gap-2 mt-1">
                   <span className="text-sm text-gray-400">across</span>
-                  <span className="text-3xl md:text-4xl font-light">54</span>
+                  <span className="text-2xl sm:text-3xl md:text-4xl font-light">54</span>
                   <span className="text-gray-500 text-sm">Countries</span>
                 </div>
               </div>

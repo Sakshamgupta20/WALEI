@@ -1,18 +1,46 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, ArrowRight, CheckCircle } from "lucide-react";
+import { Mail, ArrowRight, CheckCircle, Loader2 } from "lucide-react";
+
+const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "";
+
+type SubStatus = "idle" | "submitting" | "success" | "error";
 
 export function Newsletter() {
   const [email, setEmail] = useState("");
   const [consent, setConsent] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<SubStatus>("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Implement newsletter subscription
-    console.log("Subscribe:", email);
-    setSubmitted(true);
+    setStatus("submitting");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          email,
+          subject: "[WALEI] New Newsletter Subscription",
+          message: `New subscriber: ${email}`,
+          from_name: "WALEI Newsletter",
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setStatus("success");
+        setEmail("");
+        setConsent(false);
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -67,7 +95,19 @@ export function Newsletter() {
 
           {/* Right - Form */}
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-            {!submitted ? (
+            {status === "success" ? (
+              <div className="text-center py-8">
+                <div className="w-16 h-16 rounded-full bg-[var(--gold)]/20 flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle size={32} className="text-[var(--gold)]" />
+                </div>
+                <h4 className="text-xl font-medium text-white mb-2">
+                  You&apos;re subscribed!
+                </h4>
+                <p className="text-white/60">
+                  Thank you for joining our community. We&apos;ll keep you updated.
+                </p>
+              </div>
+            ) : (
               <form onSubmit={handleSubmit}>
                 <div className="mb-6">
                   <label className="block text-sm text-white/80 mb-2 font-medium">
@@ -103,27 +143,29 @@ export function Newsletter() {
                   </span>
                 </label>
 
+                {status === "error" && (
+                  <p className="text-sm text-red-400 mb-4">
+                    Something went wrong. Please try again.
+                  </p>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full py-4 text-white font-semibold text-base hover:opacity-90 transition-all flex items-center justify-center gap-2 rounded-lg"
+                  disabled={status === "submitting"}
+                  className="w-full py-4 text-white font-semibold text-base hover:opacity-90 transition-all flex items-center justify-center gap-2 rounded-lg disabled:opacity-60 disabled:cursor-not-allowed"
                   style={{ backgroundColor: "var(--gold)" }}
                 >
-                  Subscribe Now
-                  <ArrowRight size={18} />
+                  {status === "submitting" ? (
+                    <>
+                      Subscribing... <Loader2 size={18} className="animate-spin" />
+                    </>
+                  ) : (
+                    <>
+                      Subscribe Now <ArrowRight size={18} />
+                    </>
+                  )}
                 </button>
               </form>
-            ) : (
-              <div className="text-center py-8">
-                <div className="w-16 h-16 rounded-full bg-[var(--gold)]/20 flex items-center justify-center mx-auto mb-4">
-                  <CheckCircle size={32} className="text-[var(--gold)]" />
-                </div>
-                <h4 className="text-xl font-medium text-white mb-2">
-                  You&apos;re subscribed!
-                </h4>
-                <p className="text-white/60">
-                  Thank you for joining our community. Check your inbox for a confirmation.
-                </p>
-              </div>
             )}
           </div>
         </div>
