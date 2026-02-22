@@ -23,11 +23,11 @@ const notesSeries = [
     bgPattern: "radial-gradient(circle at 80% 20%, rgba(197, 75, 75, 0.15) 0%, transparent 50%)",
   },
   {
-    name: "Notes of Moments",
+    name: "Notes of Movements",
     tagline: "Living between places, becoming across borders",
     description:
       "Personal reflections from NRIs abroad. Stories of transition and cross-cultural identity. For those living change and finding meaning.",
-    href: "/notes-of-moments",
+    href: "/notes-of-movements",
     color: "#6B5B95",
     icon: "M",
     bgPattern: "radial-gradient(circle at 80% 20%, rgba(107, 91, 149, 0.15) 0%, transparent 50%)",
@@ -113,7 +113,7 @@ export function NotesSeriesSection() {
               <p className="text-sm text-gray-500 mt-1">Published Notes</p>
             </div>
             <div>
-              <p className="text-3xl md:text-4xl font-light" style={{ color: "var(--teal)" }}>30+</p>
+              <p className="text-3xl md:text-4xl font-light" style={{ color: "var(--gold)" }}>30+</p>
               <p className="text-sm text-gray-500 mt-1">Distinguished Scientists</p>
             </div>
             <div>
@@ -121,7 +121,7 @@ export function NotesSeriesSection() {
               <p className="text-sm text-gray-500 mt-1">Startup Stories</p>
             </div>
             <div>
-              <p className="text-3xl md:text-4xl font-light" style={{ color: "var(--accent-moments)" }}>20+</p>
+              <p className="text-3xl md:text-4xl font-light" style={{ color: "var(--accent-movements)" }}>20+</p>
               <p className="text-sm text-gray-500 mt-1">NRI Journeys</p>
             </div>
           </div>

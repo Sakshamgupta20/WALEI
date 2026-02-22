@@ -1,46 +1,31 @@
 export const navigation = {
-  main: [
+  notes: [
     { name: "Notes of Future", href: "/notes-of-future" },
     { name: "Notes of Challenges", href: "/notes-of-challenges" },
-    { name: "Notes to Leaders", href: "/notes-to-leaders" },
-    { name: "About", href: "/about" },
+    { name: "Notes of Movements", href: "/notes-of-movements" },
   ],
-  categories: [
-    {
-      name: "Notes of Future",
-      href: "/notes-of-future",
-      description: "Exploring tomorrow's possibilities through visionary conversations",
-    },
-    {
-      name: "Notes of Challenges",
-      href: "/notes-of-challenges",
-      description: "Learning from obstacles and turning challenges into opportunities",
-    },
-    {
-      name: "Notes to Leaders",
-      href: "/notes-to-leaders",
-      description: "Wisdom and insights for aspiring and established leaders",
-    },
+  portfolio: [
+    { name: "Start-ups", href: "/startups" },
+    { name: "Patents", href: "/patents" },
+    { name: "Supplies", href: "/supplies" },
+    { name: "Projects", href: "/projects" },
+  ],
+  team: [
+    { name: "Core Team", href: "/team" },
+    { name: "Advisors", href: "/team?tab=advisors" },
+    { name: "Strategic Partners", href: "/team?tab=partners" },
+  ],
+  flat: [
+    { name: "Gigs", href: "/gigs" },
+    { name: "H&T", href: "/headlines" },
+    { name: "NEWS", href: "/news" },
+    { name: "Calendar", href: "/calendar" },
+  ],
+  social: [
+    { name: "LinkedIn", href: "https://www.linkedin.com/company/walei/", icon: "linkedin" },
+    { name: "Instagram", href: "https://instagram.com/walei_official", icon: "instagram" },
   ],
   footer: {
-    categories: [
-      { name: "Notes of Future", href: "/notes-of-future" },
-      { name: "Notes of Challenges", href: "/notes-of-challenges" },
-      { name: "Notes to Leaders", href: "/notes-to-leaders" },
-    ],
-    company: [
-      { name: "About", href: "/about" },
-      { name: "Publish", href: "/publish" },
-      { name: "Contact", href: "/contact" },
-    ],
-    legal: [
-      { name: "Privacy Policy", href: "/privacy" },
-      { name: "Terms of Use", href: "/terms" },
-      { name: "Accessibility", href: "/accessibility" },
-    ],
+    email: "walei.office@gmail.com",
   },
-  social: [
-    { name: "LinkedIn", href: "https://linkedin.com/company/walei", icon: "linkedin" },
-    { name: "Twitter", href: "https://twitter.com/walei", icon: "twitter" },
-  ],
 };

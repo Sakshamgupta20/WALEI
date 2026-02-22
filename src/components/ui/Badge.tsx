@@ -6,9 +6,9 @@ const badgeVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-walei-blue-100 text-walei-blue-700",
+        default: "bg-gold/10 text-gold-dark",
         outline: "border border-gray-300 text-gray-600 bg-white",
-        gold: "bg-walei-gold/10 text-walei-gold-dark",
+        gold: "bg-gold/10 text-gold-dark",
         muted: "bg-gray-100 text-gray-600",
       },
       size: {

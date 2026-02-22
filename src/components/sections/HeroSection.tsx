@@ -98,7 +98,7 @@ export function HeroSection() {
                 <div className="flex items-start gap-4 mb-6">
                   <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 border-2 border-white/20">
                     <Image
-                      src={`${basePath}/images/scientists/scientist-3.png`}
+                      src={`${basePath}/images/notes/future/suman-chakraborty.png`}
                       alt="Prof. Suman Chakraborty"
                       width={64}
                       height={64}

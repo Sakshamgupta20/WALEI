@@ -11,10 +11,10 @@ export function FeaturedScientist() {
         {/* Section Header */}
         <div className="flex items-center gap-4 mb-12">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-[2px]" style={{ backgroundColor: "var(--teal)" }} />
+            <div className="w-8 h-[2px]" style={{ backgroundColor: "var(--gold)" }} />
             <span
               className="text-[11px] uppercase tracking-[0.2em] font-bold"
-              style={{ color: "var(--teal)" }}
+              style={{ color: "var(--gold)" }}
             >
               Featured Interview
             </span>
@@ -34,7 +34,7 @@ export function FeaturedScientist() {
               {/* Main image */}
               <div className="relative aspect-[4/5] rounded-lg overflow-hidden">
                 <Image
-                  src={`${basePath}/images/scientists/scientist-1.png`}
+                  src={`${basePath}/images/notes/future/dipankar-chatterji.jpg`}
                   alt="Prof. Dipankar Chatterji"
                   fill
                   className="object-cover"
@@ -103,7 +103,7 @@ export function FeaturedScientist() {
               <Link
                 href="/notes-of-future"
                 className="group px-6 py-3 font-semibold text-sm tracking-wide text-white flex items-center gap-2 hover:opacity-90 transition-all"
-                style={{ backgroundColor: "var(--teal)" }}
+                style={{ backgroundColor: "var(--gold)" }}
               >
                 Read Full Interview
                 <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -112,8 +112,10 @@ export function FeaturedScientist() {
               </Link>
 
               <a
-                href="#"
-                className="flex items-center gap-2 px-5 py-3 border border-gray-300 text-gray-600 hover:border-[#0077b5] hover:text-[#0077b5] transition-all text-sm font-medium"
+                href="https://www.linkedin.com/company/walei/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-5 py-3 border border-gray-300 text-gray-600 hover:border-[var(--gold)] hover:text-[var(--gold)] transition-all text-sm font-medium"
               >
                 <Linkedin size={16} />
                 Connect on LinkedIn

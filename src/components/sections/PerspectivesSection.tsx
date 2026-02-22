@@ -12,8 +12,9 @@ const perspectives = [
     date: "15.01.2026",
     author: "Prof. Dipankar Chatterji",
     institution: "IISc Bangalore",
-    image: "/images/scientists/scientist-1.png",
+    image: "/images/notes/future/dipankar-chatterji.jpg",
     color: "var(--accent-future)",
+    href: "/notes-of-future/3",
   },
   {
     id: "2",
@@ -22,8 +23,9 @@ const perspectives = [
     date: "08.01.2026",
     author: "Dr. Shantanu Pathak",
     institution: "CareMother",
-    image: "/images/scientists/scientist-3.png",
+    image: "/images/notes/challenges/shantanu-pathak.png",
     color: "var(--accent-challenges)",
+    href: "/notes-of-challenges/1",
   },
 ];
 
@@ -46,7 +48,7 @@ export function PerspectivesSection() {
           </div>
           <Link
             href="/news"
-            className="hidden md:flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-[var(--teal)] transition-colors"
+            className="hidden md:flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-[var(--gold)] transition-colors"
           >
             View all news
             <ArrowUpRight size={16} />
@@ -57,7 +59,7 @@ export function PerspectivesSection() {
           {perspectives.map((item) => (
             <Link
               key={item.id}
-              href={`/news/${item.id}`}
+              href={item.href}
               className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500"
             >
               {/* Image */}
@@ -109,7 +111,7 @@ export function PerspectivesSection() {
         <div className="mt-8 text-center md:hidden">
           <Link
             href="/news"
-            className="inline-flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-[var(--teal)] transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-[var(--gold)] transition-colors"
           >
             View all news
             <ArrowUpRight size={16} />

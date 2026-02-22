@@ -50,7 +50,7 @@ const placeholderArticles = [
 
 export function LatestArticles() {
   return (
-    <section className="py-16 md:py-24 bg-walei-pale">
+    <section className="py-16 md:py-24 bg-[var(--light)]">
       <Container>
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
           <div>
@@ -61,7 +61,7 @@ export function LatestArticles() {
               Fresh insights and conversations with thought leaders
             </p>
           </div>
-          <Link href="/articles" className="mt-6 md:mt-0">
+          <Link href="/notes" className="mt-6 md:mt-0">
             <Button variant="secondary" size="lg">
               View All Articles
               <ArrowRight className="h-4 w-4 ml-2" />
@@ -73,7 +73,7 @@ export function LatestArticles() {
           {placeholderArticles.map((article, index) => (
             <article
               key={article.id}
-              className={`group bg-white rounded-xl overflow-hidden shadow-natural hover:shadow-deep transition-shadow ${
+              className={`group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow ${
                 index === 0 ? "md:col-span-2" : ""
               }`}
             >
@@ -83,14 +83,14 @@ export function LatestArticles() {
               >
                 {/* Image Placeholder */}
                 <div
-                  className={`relative bg-gradient-to-br from-walei-blue-100 to-walei-blue-200 ${
+                  className={`relative bg-gradient-to-br from-gray-100 to-gray-200 ${
                     index === 0
                       ? "h-48 md:h-auto md:w-1/2"
                       : "h-40"
                   }`}
                 >
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-walei-blue-400 text-6xl font-serif opacity-50">
+                    <span className="text-gray-300 text-6xl font-serif opacity-50">
                       W
                     </span>
                   </div>
@@ -110,7 +110,7 @@ export function LatestArticles() {
                   </div>
 
                   <h3
-                    className={`font-serif font-semibold text-gray-900 group-hover:text-walei-blue-600 transition-colors ${
+                    className={`font-serif font-semibold text-gray-900 group-hover:text-[var(--gold)] transition-colors ${
                       index === 0 ? "text-xl md:text-2xl" : "text-lg"
                     }`}
                   >

@@ -5,16 +5,21 @@
 @layer base {
   :root {
     --gold: #B8860B;
-    --teal: #007A8C;
-    --teal-dark: #005f6b;
+    --gold-light: #D4A853;
+    --coral: #C54B4B;
+    --purple: #6B5B95;
     --dark: #1A1A1A;
     --light: #F8F6F1;
     --white: #FFFFFF;
 
-    /* Category accent colors (from PDF) */
-    --accent-future: #D4A853;     /* Gold/Yellow for Notes of Future */
-    --accent-challenges: #C54B4B; /* Red for Notes of Challenges */
-    --accent-moments: #6B5B95;    /* Purple for Notes of Moments */
+    /* Primary action color (replaces teal) */
+    --primary: #B8860B;
+    --primary-dark: #8B6508;
+
+    /* Category accent colors */
+    --accent-future: #D4A853;     /* Gold for Notes of Future */
+    --accent-challenges: #C54B4B; /* Coral for Notes of Challenges */
+    --accent-movements: #6B5B95;  /* Purple for Notes of Movements */
   }
 
   * {
@@ -49,7 +54,7 @@
 
   :focus-visible {
     @apply outline-none ring-2 ring-offset-2;
-    ring-color: var(--teal);
+    ring-color: var(--primary);
   }
 
   .skip-link {

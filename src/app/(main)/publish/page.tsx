@@ -78,7 +78,7 @@ export default function PublishPage() {
                       id="name"
                       name="name"
                       required
-                      className="w-full px-3 py-2.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--teal)] focus:border-transparent transition-colors text-sm"
+                      className="w-full px-3 py-2.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--gold)] focus:border-transparent transition-colors text-sm"
                       placeholder="Your name"
                     />
                   </div>
@@ -92,7 +92,7 @@ export default function PublishPage() {
                       id="email"
                       name="email"
                       required
-                      className="w-full px-3 py-2.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--teal)] focus:border-transparent transition-colors text-sm"
+                      className="w-full px-3 py-2.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--gold)] focus:border-transparent transition-colors text-sm"
                       placeholder="you@example.com"
                     />
                   </div>
@@ -108,7 +108,7 @@ export default function PublishPage() {
                       id="title"
                       name="title"
                       required
-                      className="w-full px-3 py-2.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--teal)] focus:border-transparent transition-colors text-sm"
+                      className="w-full px-3 py-2.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--gold)] focus:border-transparent transition-colors text-sm"
                       placeholder="CEO, Professor, etc."
                     />
                   </div>
@@ -121,7 +121,7 @@ export default function PublishPage() {
                       type="text"
                       id="organization"
                       name="organization"
-                      className="w-full px-3 py-2.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--teal)] focus:border-transparent transition-colors text-sm"
+                      className="w-full px-3 py-2.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--gold)] focus:border-transparent transition-colors text-sm"
                       placeholder="Company or Institution"
                     />
                   </div>
@@ -140,7 +140,7 @@ export default function PublishPage() {
                     id="category"
                     name="category"
                     required
-                    className="w-full px-3 py-2.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--teal)] focus:border-transparent transition-colors text-sm"
+                    className="w-full px-3 py-2.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--gold)] focus:border-transparent transition-colors text-sm"
                   >
                     <option value="">Select a category</option>
                     <option value="notes-of-future">Notes of Future</option>
@@ -158,7 +158,7 @@ export default function PublishPage() {
                     id="storyTitle"
                     name="storyTitle"
                     required
-                    className="w-full px-3 py-2.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--teal)] focus:border-transparent transition-colors text-sm"
+                    className="w-full px-3 py-2.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--gold)] focus:border-transparent transition-colors text-sm"
                     placeholder="A compelling title for your story"
                   />
                 </div>
@@ -172,7 +172,7 @@ export default function PublishPage() {
                     name="story"
                     rows={6}
                     required
-                    className="w-full px-3 py-2.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--teal)] focus:border-transparent transition-colors resize-none text-sm"
+                    className="w-full px-3 py-2.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--gold)] focus:border-transparent transition-colors resize-none text-sm"
                     placeholder="Share your experience, insights, and what you'd like readers to learn from your story..."
                   />
                   <p className="mt-1.5 text-xs text-gray-500">

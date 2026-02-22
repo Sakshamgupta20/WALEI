@@ -7,38 +7,65 @@ import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
-const notesCategories = [
+const dropdownMenus = [
   {
-    name: "Notes of Future",
-    href: "/notes-of-future",
-    color: "var(--accent-future)",
-    description: "Long-view legacy for what comes next",
+    label: "Notes",
+    items: [
+      {
+        name: "Combined",
+        href: "/notes",
+        description: "All notes across every series",
+      },
+      {
+        name: "Notes of Future",
+        href: "/notes-of-future",
+        color: "var(--accent-future)",
+        description: "Long-view legacy for what comes next",
+      },
+      {
+        name: "Notes of Challenges",
+        href: "/notes-of-challenges",
+        color: "var(--accent-challenges)",
+        description: "From ideas to resilience beyond labs",
+      },
+      {
+        name: "Notes of Movements",
+        href: "/notes-of-movements",
+        color: "var(--accent-movements)",
+        description: "Living between places, becoming across borders",
+      },
+    ],
   },
   {
-    name: "Notes of Challenges",
-    href: "/notes-of-challenges",
-    color: "var(--accent-challenges)",
-    description: "From ideas to resilience beyond labs",
+    label: "Portfolio",
+    items: [
+      { name: "Start-ups", href: "/startups", description: "Science-based ventures and innovations" },
+      { name: "Patents", href: "/patents", description: "Research IP and licensing opportunities" },
+      { name: "Supplies", href: "/supplies", description: "Coming soon" },
+      { name: "Projects", href: "/projects", description: "Coming soon" },
+    ],
   },
   {
-    name: "Notes of Moments",
-    href: "/notes-of-moments",
-    color: "var(--accent-moments)",
-    description: "Living between places, becoming across borders",
+    label: "Team",
+    items: [
+      { name: "Core Team", href: "/team", description: "The people behind WALEI" },
+      { name: "Advisors", href: "/team?tab=advisors", description: "Our advisory board" },
+      { name: "Strategic Partners", href: "/team?tab=partners", description: "Partner institutions" },
+    ],
   },
 ];
 
-const navItems = [
-  { name: "Sponsors", href: "/sponsors" },
-  { name: "Products", href: "/products" },
-  { name: "News", href: "/news" },
-  { name: "Patents", href: "/patents" },
-  { name: "About", href: "/about" },
+const flatNavItems = [
+  { name: "Gigs", href: "/gigs" },
+  { name: "H&T", href: "/headlines" },
+  { name: "NEWS", href: "/news" },
+  { name: "Calendar", href: "/calendar" },
 ];
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [notesDropdownOpen, setNotesDropdownOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -61,7 +88,6 @@ export function Header() {
         <div className="flex items-center justify-between h-14 md:h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group">
-            {/* Logo mark */}
             <div className="relative w-8 h-8 md:w-9 md:h-9 transition-transform group-hover:scale-105">
               <Image
                 src={`${basePath}/logo.png`}
@@ -71,7 +97,6 @@ export function Header() {
                 priority
               />
             </div>
-            {/* Logo text */}
             <div className="hidden sm:block">
               <h1
                 className="text-lg font-medium tracking-wide transition-colors leading-tight"
@@ -90,61 +115,67 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-0.5">
-            {/* Notes Series Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => setNotesDropdownOpen(true)}
-              onMouseLeave={() => setNotesDropdownOpen(false)}
-            >
-              <button className="flex items-center gap-1 px-3 py-1.5 text-[13px] font-medium text-gray-700 hover:text-[var(--teal)] transition-colors rounded-md hover:bg-gray-50">
-                Notes Series
-                <ChevronDown
-                  size={12}
-                  className={`transition-transform duration-200 ${
-                    notesDropdownOpen ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
-
-              {/* Dropdown */}
+            {/* Dropdown Menus */}
+            {dropdownMenus.map((menu) => (
               <div
-                className={`absolute top-full left-0 pt-1.5 transition-all duration-200 ${
-                  notesDropdownOpen
-                    ? "opacity-100 visible translate-y-0"
-                    : "opacity-0 invisible -translate-y-2"
-                }`}
+                key={menu.label}
+                className="relative"
+                onMouseEnter={() => setOpenDropdown(menu.label)}
+                onMouseLeave={() => setOpenDropdown(null)}
               >
-                <div className="bg-white rounded-lg shadow-xl border border-gray-100 p-1.5 min-w-[260px]">
-                  {notesCategories.map((category) => (
-                    <Link
-                      key={category.name}
-                      href={category.href}
-                      className="flex items-start gap-2.5 p-2.5 rounded-md hover:bg-gray-50 transition-colors group/item"
-                    >
-                      <span
-                        className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0"
-                        style={{ backgroundColor: category.color }}
-                      />
-                      <div>
-                        <span className="text-[13px] font-medium text-gray-800 group-hover/item:text-[var(--teal)] transition-colors">
-                          {category.name}
-                        </span>
-                        <p className="text-[11px] text-gray-500 mt-0.5">
-                          {category.description}
-                        </p>
-                      </div>
-                    </Link>
-                  ))}
+                <button className="flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-gray-700 hover:text-[var(--gold)] transition-colors rounded-lg hover:bg-gray-50">
+                  {menu.label}
+                  <ChevronDown
+                    size={12}
+                    className={`transition-transform duration-200 ${
+                      openDropdown === menu.label ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+
+                <div
+                  className={`absolute top-full left-0 pt-1.5 transition-all duration-200 ${
+                    openDropdown === menu.label
+                      ? "opacity-100 visible translate-y-0"
+                      : "opacity-0 invisible -translate-y-2"
+                  }`}
+                >
+                  <div className="bg-white rounded-xl shadow-xl border border-gray-100 p-1.5 min-w-[240px]">
+                    {menu.items.map((item) => (
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        className="flex items-start gap-2.5 p-2.5 rounded-lg hover:bg-gray-50 transition-colors group/item"
+                      >
+                        {"color" in item && (
+                          <span
+                            className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0"
+                            style={{ backgroundColor: (item as { color: string }).color }}
+                          />
+                        )}
+                        <div>
+                          <span className="text-xs font-medium text-gray-800 group-hover/item:text-[var(--gold)] transition-colors">
+                            {item.name}
+                          </span>
+                          {item.description && (
+                            <p className="text-[11px] text-gray-500 mt-0.5">
+                              {item.description}
+                            </p>
+                          )}
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
+            ))}
 
-            {/* Regular Nav Items */}
-            {navItems.map((item) => (
+            {/* Flat Nav Items */}
+            {flatNavItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="px-3 py-1.5 text-[13px] font-medium text-gray-600 hover:text-[var(--teal)] transition-colors rounded-md hover:bg-gray-50"
+                className="px-3 py-1.5 text-xs font-medium text-gray-600 hover:text-[var(--gold)] transition-colors rounded-lg hover:bg-gray-50"
               >
                 {item.name}
               </Link>
@@ -153,8 +184,8 @@ export function Header() {
             {/* CTA Button */}
             <Link
               href="/contact"
-              className="ml-3 px-4 py-2 text-[13px] font-semibold text-white rounded-md flex items-center gap-1.5 hover:opacity-90 transition-all"
-              style={{ backgroundColor: "var(--teal)" }}
+              className="ml-3 px-4 py-2 text-xs font-semibold text-white rounded-lg flex items-center gap-1.5 hover:opacity-90 transition-all"
+              style={{ backgroundColor: "var(--gold)" }}
             >
               Get in Touch
               <ArrowRight size={12} />
@@ -180,41 +211,60 @@ export function Header() {
       {/* Mobile Navigation */}
       <div
         className={`lg:hidden transition-all duration-300 overflow-hidden ${
-          mobileMenuOpen ? "max-h-[500px] border-t border-gray-100" : "max-h-0"
+          mobileMenuOpen ? "max-h-[80vh] border-t border-gray-100 overflow-y-auto" : "max-h-0"
         }`}
       >
         <div className="px-5 py-4 bg-white">
-          {/* Notes Series */}
-          <div className="mb-4">
-            <p className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-3">
-              Notes Series
-            </p>
-            <div className="space-y-1">
-              {notesCategories.map((category) => (
-                <Link
-                  key={category.name}
-                  href={category.href}
-                  className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <span
-                    className="w-2 h-2 rounded-full"
-                    style={{ backgroundColor: category.color }}
-                  />
-                  <span className="text-sm font-medium text-gray-700">
-                    {category.name}
-                  </span>
-                </Link>
-              ))}
+          {/* Dropdown Sections */}
+          {dropdownMenus.map((menu) => (
+            <div key={menu.label} className="mb-2">
+              <button
+                className="w-full flex items-center justify-between px-3 py-2.5 text-sm font-semibold text-gray-700 rounded-lg hover:bg-gray-50"
+                onClick={() =>
+                  setMobileExpanded(mobileExpanded === menu.label ? null : menu.label)
+                }
+              >
+                {menu.label}
+                <ChevronDown
+                  size={14}
+                  className={`transition-transform duration-200 ${
+                    mobileExpanded === menu.label ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              <div
+                className={`transition-all duration-200 overflow-hidden ${
+                  mobileExpanded === menu.label ? "max-h-[300px]" : "max-h-0"
+                }`}
+              >
+                <div className="pl-3 space-y-1 pb-2">
+                  {menu.items.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50 transition-colors"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {"color" in item && (
+                        <span
+                          className="w-2 h-2 rounded-full"
+                          style={{ backgroundColor: (item as { color: string }).color }}
+                        />
+                      )}
+                      <span className="text-sm text-gray-600">{item.name}</span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
             </div>
-          </div>
+          ))}
 
           {/* Divider */}
-          <div className="h-px bg-gray-100 my-4" />
+          <div className="h-px bg-gray-100 my-3" />
 
-          {/* Other Nav Items */}
+          {/* Flat Nav Items */}
           <div className="space-y-1">
-            {navItems.map((item) => (
+            {flatNavItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
@@ -230,7 +280,7 @@ export function Header() {
           <Link
             href="/contact"
             className="mt-4 w-full px-5 py-3 text-sm font-semibold text-white rounded-lg flex items-center justify-center gap-2"
-            style={{ backgroundColor: "var(--teal)" }}
+            style={{ backgroundColor: "var(--gold)" }}
             onClick={() => setMobileMenuOpen(false)}
           >
             Get in Touch

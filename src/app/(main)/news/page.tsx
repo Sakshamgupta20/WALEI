@@ -25,7 +25,7 @@ const news = [
     date: "18 DEC 2025",
     author: "Phie Jacobs",
     category: "Policy",
-    color: "var(--teal)",
+    color: "var(--gold)",
   },
   {
     id: "3",
@@ -33,7 +33,7 @@ const news = [
     date: "18 DEC 2025",
     author: "Celina Zhao",
     category: "Technology",
-    color: "var(--accent-moments)",
+    color: "var(--accent-movements)",
   },
   {
     id: "4",
@@ -87,7 +87,7 @@ export default function NewsPage() {
             {/* Main News Column */}
             <div className="lg:col-span-2">
               {/* Featured */}
-              <Link href={`/news/${featuredNews.id}`} className="group block mb-12">
+              <a href="https://www.linkedin.com/company/walei/" target="_blank" rel="noopener noreferrer" className="group block mb-12">
                 <div
                   className="aspect-[16/9] rounded-2xl mb-6 relative overflow-hidden"
                   style={{ background: `linear-gradient(135deg, ${featuredNews.color}40 0%, ${featuredNews.color}80 100%)` }}
@@ -109,14 +109,16 @@ export default function NewsPage() {
                     </h3>
                   </div>
                 </div>
-              </Link>
+              </a>
 
               {/* News Grid */}
               <div className="grid md:grid-cols-3 gap-8">
                 {news.map((item) => (
-                  <Link
+                  <a
                     key={item.id}
-                    href={`/news/${item.id}`}
+                    href="https://www.linkedin.com/company/walei/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="group"
                   >
                     <div
@@ -134,20 +136,20 @@ export default function NewsPage() {
                       <Calendar size={10} />
                       {item.date}
                     </p>
-                    <h4 className="text-sm font-medium text-gray-900 group-hover:text-[var(--teal)] transition-colors line-clamp-3 mb-2">
+                    <h4 className="text-sm font-medium text-gray-900 group-hover:text-[var(--gold)] transition-colors line-clamp-3 mb-2">
                       {item.title}
                     </h4>
                     <p className="text-xs text-gray-500 flex items-center gap-1.5">
                       <User size={10} />
                       {item.author}
                     </p>
-                  </Link>
+                  </a>
                 ))}
               </div>
 
               <Link
                 href="/news"
-                className="inline-flex items-center gap-2 mt-10 text-sm font-semibold text-[var(--teal)] hover:gap-3 transition-all"
+                className="inline-flex items-center gap-2 mt-10 text-sm font-semibold text-[var(--gold)] hover:gap-3 transition-all"
               >
                 View all news <ArrowRight size={16} />
               </Link>
@@ -158,14 +160,14 @@ export default function NewsPage() {
               {/* Editorial */}
               <div className="bg-[var(--light)] rounded-2xl p-6">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-1 h-6 rounded-full" style={{ backgroundColor: "var(--teal)" }} />
+                  <div className="w-1 h-6 rounded-full" style={{ backgroundColor: "var(--gold)" }} />
                   <h2 className="text-sm font-bold uppercase tracking-wide text-gray-900">Editorial</h2>
                 </div>
                 <div className="space-y-4">
                   {editorials.map((item, index) => (
                     <div key={index} className="pb-4 border-b border-gray-200 last:border-0 last:pb-0">
                       <p className="text-xs text-gray-400 mb-1">{item.date}</p>
-                      <h4 className="text-sm font-medium text-gray-900 hover:text-[var(--teal)] cursor-pointer transition-colors">
+                      <h4 className="text-sm font-medium text-gray-900 hover:text-[var(--gold)] cursor-pointer transition-colors">
                         {item.title}
                       </h4>
                     </div>
@@ -183,7 +185,7 @@ export default function NewsPage() {
                   {firstRelease.map((item, index) => (
                     <div key={index} className="pb-4 border-b border-gray-200 last:border-0 last:pb-0">
                       <p className="text-xs text-gray-400 mb-1">{item.date}</p>
-                      <h4 className="text-sm font-medium text-gray-900 hover:text-[var(--teal)] cursor-pointer transition-colors">
+                      <h4 className="text-sm font-medium text-gray-900 hover:text-[var(--gold)] cursor-pointer transition-colors">
                         {item.title}
                       </h4>
                     </div>

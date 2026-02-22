@@ -13,7 +13,7 @@ export function Logo({ variant = "default", className }: LogoProps) {
       className={cn(
         "font-serif text-2xl font-bold tracking-tight transition-colors",
         variant === "default"
-          ? "text-walei-blue-600 hover:text-walei-blue-700"
+          ? "text-gray-900 hover:text-[var(--gold)]"
           : "text-white hover:text-gray-200",
         className
       )}

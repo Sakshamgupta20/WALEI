@@ -22,9 +22,9 @@ const notesCategories = [
     icon: Target,
   },
   {
-    title: "Notes of Moments",
+    title: "Notes of Movements",
     description: "Living between places, becoming across borders. Personal reflections from NRIs abroad.",
-    color: "var(--accent-moments)",
+    color: "var(--accent-movements)",
     icon: Users,
   },
 ];
@@ -56,7 +56,7 @@ export default function AboutPage() {
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
             <span style={{ color: "var(--gold)" }}>Vision</span>
             <span className="mx-3">·</span>
-            <span style={{ color: "var(--teal)" }}>Insight</span>
+            <span style={{ color: "var(--gold)" }}>Insight</span>
             <span className="mx-3">·</span>
             <span style={{ color: "var(--accent-challenges)" }}>Action</span>
           </p>
@@ -69,7 +69,7 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-8 h-[2px]" style={{ backgroundColor: "var(--teal)" }} />
+                <div className="w-8 h-[2px]" style={{ backgroundColor: "var(--gold)" }} />
                 <span className="text-[11px] uppercase tracking-[0.2em] font-bold text-gray-500">
                   Our Mission
                 </span>
@@ -101,7 +101,7 @@ export default function AboutPage() {
                 <p className="text-sm text-gray-500">Cities Worldwide</p>
               </div>
               <div className="bg-[var(--light)] rounded-2xl p-6">
-                <Award size={24} style={{ color: "var(--teal)" }} className="mb-4" />
+                <Award size={24} style={{ color: "var(--gold)" }} className="mb-4" />
                 <p className="text-3xl font-light text-gray-900 mb-1">54</p>
                 <p className="text-sm text-gray-500">Countries</p>
               </div>
@@ -156,7 +156,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 md:py-28 bg-gradient-to-br from-[var(--teal)] to-[#005a68] relative overflow-hidden">
+      <section className="py-20 md:py-28 bg-[var(--dark)] relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-10 left-10 w-64 h-64 rounded-full border border-white/10" />
           <div className="absolute bottom-10 right-10 w-48 h-48 rounded-full border border-white/10" />
@@ -172,7 +172,7 @@ export default function AboutPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/publish"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[var(--teal)] font-semibold rounded-lg hover:bg-white/90 transition-all"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[var(--gold)] font-semibold rounded-lg hover:bg-white/90 transition-all"
             >
               Share Your Story
               <ArrowRight size={18} />

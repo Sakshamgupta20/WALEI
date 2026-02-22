@@ -5,18 +5,18 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils/cn";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-walei-blue-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
         primary:
-          "bg-walei-blue-500 text-white hover:bg-walei-blue-600 active:bg-walei-blue-700",
+          "bg-gold text-white hover:bg-gold-dark active:bg-gold-dark",
         secondary:
-          "bg-walei-pale border border-gray-200 text-gray-900 hover:bg-walei-smoke hover:border-gray-300",
-        ghost: "text-gray-700 hover:bg-walei-smoke hover:text-gray-900",
-        gold: "bg-walei-gold text-white hover:bg-walei-gold-dark active:bg-walei-gold-dark",
+          "bg-gray-50 border border-gray-200 text-gray-900 hover:bg-gray-100 hover:border-gray-300",
+        ghost: "text-gray-700 hover:bg-gray-100 hover:text-gray-900",
+        gold: "bg-gold text-white hover:bg-gold-dark active:bg-gold-dark",
         outline:
-          "border-2 border-walei-blue-500 text-walei-blue-600 hover:bg-walei-blue-50",
+          "border-2 border-gold text-gold hover:bg-gold/10",
       },
       size: {
         sm: "h-9 px-3 text-sm",

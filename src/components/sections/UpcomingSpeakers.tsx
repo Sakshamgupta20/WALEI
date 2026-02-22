@@ -29,7 +29,7 @@ export function UpcomingSpeakers() {
     <section className="py-14 md:py-20 bg-white">
       <div className="max-w-[1200px] mx-auto px-5 md:px-8">
         <div className="border-t border-gray-200 pt-10 mb-10">
-          <span className="text-overline" style={{ color: "var(--teal)" }}>
+          <span className="text-overline" style={{ color: "var(--gold)" }}>
             Upcoming Events
           </span>
           <h2 className="text-2xl md:text-3xl font-light mb-3">Featured Speakers</h2>
@@ -50,11 +50,11 @@ export function UpcomingSpeakers() {
               </div>
 
               <div className="p-5">
-                <span className="text-overline" style={{ color: "var(--teal)" }}>
+                <span className="text-overline" style={{ color: "var(--gold)" }}>
                   {speaker.field}
                 </span>
 
-                <h3 className="text-base font-normal mb-1 group-hover:text-[var(--teal)] transition-colors">
+                <h3 className="text-base font-normal mb-1 group-hover:text-[var(--gold)] transition-colors">
                   {speaker.name}
                 </h3>
 

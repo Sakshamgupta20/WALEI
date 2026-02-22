@@ -35,7 +35,7 @@ export function LatestNews() {
     <section className="py-14 md:py-20 bg-white">
       <div className="max-w-[1200px] mx-auto px-5 md:px-8">
         <div className="border-t border-gray-200 pt-10 mb-10">
-          <span className="text-overline" style={{ color: "var(--teal)" }}>
+          <span className="text-overline" style={{ color: "var(--gold)" }}>
             Latest News
           </span>
           <h2 className="text-2xl md:text-3xl font-light mb-3">Stay Informed</h2>
@@ -61,7 +61,7 @@ export function LatestNews() {
                   {item.category}
                 </span>
 
-                <h3 className="text-base font-normal mb-2 group-hover:text-[var(--teal)] transition-colors">
+                <h3 className="text-base font-normal mb-2 group-hover:text-[var(--gold)] transition-colors">
                   {item.title}
                 </h3>
 
@@ -82,8 +82,8 @@ export function LatestNews() {
         <div className="text-center">
           <Link
             href="/notes-of-future"
-            className="inline-block px-6 py-2.5 border rounded-md font-semibold text-sm hover:bg-[var(--teal)] hover:text-white hover:border-[var(--teal)] transition-all"
-            style={{ borderColor: "var(--teal)", color: "var(--teal)" }}
+            className="inline-block px-6 py-2.5 border rounded-md font-semibold text-sm hover:bg-[var(--gold)] hover:text-white hover:border-[var(--gold)] transition-all"
+            style={{ borderColor: "var(--gold)", color: "var(--gold)" }}
           >
             View All News
           </Link>

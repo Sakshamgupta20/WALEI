@@ -34,7 +34,7 @@ const placeholderArticles = {
       date: "Jan 10, 2026",
     },
   ],
-  "notes-to-leaders": [
+  "notes-of-movements": [
     {
       id: 1,
       title: "The Art of Decisive Leadership",
@@ -52,10 +52,10 @@ const placeholderArticles = {
 
 export function CategoryPreview() {
   return (
-    <section className="py-16 md:py-24 bg-walei-smoke">
+    <section className="py-16 md:py-24 bg-[var(--light)]">
       <Container>
         <div className="text-center mb-12">
-          <h2 className="font-serif text-headline md:text-display-2 text-gray-900">
+          <h2 className="text-3xl md:text-4xl font-light text-gray-900">
             Explore Our Categories
           </h2>
           <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
@@ -64,23 +64,20 @@ export function CategoryPreview() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {navigation.categories.map((category) => {
+          {navigation.notes.map((category) => {
             const slug = category.href.replace("/", "") as keyof typeof placeholderArticles;
             const articles = placeholderArticles[slug] || [];
 
             return (
               <div
                 key={category.name}
-                className="bg-white rounded-xl p-6 shadow-natural hover:shadow-deep transition-shadow"
+                className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow"
               >
                 {/* Category Header */}
                 <div className="mb-6">
                   <Badge variant="default" size="lg">
                     {category.name}
                   </Badge>
-                  <p className="mt-3 text-sm text-gray-600">
-                    {category.description}
-                  </p>
                 </div>
 
                 {/* Article List */}
@@ -91,7 +88,7 @@ export function CategoryPreview() {
                         href={`${category.href}/${article.id}`}
                         className="block"
                       >
-                        <h3 className="font-serif font-semibold text-gray-900 group-hover:text-walei-blue-600 transition-colors line-clamp-2">
+                        <h3 className="font-semibold text-gray-900 group-hover:text-[var(--gold)] transition-colors line-clamp-2">
                           {article.title}
                         </h3>
                         <p className="mt-1 text-sm text-gray-500 line-clamp-2">
@@ -108,7 +105,7 @@ export function CategoryPreview() {
                 {/* View All Link */}
                 <Link
                   href={category.href}
-                  className="inline-flex items-center gap-2 text-sm font-medium text-walei-blue-600 hover:text-walei-blue-700 transition-colors group"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-[var(--gold)] hover:text-[var(--primary-dark)] transition-colors group"
                 >
                   View all
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

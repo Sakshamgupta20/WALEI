@@ -24,7 +24,7 @@ const features = [
 
 export function NotesToLeadersSection() {
   return (
-    <section className="py-14 md:py-20" style={{ backgroundColor: "var(--teal)" }}>
+    <section className="py-14 md:py-20" style={{ backgroundColor: "var(--dark)" }}>
       <div className="max-w-[1200px] mx-auto px-5 md:px-8">
         <div className="max-w-3xl mx-auto text-center mb-10">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-white mb-4">
@@ -58,7 +58,7 @@ export function NotesToLeadersSection() {
 
         <div className="text-center">
           <Link
-            href="/notes-to-leaders"
+            href="/publish"
             className="inline-block px-6 py-2.5 text-white rounded-md font-semibold text-sm hover:opacity-90 transition-all"
             style={{ backgroundColor: "var(--gold)" }}
           >

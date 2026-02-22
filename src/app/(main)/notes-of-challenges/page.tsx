@@ -19,16 +19,17 @@ const articles = [
       "With 21 Indian cities expected to run out of groundwater, researchers and civic leaders discuss scalable solutions.",
     date: "Jan 20, 2026",
     author: "Dr. Shantanu Pathak",
-    image: "/images/scientists/scientist-1.png",
+    image: "/images/notes/challenges/shantanu-pathak.png",
     featured: true,
   },
   {
     id: "2",
-    title: "Bridging the Rural-Urban Healthcare Gap",
+    title: "IYASO: Transforming Healthcare with Data Analytics",
     excerpt:
-      "How telemedicine startups and ASHA workers are collaborating to bring specialist care to 600,000 villages.",
+      "How AI-driven diagnostics and data analytics platforms are optimising healthcare delivery across India.",
     date: "Jan 16, 2026",
-    author: "Dr. Gagandeep Kang",
+    author: "Viraj Kulkarni",
+    image: "/images/notes/challenges/viraj-kulkarni.png",
     featured: false,
   },
   {
@@ -121,7 +122,7 @@ export default function NotesOfChallengesPage() {
                   >
                     Featured
                   </span>
-                  <h2 className="text-xl md:text-2xl font-light text-gray-900 group-hover:text-[var(--teal)] transition-colors mb-3">
+                  <h2 className="text-xl md:text-2xl font-light text-gray-900 group-hover:text-[var(--gold)] transition-colors mb-3">
                     {featuredArticle.title}
                   </h2>
                   <p className="text-sm text-gray-600 leading-relaxed mb-4">
@@ -160,12 +161,21 @@ export default function NotesOfChallengesPage() {
                 className="group"
               >
                 <article className="rounded-xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all hover:-translate-y-1">
+                  <div className="h-1 w-full" style={{ backgroundColor: accentColor }} />
                   <div
-                    className="h-32 relative"
+                    className="h-48 relative overflow-hidden"
                     style={{ background: `linear-gradient(135deg, ${accentColor}15 0%, ${accentColor}30 100%)` }}
                   >
+                    {article.image && (
+                      <Image
+                        src={`${basePath}${article.image}`}
+                        alt={article.author}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                    )}
                     <div
-                      className="absolute top-3 left-3 px-2 py-1 rounded-full text-[9px] font-bold uppercase text-white"
+                      className="absolute top-3 left-3 px-2 py-1 rounded-full text-xs font-bold uppercase text-white z-10"
                       style={{ backgroundColor: accentColor }}
                     >
                       Challenge
@@ -173,7 +183,7 @@ export default function NotesOfChallengesPage() {
                   </div>
 
                   <div className="p-5">
-                    <h3 className="text-sm font-medium text-gray-900 group-hover:text-[var(--teal)] transition-colors line-clamp-2 mb-2">
+                    <h3 className="text-sm font-medium text-gray-900 group-hover:text-[var(--gold)] transition-colors line-clamp-2 mb-2">
                       {article.title}
                     </h3>
                     <p className="text-xs text-gray-500 line-clamp-2 mb-3">

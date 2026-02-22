@@ -4,28 +4,28 @@ import { ArrowUpRight } from "lucide-react";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
+const WALEI_LINKEDIN = "https://www.linkedin.com/company/walei/";
+
 const upcomingNotes = [
   {
     category: "Notes of Future",
-    href: "/notes-of-future",
+    href: WALEI_LINKEDIN,
     title: "DIMENSIONS OF FLUIDS",
     speaker: "Prof. Suman Chakraborty",
     institution: "IIT KGP",
     color: "var(--accent-future)",
-    bgFrom: "#f5e6c8",
-    bgTo: "#e8d4a8",
-    image: "/images/scientists/suman-chakraborty.png",
+    image: "/images/notes/future/suman-chakraborty.png",
+    external: true,
   },
   {
     category: "Notes of Challenges",
-    href: "/notes-of-challenges",
+    href: WALEI_LINKEDIN,
     title: "IYASO",
     speaker: "Viraj Kulkarni",
     institution: "Founder & CEO",
     color: "var(--accent-challenges)",
-    bgFrom: "#f5d4d4",
-    bgTo: "#e8bfbf",
-    image: "/images/team/team-member-2.jpg",
+    image: "/images/notes/challenges/viraj-kulkarni.png",
+    external: true,
   },
 ];
 
@@ -42,9 +42,9 @@ export function UpcomingSection() {
             <p className="text-gray-500 mt-2">Featured voices in the next series</p>
           </div>
           <Link
-            href="/notes-of-future"
+            href="/notes"
             className="hidden md:flex items-center gap-2 text-sm font-medium hover:gap-3 transition-all"
-            style={{ color: "var(--teal)" }}
+            style={{ color: "var(--gold)" }}
           >
             View all upcoming
             <ArrowUpRight size={16} />
@@ -53,71 +53,53 @@ export function UpcomingSection() {
 
         <div className="grid md:grid-cols-2 gap-8">
           {upcomingNotes.map((note) => (
-            <Link
+            <a
               key={note.category}
               href={note.href}
-              className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500"
+              target={note.external ? "_blank" : undefined}
+              rel={note.external ? "noopener noreferrer" : undefined}
+              className="group relative overflow-hidden rounded-xl hover:shadow-xl transition-all duration-500"
             >
-              {/* Background with gradient */}
-              <div
-                className="aspect-[4/3] relative overflow-hidden"
-                style={{ background: `linear-gradient(135deg, ${note.bgFrom} 0%, ${note.bgTo} 100%)` }}
-              >
-                {/* Decorative elements */}
-                <div className="absolute inset-0">
-                  <div className="absolute top-8 left-8 w-32 h-32 rounded-full border border-black/5" />
-                  <div className="absolute bottom-8 right-[40%] w-20 h-20 rounded-full border border-black/5" />
-                </div>
+              {/* Full-bleed photo card */}
+              <div className="aspect-[4/3] relative overflow-hidden">
+                <Image
+                  src={`${basePath}${note.image}`}
+                  alt={note.speaker}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
 
-                {/* Speaker Photo (circular, positioned right) */}
-                <div className="absolute right-6 md:right-10 top-1/2 -translate-y-1/2 z-10">
-                  <div className="relative">
-                    {/* Outer ring */}
-                    <div
-                      className="absolute -inset-2 rounded-full opacity-30"
-                      style={{ border: `2px solid ${note.color}` }}
-                    />
-                    {/* Photo */}
-                    <div className="w-36 h-36 md:w-48 md:h-48 rounded-full border-4 border-white shadow-2xl overflow-hidden group-hover:scale-105 transition-transform duration-500">
-                      <Image
-                        src={`${basePath}${note.image}`}
-                        alt={note.speaker}
-                        width={192}
-                        height={192}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Category Label */}
-                <div
-                  className="absolute bottom-6 left-6 px-4 py-2 bg-white/90 backdrop-blur-sm rounded-full font-semibold text-xs uppercase tracking-wider shadow-sm"
-                  style={{ color: note.color }}
-                >
-                  {note.category}
-                </div>
-              </div>
-
-              {/* Content */}
-              <div className="p-6 bg-white border-t" style={{ borderColor: note.color }}>
-                <div className="flex items-start justify-between">
-                  <div>
-                    <h3 className="text-xl md:text-2xl font-bold uppercase tracking-wide text-gray-900 mb-2 group-hover:text-gray-700 transition-colors">
-                      {note.title}
-                    </h3>
-                    <p className="text-base text-gray-800 font-medium">{note.speaker}</p>
-                    <p className="text-sm text-gray-500">{note.institution}</p>
-                  </div>
-                  <div
-                    className="w-10 h-10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform"
+                {/* Category badge top-left */}
+                <div className="absolute top-5 left-5">
+                  <span
+                    className="px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider text-white"
                     style={{ backgroundColor: note.color }}
+                  >
+                    {note.category}
+                  </span>
+                </div>
+
+                {/* Content bottom */}
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <h3 className="text-xl md:text-2xl font-bold uppercase tracking-wide text-white mb-2">
+                    {note.title}
+                  </h3>
+                  <p className="text-base text-white/90 font-medium">{note.speaker}</p>
+                  <p className="text-sm text-white/60">{note.institution}</p>
+                </div>
+
+                {/* Arrow top-right */}
+                <div className="absolute top-5 right-5">
+                  <div
+                    className="w-10 h-10 rounded-full flex items-center justify-center bg-white/20 backdrop-blur-sm group-hover:bg-white/30 transition-colors"
                   >
                     <ArrowUpRight size={18} className="text-white" />
                   </div>
                 </div>
               </div>
-            </Link>
+            </a>
           ))}
         </div>
       </div>

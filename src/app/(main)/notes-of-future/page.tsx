@@ -19,52 +19,47 @@ const articles = [
       "With $10 billion committed to the India Semiconductor Mission, experts debate whether India can become a global chip manufacturing hub by 2030.",
     date: "Jan 22, 2026",
     author: "Prof. V. Ramgopal Rao",
-    image: "/images/scientists/scientist-4.png",
+    image: "/images/notes/future/v-ramgopal-rao.jpg",
     featured: true,
   },
   {
     id: "2",
-    title: "The Future of AI in Education: Reimagining How India Learns",
+    title: "Dimensions of Fluids: Micro to Macro Scale Phenomena",
     excerpt:
-      "Exploring how artificial intelligence is reshaping learning experiences for 300 million Indian students.",
+      "Exploring the fascinating world of fluid dynamics across scales — from microfluidics in medical diagnostics to large-scale energy systems.",
     date: "Jan 18, 2026",
-    author: "Dr. Aisha Sharma",
+    author: "Prof. Suman Chakraborty",
+    image: "/images/notes/future/suman-chakraborty.png",
     featured: false,
   },
   {
     id: "3",
-    title: "Green Hydrogen: India's Path to Energy Independence",
+    title: "Molecular Biophysics: Decoding Life's Machinery",
     excerpt:
-      "How the National Green Hydrogen Mission could position India as a global clean energy leader.",
+      "How structural biology and biophysics are revealing the intricate molecular machines that power living cells.",
     date: "Jan 15, 2026",
-    author: "Dr. Rajesh Menon",
+    author: "Prof. Dipankar Chatterji",
+    image: "/images/notes/future/dipankar-chatterji.jpg",
     featured: false,
   },
   {
     id: "4",
-    title: "Quantum Computing: India's Silent Revolution",
+    title: "Organic Chemistry's New Frontiers in Drug Discovery",
     excerpt:
-      "From IISc to TIFR, Indian researchers are making breakthroughs in quantum error correction.",
+      "Novel synthetic methodologies are opening doors to previously inaccessible molecular architectures for pharmaceutical development.",
     date: "Jan 12, 2026",
-    author: "Prof. Sunita Verma",
+    author: "Prof. Sabyasachi Sarkar",
+    image: "/images/notes/future/sabyasachi-sarkar.jpg",
     featured: false,
   },
   {
     id: "5",
-    title: "Digital Health Infrastructure: Building on CoWIN's Legacy",
+    title: "Urban Policy and the Future of Indian Cities",
     excerpt:
-      "How India's Ayushman Bharat Digital Mission is creating the world's largest interoperable health records system.",
+      "How evidence-based policy frameworks are reshaping urban governance and planning across India's rapidly growing metropolitan areas.",
     date: "Jan 8, 2026",
-    author: "Dr. Amit Patel",
-    featured: false,
-  },
-  {
-    id: "6",
-    title: "Smart Cities 2.0: Lessons from Pune, Surat, and Bhubaneswar",
-    excerpt:
-      "Three Indian cities leading the smart urban transformation share what worked and what comes next.",
-    date: "Jan 5, 2026",
-    author: "Architect Priya Nair",
+    author: "Prof. Shishir K. Jha",
+    image: "/images/notes/future/shishir-jha.jpg",
     featured: false,
   },
 ];
@@ -130,7 +125,7 @@ export default function NotesOfFuturePage() {
                   >
                     Featured
                   </span>
-                  <h2 className="text-xl md:text-2xl font-light text-gray-900 group-hover:text-[var(--teal)] transition-colors mb-3">
+                  <h2 className="text-xl md:text-2xl font-light text-gray-900 group-hover:text-[var(--gold)] transition-colors mb-3">
                     {featuredArticle.title}
                   </h2>
                   <p className="text-sm text-gray-600 leading-relaxed mb-4">
@@ -169,12 +164,22 @@ export default function NotesOfFuturePage() {
                 className="group"
               >
                 <article className="rounded-xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all hover:-translate-y-1">
+                  {/* Series color accent line */}
+                  <div className="h-1 w-full" style={{ backgroundColor: accentColor }} />
                   <div
-                    className="h-32 relative"
+                    className="h-48 relative overflow-hidden"
                     style={{ background: `linear-gradient(135deg, ${accentColor}15 0%, ${accentColor}30 100%)` }}
                   >
+                    {article.image && (
+                      <Image
+                        src={`${basePath}${article.image}`}
+                        alt={article.author}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                    )}
                     <div
-                      className="absolute top-3 left-3 px-2 py-1 rounded-full text-[9px] font-bold uppercase text-white"
+                      className="absolute top-3 left-3 px-2 py-1 rounded-full text-xs font-bold uppercase text-white z-10"
                       style={{ backgroundColor: accentColor }}
                     >
                       Future
@@ -182,7 +187,7 @@ export default function NotesOfFuturePage() {
                   </div>
 
                   <div className="p-5">
-                    <h3 className="text-sm font-medium text-gray-900 group-hover:text-[var(--teal)] transition-colors line-clamp-2 mb-2">
+                    <h3 className="text-sm font-medium text-gray-900 group-hover:text-[var(--gold)] transition-colors line-clamp-2 mb-2">
                       {article.title}
                     </h3>
                     <p className="text-xs text-gray-500 line-clamp-2 mb-3">

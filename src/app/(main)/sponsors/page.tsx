@@ -138,7 +138,7 @@ export default function SponsorsPage() {
       </section>
 
       {/* Become a Sponsor CTA */}
-      <section className="py-20 md:py-28 bg-gradient-to-br from-[var(--teal)] to-[#005a68] relative overflow-hidden">
+      <section className="py-20 md:py-28 bg-[var(--dark)] relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-10 left-10 w-64 h-64 rounded-full border border-white/10" />
           <div className="absolute bottom-10 right-10 w-48 h-48 rounded-full border border-white/10" />
@@ -153,7 +153,7 @@ export default function SponsorsPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[var(--teal)] font-semibold rounded-lg hover:bg-white/90 transition-all"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[var(--gold)] font-semibold rounded-lg hover:bg-white/90 transition-all"
           >
             Become a Sponsor
             <ArrowRight size={18} />

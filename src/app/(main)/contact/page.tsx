@@ -1,13 +1,47 @@
-import { Metadata } from "next";
-import { Mail, Users, Globe, Send } from "lucide-react";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Contact",
-  description:
-    "Get in touch with WALEI. Reach out for partnerships, collaborations, or general inquiries.",
-};
+import { useState, FormEvent } from "react";
+import { Mail, Users, Globe, Send, CheckCircle } from "lucide-react";
+
+const MAILTO_ADDRESS = "walei.office@gmail.com";
+
+const SUBJECT_OPTIONS: { value: string; label: string }[] = [
+  { value: "partnership", label: "Partnership Inquiry" },
+  { value: "sponsorship", label: "Sponsorship" },
+  { value: "collaboration", label: "Research Collaboration" },
+  { value: "media", label: "Media Inquiry" },
+  { value: "general", label: "General Question" },
+];
+
+type FormStatus = "idle" | "success";
 
 export default function ContactPage() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState<FormStatus>("idle");
+
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    const subjectLabel =
+      SUBJECT_OPTIONS.find((opt) => opt.value === subject)?.label ?? subject;
+    const mailSubject = encodeURIComponent(`[WALEI Contact] ${subjectLabel}`);
+    const mailBody = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\nSubject: ${subjectLabel}\n\n${message}`
+    );
+    const mailtoLink = `mailto:${MAILTO_ADDRESS}?subject=${mailSubject}&body=${mailBody}`;
+
+    window.open(mailtoLink, "_blank");
+
+    setStatus("success");
+    setName("");
+    setEmail("");
+    setSubject("");
+    setMessage("");
+  }
+
   return (
     <>
       {/* Hero */}
@@ -19,7 +53,10 @@ export default function ContactPage() {
         <div className="relative max-w-[1200px] mx-auto px-5 md:px-8">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-8 h-[2px] bg-gradient-to-r from-transparent to-[var(--gold)]" />
-            <span className="text-[11px] uppercase tracking-[0.2em] font-semibold" style={{ color: "var(--gold)" }}>
+            <span
+              className="text-[11px] uppercase tracking-[0.2em] font-semibold"
+              style={{ color: "var(--gold)" }}
+            >
               Get in Touch
             </span>
           </div>
@@ -27,7 +64,8 @@ export default function ContactPage() {
             Contact Us
           </h1>
           <p className="text-lg text-gray-400 max-w-2xl leading-relaxed">
-            Have questions, ideas, or want to collaborate? We&apos;d love to hear from you.
+            Have questions, ideas, or want to collaborate? We&apos;d love to
+            hear from you.
           </p>
         </div>
       </section>
@@ -38,21 +76,25 @@ export default function ContactPage() {
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Contact Info */}
             <div>
-              <h2 className="text-2xl font-light text-gray-900 mb-8">Reach Out</h2>
+              <h2 className="text-2xl font-light text-gray-900 mb-8">
+                Reach Out
+              </h2>
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4 p-5 bg-[var(--light)] rounded-2xl">
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
-                    style={{ backgroundColor: "var(--teal)" }}
+                    style={{ backgroundColor: "var(--gold)" }}
                   >
                     <Mail size={20} className="text-white" />
                   </div>
                   <div>
-                    <h3 className="text-sm font-semibold text-gray-900 mb-1">Email</h3>
+                    <h3 className="text-sm font-semibold text-gray-900 mb-1">
+                      Email
+                    </h3>
                     <a
                       href="mailto:walei.office@gmail.com"
-                      className="text-base text-gray-600 hover:text-[var(--teal)] transition-colors"
+                      className="text-base text-gray-600 hover:text-[var(--gold)] transition-colors"
                     >
                       walei.office@gmail.com
                     </a>
@@ -67,7 +109,9 @@ export default function ContactPage() {
                     <Globe size={20} className="text-white" />
                   </div>
                   <div>
-                    <h3 className="text-sm font-semibold text-gray-900 mb-1">Global Presence</h3>
+                    <h3 className="text-sm font-semibold text-gray-900 mb-1">
+                      Global Presence
+                    </h3>
                     <p className="text-base text-gray-600">
                       349 Cities across 54 Countries
                     </p>
@@ -77,12 +121,14 @@ export default function ContactPage() {
                 <div className="flex items-start gap-4 p-5 bg-[var(--light)] rounded-2xl">
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
-                    style={{ backgroundColor: "var(--accent-moments)" }}
+                    style={{ backgroundColor: "var(--accent-movements)" }}
                   >
                     <Users size={20} className="text-white" />
                   </div>
                   <div>
-                    <h3 className="text-sm font-semibold text-gray-900 mb-1">Community</h3>
+                    <h3 className="text-sm font-semibold text-gray-900 mb-1">
+                      Community
+                    </h3>
                     <p className="text-base text-gray-600">
                       IIT K, IIT B, IISc, IIT KGP, MPI, SDU, VUB...
                     </p>
@@ -97,11 +143,21 @@ export default function ContactPage() {
                 </h3>
                 <div className="grid grid-cols-2 gap-8">
                   <div>
-                    <p className="text-4xl font-light" style={{ color: "var(--gold)" }}>349</p>
+                    <p
+                      className="text-4xl font-light"
+                      style={{ color: "var(--gold)" }}
+                    >
+                      349
+                    </p>
                     <p className="text-sm text-gray-400 mt-1">Cities</p>
                   </div>
                   <div>
-                    <p className="text-4xl font-light" style={{ color: "var(--teal)" }}>54</p>
+                    <p
+                      className="text-4xl font-light"
+                      style={{ color: "var(--gold)" }}
+                    >
+                      54
+                    </p>
                     <p className="text-sm text-gray-400 mt-1">Countries</p>
                   </div>
                 </div>
@@ -110,12 +166,40 @@ export default function ContactPage() {
 
             {/* Contact Form */}
             <div className="bg-[var(--light)] rounded-3xl p-8 md:p-10">
-              <h2 className="text-2xl font-light text-gray-900 mb-8">Send a Message</h2>
+              <h2 className="text-2xl font-light text-gray-900 mb-8">
+                Send a Message
+              </h2>
 
-              <form className="space-y-6">
+              {/* Status Banner */}
+              {status === "success" && (
+                <div
+                  className="flex items-start gap-3 p-4 rounded-xl mb-6"
+                  style={{
+                    backgroundColor: "color-mix(in srgb, var(--gold) 12%, transparent)",
+                    border: "1px solid var(--gold)",
+                  }}
+                >
+                  <CheckCircle
+                    size={20}
+                    className="flex-shrink-0 mt-0.5"
+                    style={{ color: "var(--gold)" }}
+                  />
+                  <p className="text-sm" style={{ color: "var(--gold)" }}>
+                    Your email client should have opened with the message. If not, please email us directly at{" "}
+                    <a href={`mailto:${MAILTO_ADDRESS}`} className="underline font-medium">
+                      {MAILTO_ADDRESS}
+                    </a>
+                  </p>
+                </div>
+              )}
+
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
                       Name *
                     </label>
                     <input
@@ -123,12 +207,17 @@ export default function ContactPage() {
                       id="name"
                       name="name"
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white focus:outline-none focus:ring-2 focus:ring-[var(--teal)] focus:border-transparent text-sm transition-all"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white focus:outline-none focus:ring-2 focus:ring-[var(--gold)] focus:border-transparent text-sm transition-all"
                       placeholder="Your name"
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
                       Email *
                     </label>
                     <input
@@ -136,33 +225,43 @@ export default function ContactPage() {
                       id="email"
                       name="email"
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white focus:outline-none focus:ring-2 focus:ring-[var(--teal)] focus:border-transparent text-sm transition-all"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white focus:outline-none focus:ring-2 focus:ring-[var(--gold)] focus:border-transparent text-sm transition-all"
                       placeholder="you@example.com"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="subject"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Subject *
                   </label>
                   <select
                     id="subject"
                     name="subject"
                     required
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white focus:outline-none focus:ring-2 focus:ring-[var(--teal)] focus:border-transparent text-sm transition-all"
+                    value={subject}
+                    onChange={(e) => setSubject(e.target.value)}
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white focus:outline-none focus:ring-2 focus:ring-[var(--gold)] focus:border-transparent text-sm transition-all"
                   >
                     <option value="">Select a topic</option>
-                    <option value="partnership">Partnership Inquiry</option>
-                    <option value="sponsorship">Sponsorship</option>
-                    <option value="collaboration">Research Collaboration</option>
-                    <option value="media">Media Inquiry</option>
-                    <option value="general">General Question</option>
+                    {SUBJECT_OPTIONS.map((opt) => (
+                      <option key={opt.value} value={opt.value}>
+                        {opt.label}
+                      </option>
+                    ))}
                   </select>
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Message *
                   </label>
                   <textarea
@@ -170,14 +269,16 @@ export default function ContactPage() {
                     name="message"
                     rows={5}
                     required
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white focus:outline-none focus:ring-2 focus:ring-[var(--teal)] focus:border-transparent resize-none text-sm transition-all"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white focus:outline-none focus:ring-2 focus:ring-[var(--gold)] focus:border-transparent resize-none text-sm transition-all"
                     placeholder="How can we help you?"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full px-6 py-4 bg-[var(--teal)] text-white font-semibold rounded-xl hover:opacity-90 transition-all flex items-center justify-center gap-2"
+                  className="w-full px-6 py-4 bg-[var(--gold)] text-white font-semibold rounded-xl hover:opacity-90 transition-all flex items-center justify-center gap-2"
                 >
                   Send Message
                   <Send size={18} />

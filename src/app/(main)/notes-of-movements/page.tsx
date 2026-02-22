@@ -6,7 +6,7 @@ import { ArrowRight, Calendar, User } from "lucide-react";
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 export const metadata: Metadata = {
-  title: "Notes of Moments",
+  title: "Notes of Movements",
   description:
     "Personal reflections from NRIs abroad. Stories of transition and cross-cultural identity. For those living change and finding meaning.",
 };
@@ -20,7 +20,7 @@ const articles = [
     date: "Jan 24, 2026",
     author: "Dr. Bhaskar Paul",
     institution: "MPI CEC, Germany",
-    image: "/images/scientists/scientist-2.png",
+    image: "/images/notes/movements/bhaskar-paul.jpg",
     featured: true,
   },
   {
@@ -31,6 +31,7 @@ const articles = [
     date: "Jan 20, 2026",
     author: "Dr. Richa Sharma",
     institution: "Vrije Universiteit Brussel",
+    image: "/images/notes/movements/richa-sharma.png",
     featured: false,
   },
   {
@@ -65,7 +66,7 @@ const articles = [
   },
 ];
 
-const accentColor = "var(--accent-moments)";
+const accentColor = "var(--accent-movements)";
 
 export default function NotesOfMomentsPage() {
   const featuredArticle = articles.find((a) => a.featured);
@@ -83,7 +84,7 @@ export default function NotesOfMomentsPage() {
           <div className="flex items-center gap-3 mb-4">
             <div className="w-8 h-[2px]" style={{ background: `linear-gradient(to right, transparent, ${accentColor})` }} />
             <span className="text-[11px] uppercase tracking-[0.2em] font-semibold" style={{ color: accentColor }}>
-              Notes of Moments
+              Notes of Movements
             </span>
           </div>
           <h1 className="text-3xl md:text-4xl font-light text-white mb-4">
@@ -101,7 +102,7 @@ export default function NotesOfMomentsPage() {
         <section className="py-10 bg-white">
           <div className="max-w-[1200px] mx-auto px-5 md:px-8">
             <Link
-              href={`/notes-of-moments/${featuredArticle.id}`}
+              href={`/notes-of-movements/${featuredArticle.id}`}
               className="group block"
             >
               <article className="rounded-2xl overflow-hidden md:flex bg-[var(--light)] hover:shadow-xl transition-shadow">
@@ -126,7 +127,7 @@ export default function NotesOfMomentsPage() {
                   >
                     Featured
                   </span>
-                  <h2 className="text-xl md:text-2xl font-light text-gray-900 group-hover:text-[var(--teal)] transition-colors mb-3">
+                  <h2 className="text-xl md:text-2xl font-light text-gray-900 group-hover:text-[var(--gold)] transition-colors mb-3">
                     {featuredArticle.title}
                   </h2>
                   <p className="text-sm text-gray-600 leading-relaxed mb-4">
@@ -161,24 +162,33 @@ export default function NotesOfMomentsPage() {
             {otherArticles.map((article) => (
               <Link
                 key={article.id}
-                href={`/notes-of-moments/${article.id}`}
+                href={`/notes-of-movements/${article.id}`}
                 className="group"
               >
                 <article className="rounded-xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all hover:-translate-y-1">
+                  <div className="h-1 w-full" style={{ backgroundColor: accentColor }} />
                   <div
-                    className="h-32 relative"
+                    className="h-48 relative overflow-hidden"
                     style={{ background: `linear-gradient(135deg, ${accentColor}15 0%, ${accentColor}30 100%)` }}
                   >
+                    {article.image && (
+                      <Image
+                        src={`${basePath}${article.image}`}
+                        alt={article.author}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                    )}
                     <div
-                      className="absolute top-3 left-3 px-2 py-1 rounded-full text-[9px] font-bold uppercase text-white"
+                      className="absolute top-3 left-3 px-2 py-1 rounded-full text-xs font-bold uppercase text-white z-10"
                       style={{ backgroundColor: accentColor }}
                     >
-                      Moment
+                      Movement
                     </div>
                   </div>
 
                   <div className="p-5">
-                    <h3 className="text-sm font-medium text-gray-900 group-hover:text-[var(--teal)] transition-colors line-clamp-2 mb-2">
+                    <h3 className="text-sm font-medium text-gray-900 group-hover:text-[var(--gold)] transition-colors line-clamp-2 mb-2">
                       {article.title}
                     </h3>
                     <p className="text-xs text-gray-500 line-clamp-2 mb-3">
@@ -196,7 +206,7 @@ export default function NotesOfMomentsPage() {
 
           <div className="mt-10 text-center">
             <Link
-              href="/notes-of-moments"
+              href="/notes-of-movements"
               className="inline-flex items-center gap-2 text-sm font-medium hover:gap-3 transition-all"
               style={{ color: accentColor }}
             >

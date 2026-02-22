@@ -4,13 +4,13 @@ import { Button } from "@/components/ui/Button";
 
 export function CTASection() {
   return (
-    <section className="py-16 md:py-24 bg-walei-blue-600">
+    <section className="py-16 md:py-24 bg-[var(--dark)]">
       <Container>
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="font-serif text-headline md:text-display-2 text-white">
             Have a story to share?
           </h2>
-          <p className="mt-4 text-lg text-walei-blue-100 max-w-xl mx-auto">
+          <p className="mt-4 text-lg text-gray-300 max-w-xl mx-auto">
             Every leader has experiences worth sharing. Submit your insights and
             inspire the next generation of innovators and changemakers.
           </p>

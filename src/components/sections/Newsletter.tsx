@@ -16,7 +16,7 @@ export function Newsletter() {
   };
 
   return (
-    <section className="py-20 md:py-28 bg-gradient-to-br from-[var(--teal)] to-[#005a68] relative overflow-hidden">
+    <section className="py-20 md:py-28 bg-[var(--dark)] relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute inset-0">
         <div className="absolute top-10 left-10 w-64 h-64 rounded-full border border-white/10" />
@@ -94,7 +94,7 @@ export function Newsletter() {
                   <span className="leading-relaxed">
                     I consent to receive emails in accordance with the{" "}
                     <a
-                      href="/privacy"
+                      href="/about"
                       className="underline hover:text-white transition-colors"
                     >
                       privacy policy
@@ -114,8 +114,8 @@ export function Newsletter() {
               </form>
             ) : (
               <div className="text-center py-8">
-                <div className="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-4">
-                  <CheckCircle size={32} className="text-green-400" />
+                <div className="w-16 h-16 rounded-full bg-[var(--gold)]/20 flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle size={32} className="text-[var(--gold)]" />
                 </div>
                 <h4 className="text-xl font-medium text-white mb-2">
                   You&apos;re subscribed!

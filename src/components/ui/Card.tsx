@@ -10,7 +10,7 @@ export function Card({ children, className, hover = true }: CardProps) {
   return (
     <div
       className={cn(
-        "bg-white rounded-lg overflow-hidden",
+        "bg-white rounded-xl overflow-hidden",
         hover && "transition-shadow hover:shadow-deep",
         className
       )}
