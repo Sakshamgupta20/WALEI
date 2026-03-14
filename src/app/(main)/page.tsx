@@ -4,7 +4,7 @@ import {
   UpcomingSection,
   NotesSeriesSection,
   AboutWaleiSection,
-  FeaturedScientist,
+  MilieuSection,
   Newsletter,
 } from "@/components/sections";
 
@@ -23,8 +23,8 @@ export default function HomePage() {
       {/* Notes Series Overview - Three columns */}
       <NotesSeriesSection />
 
-      {/* Featured Scientist Interview */}
-      <FeaturedScientist />
+      {/* Milieu - Patents, Startups, Gigs */}
+      <MilieuSection />
 
       {/* About WALEI Stats */}
       <AboutWaleiSection />

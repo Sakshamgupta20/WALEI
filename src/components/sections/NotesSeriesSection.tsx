@@ -1,8 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const notesSeries = [
   {
@@ -12,7 +9,8 @@ const notesSeries = [
       "Scientists' reflections shaping their disciplines. Insights that guide the questions ahead. For those seeking depth beyond fleeting trends.",
     href: "/notes-of-future",
     color: "#D4A853",
-    image: "/images/notes/future/dipankar-chatterji.jpg",
+    icon: "F",
+    bgPattern: "radial-gradient(circle at 80% 20%, rgba(212, 168, 83, 0.15) 0%, transparent 50%)",
   },
   {
     name: "Notes of Challenges",
@@ -21,7 +19,8 @@ const notesSeries = [
       "Honest accounts of building science ventures. Early hurdles, quiet pivots, uncertain decisions. For those scaling ideas beyond labs.",
     href: "/notes-of-challenges",
     color: "#C54B4B",
-    image: "/images/notes/challenges/shantanu-pathak.png",
+    icon: "C",
+    bgPattern: "radial-gradient(circle at 80% 20%, rgba(197, 75, 75, 0.15) 0%, transparent 50%)",
   },
   {
     name: "Notes of Movements",
@@ -30,7 +29,8 @@ const notesSeries = [
       "Personal reflections from NRIs abroad. Stories of transition and cross-cultural identity. For those living change and finding meaning.",
     href: "/notes-of-movements",
     color: "#6B5B95",
-    image: "/images/notes/movements/bhaskar-paul.jpg",
+    icon: "M",
+    bgPattern: "radial-gradient(circle at 80% 20%, rgba(107, 91, 149, 0.15) 0%, transparent 50%)",
   },
 ];
 
@@ -40,11 +40,11 @@ export function NotesSeriesSection() {
       <div className="max-w-[1200px] mx-auto px-5 md:px-8">
         {/* Section Header */}
         <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-3">
+          <h2 className="font-serif text-3xl md:text-4xl font-light text-gray-900 mb-3">
             Explore the Notes Series
           </h2>
           <p className="text-gray-500 max-w-2xl mx-auto">
-            Three distinct perspectives on science, innovation, and the human journey
+            Three distinct perspectives on science, innovation, and the journey
           </p>
         </div>
 
@@ -80,7 +80,7 @@ export function NotesSeriesSection() {
                   </h3>
 
                   <p
-                    className="text-sm italic mb-4 font-medium"
+                    className="text-sm mb-4 font-medium"
                     style={{ color: series.color }}
                   >
                     {series.tagline}
@@ -104,7 +104,6 @@ export function NotesSeriesSection() {
             </Link>
           ))}
         </div>
-
       </div>
     </section>
   );

@@ -19,9 +19,7 @@ export function HeroSection() {
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] via-[#252525] to-[#1a1a1a]" />
 
-        {/* Decorative circles */}
-        <div className="absolute top-20 right-[15%] w-[500px] h-[500px] rounded-full border border-white/5" />
-        <div className="absolute top-32 right-[18%] w-[400px] h-[400px] rounded-full border border-white/5" />
+        {/* Decorative circle */}
         <div className="absolute -bottom-20 -left-20 w-[300px] h-[300px] rounded-full border border-white/5" />
 
         {/* Accent glow */}
@@ -31,28 +29,13 @@ export function HeroSection() {
         />
       </div>
 
-      {/* Spin animation */}
+      {/* Orbital animation styles */}
       <style>{`
-        @keyframes orbit {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
-        @keyframes counter-orbit {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(-360deg); }
-        }
-        .animate-orbit {
-          animation: orbit 30s linear infinite;
-        }
-        .animate-counter-orbit {
-          animation: counter-orbit 30s linear infinite;
-        }
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes spin-reverse { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
         @keyframes pulse-ring {
-          0%, 100% { opacity: 0.08; transform: scale(1); }
-          50% { opacity: 0.2; transform: scale(1.03); }
-        }
-        .animate-pulse-ring {
-          animation: pulse-ring 5s ease-in-out infinite;
+          0%, 100% { opacity: 0.06; transform: scale(1); }
+          50% { opacity: 0.15; transform: scale(1.02); }
         }
       `}</style>
 
@@ -127,39 +110,40 @@ export function HeroSection() {
 
           {/* Right - Animated Science Icons */}
           <div className="hidden lg:flex items-center justify-center">
-            <div className="relative w-[280px] h-[280px]">
-              {/* Outer ring with pulse */}
-              <div className="absolute -inset-5 rounded-full border border-white/[0.04] animate-pulse-ring" />
-              {/* Main ring */}
-              <div className="absolute inset-0 rounded-full border border-white/[0.08]" />
+            <div className="relative" style={{ width: 280, height: 280 }}>
+              {/* Orbit ring — icons travel on this (r=110, diameter=220, inset=30) */}
+              <div className="absolute rounded-full border border-white/[0.08]" style={{ inset: 30, animation: 'pulse-ring 5s ease-in-out infinite' }} />
               {/* Inner ring */}
-              <div className="absolute inset-[60px] rounded-full border border-white/[0.06]" />
+              <div className="absolute rounded-full border border-white/[0.05]" style={{ inset: 75 }} />
 
               {/* Center glow */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[var(--gold)]/[0.06] blur-xl" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full blur-lg" style={{ background: 'rgba(184,134,11,0.1)' }} />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full" style={{ background: 'rgba(184,134,11,0.35)' }} />
 
               {/* Center label */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
-                <p className="text-[9px] uppercase tracking-[0.25em] text-white/25 font-semibold leading-relaxed">Science<br />&amp; Innovation</p>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <p className="text-[9px] uppercase tracking-[0.25em] text-white/20 font-semibold text-center leading-relaxed">
+                  Science<br />&amp; Innovation
+                </p>
               </div>
 
-              {/* Orbiting icons - placed ON the main ring (r=140px from center) */}
-              <div className="absolute inset-[-20px] animate-orbit">
-                {/* Top */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-[#222] flex items-center justify-center border border-white/10 shadow-lg animate-counter-orbit">
-                  <Rocket size={16} className="text-[var(--gold)]" />
+              {/* Rotating container — spins the 4 icons around center */}
+              <div className="absolute" style={{ inset: 0, transformOrigin: '140px 140px', animation: 'spin 30s linear infinite' }}>
+                {/* Top (0°) */}
+                <div className="absolute flex items-center justify-center rounded-full" style={{ width: 44, height: 44, top: 8, left: 118, background: '#1e1e1e', border: '1px solid rgba(184,134,11,0.2)', boxShadow: '0 0 12px rgba(184,134,11,0.06)', animation: 'spin-reverse 30s linear infinite' }}>
+                  <Rocket size={17} className="text-[var(--gold)]" />
                 </div>
-                {/* Right */}
-                <div className="absolute top-1/2 right-0 -translate-y-1/2 w-10 h-10 rounded-full bg-[#222] flex items-center justify-center border border-white/10 shadow-lg animate-counter-orbit">
-                  <Dna size={16} className="text-[var(--gold)]" />
+                {/* Right (90°) */}
+                <div className="absolute flex items-center justify-center rounded-full" style={{ width: 44, height: 44, top: 118, left: 228, background: '#1e1e1e', border: '1px solid rgba(184,134,11,0.2)', boxShadow: '0 0 12px rgba(184,134,11,0.06)', animation: 'spin-reverse 30s linear infinite' }}>
+                  <Dna size={17} className="text-[var(--gold)]" />
                 </div>
-                {/* Bottom */}
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-[#222] flex items-center justify-center border border-white/10 shadow-lg animate-counter-orbit">
-                  <Cpu size={16} className="text-[var(--gold)]" />
+                {/* Bottom (180°) */}
+                <div className="absolute flex items-center justify-center rounded-full" style={{ width: 44, height: 44, top: 228, left: 118, background: '#1e1e1e', border: '1px solid rgba(184,134,11,0.2)', boxShadow: '0 0 12px rgba(184,134,11,0.06)', animation: 'spin-reverse 30s linear infinite' }}>
+                  <Cpu size={17} className="text-[var(--gold)]" />
                 </div>
-                {/* Left */}
-                <div className="absolute top-1/2 left-0 -translate-y-1/2 w-10 h-10 rounded-full bg-[#222] flex items-center justify-center border border-white/10 shadow-lg animate-counter-orbit">
-                  <FlaskConical size={16} className="text-[var(--gold)]" />
+                {/* Left (270°) */}
+                <div className="absolute flex items-center justify-center rounded-full" style={{ width: 44, height: 44, top: 118, left: 8, background: '#1e1e1e', border: '1px solid rgba(184,134,11,0.2)', boxShadow: '0 0 12px rgba(184,134,11,0.06)', animation: 'spin-reverse 30s linear infinite' }}>
+                  <FlaskConical size={17} className="text-[var(--gold)]" />
                 </div>
               </div>
             </div>

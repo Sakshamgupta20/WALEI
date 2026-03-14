@@ -1,6 +1,7 @@
 export { HeroSection } from "./HeroSection";
 export { LatestNews } from "./LatestNews";
 export { FeaturedScientist } from "./FeaturedScientist";
+export { MilieuSection } from "./MilieuSection";
 export { NotesToLeadersSection } from "./NotesToLeadersSection";
 export { UpcomingSpeakers } from "./UpcomingSpeakers";
 export { Newsletter } from "./Newsletter";
