@@ -4,15 +4,6 @@ import { Rocket, Dna, Cpu, FlaskConical } from "lucide-react";
 export function HeroSection() {
   return (
     <>
-    {/* Making Statements Bar */}
-    <div className="bg-white py-4 md:py-5">
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
-        <h2 className="text-2xl md:text-3xl font-semibold text-gray-900">
-          Making <span style={{ color: "var(--gold)" }}>Statements</span>
-        </h2>
-      </div>
-    </div>
-
     <section className="relative bg-[var(--dark)] overflow-hidden min-h-[85vh] flex items-center">
       {/* Decorative background elements */}
       <div className="absolute inset-0">
@@ -54,11 +45,9 @@ export function HeroSection() {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-white mb-6 leading-[1.1]">
-              Where Science
+              Making
               <br />
-              <span className="text-gray-400">Shapes</span>
-              <br />
-              <span style={{ color: "var(--gold)" }}>Policy</span>
+              <span style={{ color: "var(--gold)" }}>Statements</span>
             </h1>
 
             <p className="text-base md:text-lg text-gray-400 mb-10 max-w-lg leading-relaxed">
@@ -69,16 +58,6 @@ export function HeroSection() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/notes-of-future"
-                className="group px-8 py-4 text-white font-semibold text-sm tracking-wide hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2"
-                style={{ backgroundColor: "var(--gold)" }}
-              >
-                Explore Notes
-                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
               <Link
                 href="/publish"
                 className="px-8 py-4 text-white border border-white/30 font-semibold text-sm tracking-wide hover:bg-white/10 hover:border-white/50 transition-all duration-300 text-center"
@@ -98,10 +77,6 @@ export function HeroSection() {
                 <p className="text-xs text-gray-500 mt-1 uppercase tracking-wider">Countries</p>
               </div>
               <div>
-                <p className="text-3xl md:text-4xl font-light" style={{ color: "var(--gold)" }}>∞</p>
-                <p className="text-xs text-gray-500 mt-1 uppercase tracking-wider">Impact</p>
-              </div>
-              <div>
                 <p className="text-3xl md:text-4xl font-light text-white">2k+</p>
                 <p className="text-xs text-gray-500 mt-1 uppercase tracking-wider">Community</p>
               </div>
@@ -110,40 +85,39 @@ export function HeroSection() {
 
           {/* Right - Animated Science Icons */}
           <div className="hidden lg:flex items-center justify-center">
-            <div className="relative" style={{ width: 280, height: 280 }}>
-              {/* Orbit ring — icons travel on this (r=110, diameter=220, inset=30) */}
-              <div className="absolute rounded-full border border-white/[0.08]" style={{ inset: 30, animation: 'pulse-ring 5s ease-in-out infinite' }} />
+            <div className="relative" style={{ width: 420, height: 420 }}>
+              {/* Orbit ring — r=160, diameter=320, inset=50 */}
+              <div className="absolute rounded-full border-2 border-white/[0.1]" style={{ inset: 50 }} />
               {/* Inner ring */}
-              <div className="absolute rounded-full border border-white/[0.05]" style={{ inset: 75 }} />
+              <div className="absolute rounded-full border border-white/[0.06]" style={{ inset: 120 }} />
 
               {/* Center glow */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full blur-lg" style={{ background: 'rgba(184,134,11,0.1)' }} />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full" style={{ background: 'rgba(184,134,11,0.35)' }} />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full blur-xl" style={{ background: 'rgba(184,134,11,0.1)' }} />
 
               {/* Center label */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <p className="text-[9px] uppercase tracking-[0.25em] text-white/20 font-semibold text-center leading-relaxed">
+                <p className="text-[11px] uppercase tracking-[0.2em] text-white/25 font-semibold text-center leading-relaxed">
                   Science<br />&amp; Innovation
                 </p>
               </div>
 
-              {/* Rotating container — spins the 4 icons around center */}
-              <div className="absolute" style={{ inset: 0, transformOrigin: '140px 140px', animation: 'spin 30s linear infinite' }}>
-                {/* Top (0°) */}
-                <div className="absolute flex items-center justify-center rounded-full" style={{ width: 44, height: 44, top: 8, left: 118, background: '#1e1e1e', border: '1px solid rgba(184,134,11,0.2)', boxShadow: '0 0 12px rgba(184,134,11,0.06)', animation: 'spin-reverse 30s linear infinite' }}>
-                  <Rocket size={17} className="text-[var(--gold)]" />
+              {/* Rotating container — icons sit ON the ring */}
+              <div className="absolute" style={{ inset: 0, transformOrigin: '210px 210px', animation: 'spin 30s linear infinite' }}>
+                {/* Top (0°): center at (210, 50) */}
+                <div className="absolute flex items-center justify-center rounded-full" style={{ width: 76, height: 76, top: 12, left: 172, background: '#1e1e1e', border: '2px solid rgba(184,134,11,0.25)', boxShadow: '0 0 24px rgba(184,134,11,0.1)', animation: 'spin-reverse 30s linear infinite' }}>
+                  <Rocket size={28} className="text-[var(--gold)]" />
                 </div>
-                {/* Right (90°) */}
-                <div className="absolute flex items-center justify-center rounded-full" style={{ width: 44, height: 44, top: 118, left: 228, background: '#1e1e1e', border: '1px solid rgba(184,134,11,0.2)', boxShadow: '0 0 12px rgba(184,134,11,0.06)', animation: 'spin-reverse 30s linear infinite' }}>
-                  <Dna size={17} className="text-[var(--gold)]" />
+                {/* Right (90°): center at (370, 210) */}
+                <div className="absolute flex items-center justify-center rounded-full" style={{ width: 76, height: 76, top: 172, left: 332, background: '#1e1e1e', border: '2px solid rgba(184,134,11,0.25)', boxShadow: '0 0 24px rgba(184,134,11,0.1)', animation: 'spin-reverse 30s linear infinite' }}>
+                  <Dna size={28} className="text-[var(--gold)]" />
                 </div>
-                {/* Bottom (180°) */}
-                <div className="absolute flex items-center justify-center rounded-full" style={{ width: 44, height: 44, top: 228, left: 118, background: '#1e1e1e', border: '1px solid rgba(184,134,11,0.2)', boxShadow: '0 0 12px rgba(184,134,11,0.06)', animation: 'spin-reverse 30s linear infinite' }}>
-                  <Cpu size={17} className="text-[var(--gold)]" />
+                {/* Bottom (180°): center at (210, 370) */}
+                <div className="absolute flex items-center justify-center rounded-full" style={{ width: 76, height: 76, top: 332, left: 172, background: '#1e1e1e', border: '2px solid rgba(184,134,11,0.25)', boxShadow: '0 0 24px rgba(184,134,11,0.1)', animation: 'spin-reverse 30s linear infinite' }}>
+                  <Cpu size={28} className="text-[var(--gold)]" />
                 </div>
-                {/* Left (270°) */}
-                <div className="absolute flex items-center justify-center rounded-full" style={{ width: 44, height: 44, top: 118, left: 8, background: '#1e1e1e', border: '1px solid rgba(184,134,11,0.2)', boxShadow: '0 0 12px rgba(184,134,11,0.06)', animation: 'spin-reverse 30s linear infinite' }}>
-                  <FlaskConical size={17} className="text-[var(--gold)]" />
+                {/* Left (270°): center at (50, 210) */}
+                <div className="absolute flex items-center justify-center rounded-full" style={{ width: 76, height: 76, top: 172, left: 12, background: '#1e1e1e', border: '2px solid rgba(184,134,11,0.25)', boxShadow: '0 0 24px rgba(184,134,11,0.1)', animation: 'spin-reverse 30s linear infinite' }}>
+                  <FlaskConical size={28} className="text-[var(--gold)]" />
                 </div>
               </div>
             </div>

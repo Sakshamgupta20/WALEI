@@ -9,41 +9,30 @@ const testimonial = {
 
 export function AboutWaleiSection() {
   return (
-    <section className="py-20 md:py-28 bg-[var(--dark)] text-white overflow-hidden">
+    <section className="py-20 md:py-28 bg-[var(--light)] overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-5 md:px-8">
         {/* Main Grid */}
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 mb-16">
           {/* Left - About */}
           <div className="lg:col-span-5">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-8 h-[2px] bg-gradient-to-r from-transparent to-[var(--gold)]" />
-              <span
-                className="text-xs uppercase tracking-[0.2em] font-semibold"
-                style={{ color: "var(--gold)" }}
-              >
-                About Us
-              </span>
-            </div>
-
-            <h2 className="text-3xl md:text-4xl font-light mb-6 leading-tight">
-              Building Tomorrow&apos;s
-              <br />
-              <span className="text-gray-400">Scientific</span>{" "}
-              <span style={{ color: "var(--gold)" }}>Legacy</span>
+            <h2 className="font-serif text-3xl md:text-4xl font-light text-gray-900 mb-2 leading-tight">
+              About WALEI
             </h2>
+            <p className="text-lg text-gray-500 mb-6">A Legacy of Science</p>
 
-            <p className="text-gray-400 leading-relaxed mb-6">
-              WALEI is a digital infrastructure at stage 1 of science and innovation.
-              The leaps are charged by the conscience of its community. It is building
-              of future with sheer efforts by the top minds.
+            <p className="text-gray-600 leading-relaxed mb-6">
+              I, WALEI, is a digital infrastructure with unifying force in research,
+              science and innovation. Through my collections, I aim to guide, inspire,
+              and support students, early-career researchers, founders, and fellow
+              explorers discover their own ways forward.
             </p>
 
-            <p className="text-lg italic font-light">
+            <p className="text-lg font-light">
               <span style={{ color: "var(--gold)" }}>Vision</span>
-              <span className="text-gray-500 mx-2">·</span>
-              <span style={{ color: "var(--coral)" }}>Insight</span>
-              <span className="text-gray-500 mx-2">·</span>
-              <span style={{ color: "var(--purple)" }}>Action</span>
+              <span className="text-gray-400 mx-2">·</span>
+              <span style={{ color: "var(--gold)" }}>Insight</span>
+              <span className="text-gray-400 mx-2">·</span>
+              <span style={{ color: "var(--gold)" }}>Action</span>
             </p>
           </div>
 
@@ -61,12 +50,12 @@ export function AboutWaleiSection() {
                   </span>
                 </div>
                 <div className="flex items-baseline gap-2">
-                  <span className="text-3xl sm:text-4xl md:text-5xl font-light">349</span>
+                  <span className="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-gray-900">349</span>
                   <span className="text-gray-500 text-sm">Cities</span>
                 </div>
                 <div className="flex items-baseline gap-2 mt-1">
-                  <span className="text-sm text-gray-400">across</span>
-                  <span className="text-2xl sm:text-3xl md:text-4xl font-light">54</span>
+                  <span className="text-sm text-gray-500">across</span>
+                  <span className="font-serif text-2xl sm:text-3xl md:text-4xl font-light text-gray-900">54</span>
                   <span className="text-gray-500 text-sm">Countries</span>
                 </div>
               </div>
@@ -85,8 +74,8 @@ export function AboutWaleiSection() {
                   {["IIT K", "IIT B", "IISC", "IIT KGP", "MPI", "SDU", "VUB", "CareMother"].map((inst) => (
                     <span
                       key={inst}
-                      className="px-2 py-1 text-xs rounded text-gray-300"
-                      style={{ backgroundColor: "rgba(197, 75, 75, 0.15)" }}
+                      className="px-2 py-1 text-xs rounded text-gray-700"
+                      style={{ backgroundColor: "rgba(197, 75, 75, 0.1)" }}
                     >
                       {inst}
                     </span>
@@ -109,8 +98,8 @@ export function AboutWaleiSection() {
                   {["Director", "VC", "Padma Shri", "Founder", "CEO", "Marie Curie Fellow"].map((role) => (
                     <span
                       key={role}
-                      className="px-2 py-1 text-xs rounded text-gray-300"
-                      style={{ backgroundColor: "rgba(107, 91, 149, 0.15)" }}
+                      className="px-2 py-1 text-xs rounded text-gray-700"
+                      style={{ backgroundColor: "rgba(107, 91, 149, 0.1)" }}
                     >
                       {role}
                     </span>
@@ -120,17 +109,17 @@ export function AboutWaleiSection() {
               </div>
 
               {/* Our Goals - Gray/Dark */}
-              <div className="rounded-xl p-6 border border-gray-700 bg-gray-800/50">
+              <div className="rounded-xl p-6 border border-gray-200 bg-white">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center">
-                    <Target size={18} className="text-gray-300" />
+                  <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center">
+                    <Target size={18} className="text-gray-600" />
                   </div>
-                  <span className="text-xs uppercase tracking-wider text-gray-300 font-semibold">
+                  <span className="text-xs uppercase tracking-wider text-gray-600 font-semibold">
                     Our Goals
                   </span>
                 </div>
-                <p className="text-sm text-gray-400 leading-relaxed">
-                  Stats are mere quantity, WALEI is at just stage 1 — building the
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  Stats are mere quantity, WALEI is at just stage 1, building the
                   foundation for a global scientific community.
                 </p>
               </div>
@@ -140,8 +129,8 @@ export function AboutWaleiSection() {
 
         {/* Testimonial */}
         <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-[var(--gold)]/10 to-transparent rounded-xl" />
-          <div className="relative bg-white/5 backdrop-blur-sm rounded-xl p-8 md:p-10 border border-white/10">
+          <div className="absolute inset-0 bg-gradient-to-r from-[var(--gold)]/5 to-transparent rounded-xl" />
+          <div className="relative bg-white rounded-xl p-8 md:p-10 border border-gray-200 shadow-sm">
             <div className="flex flex-col md:flex-row gap-6 items-start">
               <div
                 className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
@@ -152,14 +141,14 @@ export function AboutWaleiSection() {
                 </svg>
               </div>
               <div className="flex-1">
-                <p className="text-lg md:text-xl text-gray-200 leading-relaxed mb-4 italic">
+                <p className="font-serif text-lg md:text-xl text-gray-800 leading-relaxed mb-4">
                   &ldquo;{testimonial.quote}&rdquo;
                 </p>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gray-600" />
+                  <div className="w-10 h-10 rounded-full bg-gray-300" />
                   <div>
-                    <p className="text-white font-medium">~{testimonial.author}</p>
-                    <p className="text-sm text-gray-400">{testimonial.affiliation}</p>
+                    <p className="text-gray-900 font-medium">~{testimonial.author}</p>
+                    <p className="text-sm text-gray-500">{testimonial.affiliation}</p>
                   </div>
                 </div>
               </div>

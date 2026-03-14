@@ -8,7 +8,7 @@ const WALEI_INSTAGRAM = "https://www.instagram.com/walei.official/";
 const upcomingNotes = [
   {
     category: "Notes of Future",
-    title: "DIMENSIONS OF FLUIDS",
+    title: "Dimensions Of Fluids",
     speaker: "Prof. Suman Chakraborty",
     institution: "IIT KGP",
     color: "var(--accent-future)",
@@ -16,7 +16,7 @@ const upcomingNotes = [
   },
   {
     category: "Notes of Challenges",
-    title: "IYASO",
+    title: "Iyaso",
     speaker: "Viraj Kulkarni",
     institution: "Founder & CEO",
     color: "var(--accent-challenges)",
@@ -31,7 +31,7 @@ export function UpcomingSection() {
         {/* Section Header */}
         <div className="mb-12">
           <h2 className="text-3xl md:text-4xl font-light text-gray-900">
-            Featured Notes in......
+            Featured Notes In......
           </h2>
         </div>
 
@@ -76,7 +76,7 @@ export function UpcomingSection() {
 
                 {/* Content bottom */}
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="text-2xl md:text-3xl font-bold uppercase tracking-wide text-white mb-2">
+                  <h3 className="text-2xl md:text-3xl font-bold tracking-wide text-white mb-2">
                     {note.title}
                   </h3>
                   <p className="text-lg text-white/90 font-medium">{note.speaker}</p>

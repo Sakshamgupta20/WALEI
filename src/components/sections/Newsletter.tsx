@@ -60,8 +60,8 @@ export function Newsletter() {
               <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
                 <Mail size={20} className="text-white" />
               </div>
-              <span className="text-sm uppercase tracking-wider text-white/70 font-semibold">
-                Newsletter
+              <span className="text-xl font-semibold" style={{ color: "var(--gold)" }}>
+                Newsmeets
               </span>
             </div>
 
@@ -72,7 +72,7 @@ export function Newsletter() {
             </h3>
 
             <p className="text-base text-white/70 leading-relaxed mb-6">
-              Join thousands of global subscribers receiving monthly updates on
+              Join of global subscribers receiving updates on
               scientific insights, policy recommendations, and the latest from our
               community of researchers shaping the future.
             </p>
@@ -80,11 +80,11 @@ export function Newsletter() {
             <div className="flex flex-wrap gap-4 text-sm text-white/60">
               <div className="flex items-center gap-2">
                 <CheckCircle size={16} className="text-white/80" />
-                <span>Monthly digest</span>
+                <span>Accelerated solutions</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle size={16} className="text-white/80" />
-                <span>Exclusive interviews</span>
+                <span>Exclusive meets</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle size={16} className="text-white/80" />
