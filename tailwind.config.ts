@@ -28,8 +28,10 @@ const config: Config = {
         light: "#F8F8F8",
       },
       fontFamily: {
-        serif: ["Georgia", "Times New Roman", "serif"],
+        serif: ["var(--font-playfair)", "Playfair Display", "Georgia", "Times New Roman", "serif"],
         sans: [
+          "var(--font-mukta)",
+          "Mukta",
           "-apple-system",
           "BlinkMacSystemFont",
           "Segoe UI",

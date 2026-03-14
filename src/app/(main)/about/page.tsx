@@ -50,7 +50,7 @@ export default function AboutPage() {
             </span>
             <div className="w-8 h-[2px] bg-gradient-to-l from-transparent to-[var(--gold)]" />
           </div>
-          <h1 className="text-4xl md:text-6xl font-light text-white mb-6">
+          <h1 className="text-3xl md:text-4xl font-light text-white mb-6">
             About WALEI
           </h1>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">

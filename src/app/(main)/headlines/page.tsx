@@ -66,7 +66,7 @@ export default function HeadlinesPage() {
               Stay Updated
             </span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-light text-white mb-6">
+          <h1 className="text-3xl md:text-4xl font-light text-white mb-6">
             Headlines &amp; Timelines
           </h1>
           <p className="text-lg text-gray-400 max-w-2xl leading-relaxed">

@@ -223,7 +223,7 @@ function TeamContent() {
                     )}
                   </div>
                   <div className="p-5">
-                    <h3 className="text-base font-bold uppercase text-gray-900">
+                    <h3 className="text-base font-bold capitalize text-gray-900">
                       {member.name}
                     </h3>
                     <p className="text-sm text-gray-500 uppercase tracking-wide">
