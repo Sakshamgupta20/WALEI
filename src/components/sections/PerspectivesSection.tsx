@@ -8,8 +8,7 @@ const perspectives = [
   {
     id: "1",
     category: "NOTES OF FUTURE",
-    title: "Prof. Dipankar Chatterji on the future of microbial research",
-    date: "15.01.2026",
+    title: "On the future of microbial research",
     author: "Prof. Dipankar Chatterji",
     institution: "IISc Bangalore",
     image: "/images/notes/future/dipankar-chatterji.jpg",
@@ -20,12 +19,21 @@ const perspectives = [
     id: "2",
     category: "NOTES OF CHALLENGES",
     title: "Building a health-tech startup: Lessons from CareMother",
-    date: "08.01.2026",
     author: "Dr. Shantanu Pathak",
     institution: "CareMother",
     image: "/images/notes/challenges/shantanu-pathak.png",
     color: "var(--accent-challenges)",
     href: "/notes-of-challenges/1",
+  },
+  {
+    id: "3",
+    category: "NOTES OF MOVEMENTS",
+    title: "Navigating Research Cultures",
+    author: "Dr. Bhaskar Paul",
+    institution: "MPI CEC, Germany",
+    image: "/images/notes/movements/bhaskar-paul.jpg",
+    color: "var(--accent-movements)",
+    href: "/notes-of-movements/1",
   },
 ];
 
@@ -35,32 +43,24 @@ export function PerspectivesSection() {
       <div className="max-w-[1200px] mx-auto px-5 md:px-8">
         {/* Section Header */}
         <div className="flex items-center justify-between mb-12">
-          <div>
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-8 h-[2px] bg-[var(--dark)]" />
-              <span className="text-[11px] uppercase tracking-[0.2em] font-bold text-gray-500">
-                Latest Perspectives
-              </span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-light text-gray-900">
-              Featured Stories
-            </h2>
-          </div>
+          <h2 className="text-3xl md:text-4xl font-light text-gray-900">
+            Latest Notes
+          </h2>
           <Link
-            href="/news"
+            href="/notes"
             className="hidden md:flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-[var(--gold)] transition-colors"
           >
-            View all news
+            View All
             <ArrowUpRight size={16} />
           </Link>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-3 gap-6">
           {perspectives.map((item) => (
             <Link
               key={item.id}
               href={item.href}
-              className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500"
+              className="group overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-xl transition-all duration-500"
             >
               {/* Image */}
               <div className="aspect-[16/10] relative overflow-hidden">
@@ -70,36 +70,27 @@ export function PerspectivesSection() {
                   fill
                   className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
                 />
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-
-                {/* Decorative elements */}
-                <div className="absolute top-6 right-6 w-20 h-20 rounded-full border border-white/20 group-hover:scale-110 transition-transform duration-500" />
-                <div className="absolute top-10 right-10 w-12 h-12 rounded-full border border-white/10" />
-
                 {/* Category badge */}
                 <div
-                  className="absolute top-6 left-6 px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider text-white"
+                  className="absolute top-5 left-5 px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider text-white"
                   style={{ backgroundColor: item.color }}
                 >
                   {item.category}
                 </div>
+              </div>
 
-                {/* Content overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                  <h3 className="text-xl md:text-2xl font-light text-white leading-snug mb-4 group-hover:text-gray-100 transition-colors">
-                    {item.title}
-                  </h3>
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="text-sm text-white font-medium">{item.author}</p>
-                      <p className="text-xs text-gray-400">{item.institution} · {item.date}</p>
-                    </div>
-                    <div
-                      className="w-10 h-10 rounded-full flex items-center justify-center bg-white/10 group-hover:bg-white/20 transition-colors"
-                    >
-                      <ArrowUpRight size={18} className="text-white" />
-                    </div>
+              {/* Text section below image */}
+              <div className="p-5">
+                <h3 className="text-lg font-medium text-gray-900 leading-snug mb-3 group-hover:text-[var(--gold)] transition-colors">
+                  {item.title}
+                </h3>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-sm font-medium text-gray-700">{item.author}</p>
+                    <p className="text-xs text-gray-500">{item.institution}</p>
+                  </div>
+                  <div className="w-9 h-9 rounded-full flex items-center justify-center bg-gray-100 group-hover:bg-[var(--gold)]/10 transition-colors">
+                    <ArrowUpRight size={16} className="text-gray-500 group-hover:text-[var(--gold)] transition-colors" />
                   </div>
                 </div>
               </div>
@@ -110,10 +101,10 @@ export function PerspectivesSection() {
         {/* Mobile view all link */}
         <div className="mt-8 text-center md:hidden">
           <Link
-            href="/news"
+            href="/notes"
             className="inline-flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-[var(--gold)] transition-colors"
           >
-            View all news
+            View All
             <ArrowUpRight size={16} />
           </Link>
         </div>

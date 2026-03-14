@@ -1,10 +1,18 @@
 import Link from "next/link";
-import Image from "next/image";
-
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+import { Rocket, Dna, Cpu, FlaskConical } from "lucide-react";
 
 export function HeroSection() {
   return (
+    <>
+    {/* Making Statements Bar */}
+    <div className="bg-white py-4 md:py-5">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+        <h2 className="text-2xl md:text-3xl font-semibold text-gray-900">
+          Making <span style={{ color: "var(--gold)" }}>Statements</span>
+        </h2>
+      </div>
+    </div>
+
     <section className="relative bg-[var(--dark)] overflow-hidden min-h-[85vh] flex items-center">
       {/* Decorative background elements */}
       <div className="absolute inset-0">
@@ -22,6 +30,31 @@ export function HeroSection() {
           style={{ background: "radial-gradient(circle, var(--gold) 0%, transparent 70%)" }}
         />
       </div>
+
+      {/* Spin animation */}
+      <style>{`
+        @keyframes orbit {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        @keyframes counter-orbit {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(-360deg); }
+        }
+        .animate-orbit {
+          animation: orbit 30s linear infinite;
+        }
+        .animate-counter-orbit {
+          animation: counter-orbit 30s linear infinite;
+        }
+        @keyframes pulse-ring {
+          0%, 100% { opacity: 0.08; transform: scale(1); }
+          50% { opacity: 0.2; transform: scale(1.03); }
+        }
+        .animate-pulse-ring {
+          animation: pulse-ring 5s ease-in-out infinite;
+        }
+      `}</style>
 
       <div className="relative max-w-[1200px] mx-auto px-5 md:px-8 py-20 md:py-28">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -67,7 +100,7 @@ export function HeroSection() {
                 href="/publish"
                 className="px-8 py-4 text-white border border-white/30 font-semibold text-sm tracking-wide hover:bg-white/10 hover:border-white/50 transition-all duration-300 text-center"
               >
-                Contribute Your Voice
+                Tell us what you think?
               </Link>
             </div>
 
@@ -85,55 +118,48 @@ export function HeroSection() {
                 <p className="text-3xl md:text-4xl font-light" style={{ color: "var(--gold)" }}>∞</p>
                 <p className="text-xs text-gray-500 mt-1 uppercase tracking-wider">Impact</p>
               </div>
+              <div>
+                <p className="text-3xl md:text-4xl font-light text-white">2k+</p>
+                <p className="text-xs text-gray-500 mt-1 uppercase tracking-wider">Community</p>
+              </div>
             </div>
           </div>
 
-          {/* Right - Featured Quote Card */}
-          <div className="hidden lg:block">
-            <div className="relative">
-              {/* Background card decoration */}
-              <div className="absolute -top-4 -right-4 w-full h-full border border-white/10 rounded-lg" />
+          {/* Right - Animated Science Icons */}
+          <div className="hidden lg:flex items-center justify-center">
+            <div className="relative w-[280px] h-[280px]">
+              {/* Outer ring with pulse */}
+              <div className="absolute -inset-5 rounded-full border border-white/[0.04] animate-pulse-ring" />
+              {/* Main ring */}
+              <div className="absolute inset-0 rounded-full border border-white/[0.08]" />
+              {/* Inner ring */}
+              <div className="absolute inset-[60px] rounded-full border border-white/[0.06]" />
 
-              {/* Main card */}
-              <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-8">
-                <div className="flex items-start gap-4 mb-6">
-                  <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 border-2 border-white/20">
-                    <Image
-                      src={`${basePath}/images/notes/future/suman-chakraborty.png`}
-                      alt="Prof. Suman Chakraborty"
-                      width={64}
-                      height={64}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div>
-                    <p className="text-white font-medium">Prof. Suman Chakraborty</p>
-                    <p className="text-sm text-gray-500">IIT Kharagpur</p>
-                  </div>
+              {/* Center glow */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[var(--gold)]/[0.06] blur-xl" />
+
+              {/* Center label */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
+                <p className="text-[9px] uppercase tracking-[0.25em] text-white/25 font-semibold leading-relaxed">Science<br />&amp; Innovation</p>
+              </div>
+
+              {/* Orbiting icons - placed ON the main ring (r=140px from center) */}
+              <div className="absolute inset-[-20px] animate-orbit">
+                {/* Top */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-[#222] flex items-center justify-center border border-white/10 shadow-lg animate-counter-orbit">
+                  <Rocket size={16} className="text-[var(--gold)]" />
                 </div>
-
-                <blockquote className="text-lg text-gray-300 italic leading-relaxed mb-6">
-                  &ldquo;The beauty of fluid mechanics lies in its universal
-                  presence — from blood vessels to cosmic jets. Understanding
-                  the dimensions of fluids unlocks nature&apos;s deepest secrets.&rdquo;
-                </blockquote>
-
-                <div className="flex items-center justify-between">
-                  <span
-                    className="text-[10px] uppercase tracking-wider font-semibold px-3 py-1 rounded-full"
-                    style={{ backgroundColor: "rgba(212, 168, 83, 0.15)", color: "var(--gold)" }}
-                  >
-                    Notes of Future
-                  </span>
-                  <Link
-                    href="/notes-of-future"
-                    className="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-1"
-                  >
-                    Read more
-                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </Link>
+                {/* Right */}
+                <div className="absolute top-1/2 right-0 -translate-y-1/2 w-10 h-10 rounded-full bg-[#222] flex items-center justify-center border border-white/10 shadow-lg animate-counter-orbit">
+                  <Dna size={16} className="text-[var(--gold)]" />
+                </div>
+                {/* Bottom */}
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-[#222] flex items-center justify-center border border-white/10 shadow-lg animate-counter-orbit">
+                  <Cpu size={16} className="text-[var(--gold)]" />
+                </div>
+                {/* Left */}
+                <div className="absolute top-1/2 left-0 -translate-y-1/2 w-10 h-10 rounded-full bg-[#222] flex items-center justify-center border border-white/10 shadow-lg animate-counter-orbit">
+                  <FlaskConical size={16} className="text-[var(--gold)]" />
                 </div>
               </div>
             </div>
@@ -141,5 +167,6 @@ export function HeroSection() {
         </div>
       </div>
     </section>
+    </>
   );
 }

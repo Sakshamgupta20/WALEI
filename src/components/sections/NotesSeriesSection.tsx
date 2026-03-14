@@ -1,5 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const notesSeries = [
   {
@@ -9,8 +12,7 @@ const notesSeries = [
       "Scientists' reflections shaping their disciplines. Insights that guide the questions ahead. For those seeking depth beyond fleeting trends.",
     href: "/notes-of-future",
     color: "#D4A853",
-    icon: "F",
-    bgPattern: "radial-gradient(circle at 80% 20%, rgba(212, 168, 83, 0.15) 0%, transparent 50%)",
+    image: "/images/notes/future/dipankar-chatterji.jpg",
   },
   {
     name: "Notes of Challenges",
@@ -19,8 +21,7 @@ const notesSeries = [
       "Honest accounts of building science ventures. Early hurdles, quiet pivots, uncertain decisions. For those scaling ideas beyond labs.",
     href: "/notes-of-challenges",
     color: "#C54B4B",
-    icon: "C",
-    bgPattern: "radial-gradient(circle at 80% 20%, rgba(197, 75, 75, 0.15) 0%, transparent 50%)",
+    image: "/images/notes/challenges/shantanu-pathak.png",
   },
   {
     name: "Notes of Movements",
@@ -29,8 +30,7 @@ const notesSeries = [
       "Personal reflections from NRIs abroad. Stories of transition and cross-cultural identity. For those living change and finding meaning.",
     href: "/notes-of-movements",
     color: "#6B5B95",
-    icon: "M",
-    bgPattern: "radial-gradient(circle at 80% 20%, rgba(107, 91, 149, 0.15) 0%, transparent 50%)",
+    image: "/images/notes/movements/bhaskar-paul.jpg",
   },
 ];
 
@@ -105,27 +105,6 @@ export function NotesSeriesSection() {
           ))}
         </div>
 
-        {/* Bottom stats row */}
-        <div className="mt-16 pt-12 border-t border-gray-200">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <p className="text-3xl md:text-4xl font-light" style={{ color: "var(--gold)" }}>50+</p>
-              <p className="text-sm text-gray-500 mt-1">Published Notes</p>
-            </div>
-            <div>
-              <p className="text-3xl md:text-4xl font-light" style={{ color: "var(--gold)" }}>30+</p>
-              <p className="text-sm text-gray-500 mt-1">Distinguished Scientists</p>
-            </div>
-            <div>
-              <p className="text-3xl md:text-4xl font-light" style={{ color: "var(--accent-challenges)" }}>15+</p>
-              <p className="text-sm text-gray-500 mt-1">Startup Stories</p>
-            </div>
-            <div>
-              <p className="text-3xl md:text-4xl font-light" style={{ color: "var(--accent-movements)" }}>20+</p>
-              <p className="text-sm text-gray-500 mt-1">NRI Journeys</p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
