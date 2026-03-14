@@ -12,7 +12,7 @@ const dropdownMenus = [
     label: "Notes",
     items: [
       {
-        name: "Combined",
+        name: "Notes series",
         href: "/notes",
         description: "All notes across every series",
       },
@@ -45,21 +45,14 @@ const dropdownMenus = [
       { name: "Projects", href: "/projects", description: "Coming soon" },
     ],
   },
-  {
-    label: "Team",
-    items: [
-      { name: "Core Team", href: "/team", description: "The people behind WALEI" },
-      { name: "Advisors", href: "/team?tab=advisors", description: "Our advisory board" },
-      { name: "Strategic Partners", href: "/team?tab=partners", description: "Partner institutions" },
-    ],
-  },
 ];
 
 const flatNavItems = [
   { name: "Gigs", href: "/gigs" },
   { name: "H&T", href: "/headlines" },
-  { name: "NEWS", href: "/news" },
-  { name: "Calendar", href: "/calendar" },
+  { name: "Team", href: "/team" },
+  // { name: "NEWS", href: "/news" },
+  // { name: "Calendar", href: "/calendar" },
 ];
 
 export function Header() {

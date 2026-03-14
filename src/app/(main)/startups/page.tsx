@@ -2,7 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Search, Rocket } from "lucide-react";
+
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const startups = [
   {
@@ -14,6 +17,7 @@ const startups = [
     link: "https://caremother.in",
     sector: "Healthcare",
     color: "#C54B4B",
+    founderImage: "/images/notes/challenges/shantanu-pathak.png",
     highlighted: true,
   },
   {
@@ -25,6 +29,7 @@ const startups = [
     link: "https://iyaso.in",
     sector: "Healthcare AI",
     color: "#6B5B95",
+    founderImage: "/images/notes/challenges/viraj-kulkarni.png",
     highlighted: false,
   },
   {
@@ -36,6 +41,7 @@ const startups = [
     link: "https://nanoclean.in",
     sector: "Clean Tech",
     color: "#D4A853",
+    founderImage: "",
     highlighted: false,
   },
   {
@@ -47,6 +53,7 @@ const startups = [
     link: "https://agrisense.in",
     sector: "AgriTech",
     color: "#B8860B",
+    founderImage: "",
     highlighted: false,
   },
 ];
@@ -59,9 +66,6 @@ export default function StartupsPage() {
     startup.founder.toLowerCase().includes(searchQuery.toLowerCase()) ||
     startup.sector.toLowerCase().includes(searchQuery.toLowerCase())
   );
-
-  const highlighted = filteredStartups.find((s) => s.highlighted);
-  const others = filteredStartups.filter((s) => !s.highlighted);
 
   return (
     <>
@@ -103,88 +107,54 @@ export default function StartupsPage() {
         </div>
       </section>
 
-      {/* Highlighted Start-up (CareMother on top) */}
-      {highlighted && !searchQuery && (
-        <section className="py-10 bg-white">
-          <div className="max-w-[1200px] mx-auto px-5 md:px-8">
-            <Link href={`/startups/${highlighted.id}`} className="group block">
-              <article className="rounded-xl overflow-hidden md:flex bg-[var(--light)] hover:shadow-xl transition-shadow">
-                <div
-                  className="h-48 md:h-auto md:w-1/3 relative overflow-hidden flex items-center justify-center"
-                  style={{ background: `linear-gradient(135deg, ${highlighted.color}20 0%, ${highlighted.color}40 100%)` }}
-                >
-                  <div
-                    className="w-24 h-24 rounded-full flex items-center justify-center text-4xl font-light text-white"
-                    style={{ backgroundColor: highlighted.color }}
-                  >
-                    {highlighted.name.charAt(0)}
-                  </div>
-                </div>
-                <div className="p-6 md:p-8 md:w-2/3 flex flex-col justify-center">
-                  <span
-                    className="text-xs uppercase tracking-wider font-bold px-3 py-1 rounded-full w-fit mb-4"
-                    style={{ backgroundColor: `${highlighted.color}20`, color: highlighted.color }}
-                  >
-                    Featured Start-up
-                  </span>
-                  <h2 className="text-xl md:text-2xl font-light text-gray-900 group-hover:text-[var(--gold)] transition-colors mb-2">
-                    {highlighted.name}
-                  </h2>
-                  <p className="text-sm text-gray-600 leading-relaxed mb-3">
-                    {highlighted.description}
-                  </p>
-                  <div className="flex items-center gap-3 text-sm text-gray-500">
-                    <Rocket size={14} />
-                    <span>{highlighted.founder} · {highlighted.institution}</span>
-                  </div>
-                </div>
-              </article>
-            </Link>
-          </div>
-        </section>
-      )}
-
       {/* Start-up Grid */}
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {(searchQuery ? filteredStartups : others).map((startup) => (
+            {filteredStartups.map((startup) => (
               <Link key={startup.id} href={`/startups/${startup.id}`} className="group">
-                <article className="rounded-xl overflow-hidden bg-white border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                  {/* Color accent line */}
-                  <div className="h-1 w-full" style={{ backgroundColor: startup.color }} />
-                  <div
-                    className="aspect-[4/3] relative overflow-hidden flex items-center justify-center"
-                    style={{ background: `linear-gradient(135deg, ${startup.color}15 0%, ${startup.color}30 100%)` }}
-                  >
-                    <div
-                      className="w-20 h-20 rounded-full flex items-center justify-center text-3xl font-light text-white"
-                      style={{ backgroundColor: startup.color }}
-                    >
-                      {startup.name.charAt(0)}
+                <article className="h-full rounded-xl overflow-hidden bg-white border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 flex flex-col">
+                  <div className="p-6 flex-1 flex flex-col">
+                    <div className="flex items-start gap-4 mb-4">
+                      {/* Avatar */}
+                      {startup.founderImage ? (
+                        <Image
+                          src={basePath + startup.founderImage}
+                          alt={startup.founder}
+                          width={56}
+                          height={56}
+                          className="w-14 h-14 rounded-full object-cover flex-shrink-0"
+                        />
+                      ) : (
+                        <div
+                          className="w-14 h-14 rounded-full flex items-center justify-center text-xl font-light text-white flex-shrink-0"
+                          style={{ backgroundColor: startup.color }}
+                        >
+                          {startup.name.charAt(0)}
+                        </div>
+                      )}
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-base font-semibold text-gray-900 group-hover:text-[var(--gold)] transition-colors truncate">
+                          {startup.name}
+                        </h3>
+                        <p className="text-xs text-gray-500 mt-0.5">
+                          {startup.founder} · {startup.institution}
+                        </p>
+                      </div>
                     </div>
-                    <div
-                      className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-white"
-                      style={{ backgroundColor: startup.color }}
-                    >
-                      {startup.sector}
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-[var(--gold)] transition-colors">
-                      {startup.name}
-                    </h3>
-                    <p className="text-sm text-gray-500 mb-4 line-clamp-2 leading-relaxed">
+
+                    <p className="text-sm text-gray-600 leading-relaxed mb-4 flex-1">
                       {startup.description}
                     </p>
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
-                        <Rocket size={14} className="text-gray-400" />
-                      </div>
-                      <div>
-                        <p className="text-sm font-medium text-gray-800">{startup.founder}</p>
-                        <p className="text-xs text-gray-400">{startup.institution}</p>
-                      </div>
+
+                    {/* Sector Tag */}
+                    <div className="flex flex-wrap gap-2 pt-4 border-t border-gray-100">
+                      <span
+                        className="text-xs px-3 py-1 rounded-full font-medium"
+                        style={{ backgroundColor: `${startup.color}15`, color: startup.color }}
+                      >
+                        {startup.sector}
+                      </span>
                     </div>
                   </div>
                 </article>

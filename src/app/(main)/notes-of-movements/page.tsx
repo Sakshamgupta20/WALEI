@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Calendar, User } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
@@ -14,54 +14,54 @@ export const metadata: Metadata = {
 const articles = [
   {
     id: "1",
-    title: "From IIT Kharagpur to Max Planck: Navigating Research Cultures",
+    title: "Navigating Research Cultures",
     excerpt:
       "The transition from Indian academia to European research culture brings unexpected challenges and profound growth opportunities.",
     date: "Jan 24, 2026",
     author: "Dr. Bhaskar Paul",
-    institution: "MPI CEC, Germany",
+    affiliation: "MPI CEC, Germany",
     image: "/images/notes/movements/bhaskar-paul.jpg",
     featured: true,
   },
   {
     id: "2",
-    title: "Finding Home in Brussels: A Researcher's Dual Identity",
+    title: "Finding Home in Brussels",
     excerpt:
       "Building a research career while maintaining connections to roots — the journey of an Indian researcher in Belgium.",
     date: "Jan 20, 2026",
     author: "Dr. Richa Sharma",
-    institution: "Vrije Universiteit Brussel",
+    affiliation: "Vrije Universiteit Brussel",
     image: "/images/notes/movements/richa-sharma.png",
     featured: false,
   },
   {
     id: "3",
-    title: "The German Research Landscape: Precision Meets Intuition",
+    title: "German Research Landscape",
     excerpt:
       "Adapting to the structure of German academia after years in India's more flexible research environment.",
     date: "Jan 15, 2026",
     author: "Dr. Kartikay Sharma",
-    institution: "MPI, Germany",
+    affiliation: "MPI, Germany",
     featured: false,
   },
   {
     id: "4",
-    title: "Alpine Perspectives: Science at EPFL",
+    title: "Science at EPFL",
     excerpt:
       "Life at one of Europe's top technical universities — bridging Indian intuition with Swiss precision.",
     date: "Jan 10, 2026",
     author: "Dr. Deepika Sardana",
-    institution: "EPFL, Switzerland",
+    affiliation: "EPFL, Switzerland",
     featured: false,
   },
   {
     id: "5",
-    title: "The Fellowship Journey: Marie Curie in Copenhagen",
+    title: "Marie Curie in Copenhagen",
     excerpt:
       "Reflections on securing a prestigious fellowship and building a life in Scandinavia's research ecosystem.",
     date: "Jan 6, 2026",
     author: "Dr. Ananya Krishnan",
-    institution: "SDU, Denmark",
+    affiliation: "SDU, Denmark",
     featured: false,
   },
 ];
@@ -106,13 +106,13 @@ export default function NotesOfMomentsPage() {
               className="group block"
             >
               <article className="rounded-2xl overflow-hidden md:flex bg-[var(--light)] hover:shadow-xl transition-shadow">
-                <div className="h-56 md:h-auto md:w-1/2 relative overflow-hidden">
+                <div className="h-72 md:h-auto md:min-h-[320px] md:w-1/2 relative overflow-hidden">
                   {featuredArticle.image ? (
                     <Image
                       src={`${basePath}${featuredArticle.image}`}
                       alt={featuredArticle.author}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="object-cover object-[center_30%] group-hover:scale-105 transition-transform duration-500"
                     />
                   ) : (
                     <div className="w-full h-full bg-gradient-to-br from-[#6B5B95]/20 to-[#6B5B95]/40" />
@@ -134,14 +134,8 @@ export default function NotesOfMomentsPage() {
                     {featuredArticle.excerpt}
                   </p>
                   <div className="flex items-center gap-4 text-sm text-gray-500">
-                    <span className="flex items-center gap-1.5">
-                      <User size={12} />
-                      {featuredArticle.author}
-                    </span>
-                    <span className="flex items-center gap-1.5">
-                      <Calendar size={12} />
-                      {featuredArticle.date}
-                    </span>
+                    <span>{featuredArticle.author}</span>
+                    <span className="text-xs text-gray-400">{featuredArticle.affiliation}</span>
                   </div>
                 </div>
               </article>
@@ -188,15 +182,12 @@ export default function NotesOfMomentsPage() {
                   </div>
 
                   <div className="p-5">
-                    <h3 className="text-sm font-medium text-gray-900 group-hover:text-[var(--gold)] transition-colors line-clamp-2 mb-2">
+                    <h3 className="text-base font-medium text-gray-900 group-hover:text-[var(--gold)] transition-colors line-clamp-2 mb-3">
                       {article.title}
                     </h3>
-                    <p className="text-xs text-gray-500 line-clamp-2 mb-3">
-                      {article.excerpt}
-                    </p>
-                    <div className="flex items-center justify-between text-xs text-gray-400">
-                      <span>{article.author}</span>
-                      <span>{article.date}</span>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-gray-700">{article.author}</span>
+                      <span className="text-xs text-gray-400">{article.affiliation}</span>
                     </div>
                   </div>
                 </article>

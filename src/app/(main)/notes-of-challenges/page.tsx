@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Calendar, User } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
@@ -14,49 +14,54 @@ export const metadata: Metadata = {
 const articles = [
   {
     id: "1",
-    title: "Water Scarcity in Urban India: Engineering Solutions at Scale",
+    title: "Urban Water Scarcity",
     excerpt:
       "With 21 Indian cities expected to run out of groundwater, researchers and civic leaders discuss scalable solutions.",
     date: "Jan 20, 2026",
     author: "Dr. Shantanu Pathak",
+    affiliation: "CareMother",
     image: "/images/notes/challenges/shantanu-pathak.png",
     featured: true,
   },
   {
     id: "2",
-    title: "IYASO: Transforming Healthcare with Data Analytics",
+    title: "Healthcare Data Analytics",
     excerpt:
       "How AI-driven diagnostics and data analytics platforms are optimising healthcare delivery across India.",
     date: "Jan 16, 2026",
     author: "Viraj Kulkarni",
+    affiliation: "IYASO",
     image: "/images/notes/challenges/viraj-kulkarni.png",
     featured: false,
   },
   {
     id: "3",
-    title: "The Brain Drain Dilemma: Can India Retain Its Best Researchers?",
+    title: "The Brain Drain Dilemma",
     excerpt:
       "An honest conversation about why top scientists leave India and what systemic changes could reverse the trend.",
     date: "Jan 12, 2026",
     author: "Prof. Ashutosh Sharma",
+    affiliation: "IIT Kanpur",
     featured: false,
   },
   {
     id: "4",
-    title: "Climate Adaptation: Protecting Coastal Communities",
+    title: "Coastal Climate Adaptation",
     excerpt:
       "Mumbai, Chennai, and Kolkata face existential flooding risks. Scientists map out survival strategies.",
     date: "Jan 8, 2026",
     author: "Dr. Roxy Mathew Koll",
+    affiliation: "IITM Pune",
     featured: false,
   },
   {
     id: "5",
-    title: "Antibiotic Resistance: India's Ticking Health Time Bomb",
+    title: "Antibiotic Resistance Crisis",
     excerpt:
       "With over 58,000 newborns dying annually from drug-resistant infections, microbiologists urge immediate action.",
     date: "Jan 5, 2026",
     author: "Prof. Dipankar Chatterji",
+    affiliation: "IISc Bangalore",
     featured: false,
   },
 ];
@@ -101,13 +106,13 @@ export default function NotesOfChallengesPage() {
               className="group block"
             >
               <article className="rounded-2xl overflow-hidden md:flex bg-[var(--light)] hover:shadow-xl transition-shadow">
-                <div className="h-56 md:h-auto md:w-1/2 relative overflow-hidden">
+                <div className="h-72 md:h-auto md:min-h-[320px] md:w-1/2 relative overflow-hidden">
                   {featuredArticle.image ? (
                     <Image
                       src={`${basePath}${featuredArticle.image}`}
                       alt={featuredArticle.author}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="object-cover object-[center_30%] group-hover:scale-105 transition-transform duration-500"
                     />
                   ) : (
                     <div className="w-full h-full bg-gradient-to-br from-[#C54B4B]/20 to-[#C54B4B]/40" />
@@ -129,14 +134,8 @@ export default function NotesOfChallengesPage() {
                     {featuredArticle.excerpt}
                   </p>
                   <div className="flex items-center gap-4 text-sm text-gray-500">
-                    <span className="flex items-center gap-1.5">
-                      <User size={12} />
-                      {featuredArticle.author}
-                    </span>
-                    <span className="flex items-center gap-1.5">
-                      <Calendar size={12} />
-                      {featuredArticle.date}
-                    </span>
+                    <span>{featuredArticle.author}</span>
+                    <span className="text-xs text-gray-400">{featuredArticle.affiliation}</span>
                   </div>
                 </div>
               </article>
@@ -183,15 +182,12 @@ export default function NotesOfChallengesPage() {
                   </div>
 
                   <div className="p-5">
-                    <h3 className="text-sm font-medium text-gray-900 group-hover:text-[var(--gold)] transition-colors line-clamp-2 mb-2">
+                    <h3 className="text-base font-medium text-gray-900 group-hover:text-[var(--gold)] transition-colors line-clamp-2 mb-3">
                       {article.title}
                     </h3>
-                    <p className="text-xs text-gray-500 line-clamp-2 mb-3">
-                      {article.excerpt}
-                    </p>
-                    <div className="flex items-center justify-between text-xs text-gray-400">
-                      <span>{article.author}</span>
-                      <span>{article.date}</span>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-gray-700">{article.author}</span>
+                      <span className="text-xs text-gray-400">{article.affiliation}</span>
                     </div>
                   </div>
                 </article>

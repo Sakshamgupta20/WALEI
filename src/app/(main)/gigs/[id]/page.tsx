@@ -16,6 +16,7 @@ const gigs: Record<
     expertise: string[];
     institution: string;
     image: string | null;
+    stats: { projects: number; satisfaction: string; experience: string };
   }
 > = {
   "1": {
@@ -24,10 +25,11 @@ const gigs: Record<
     description:
       "Health-tech innovation consultant with 15+ years in medical devices and maternal care technology.",
     bio: "Dr. Shantanu Pathak is the founder of CareMother, a pioneering health-tech company focused on maternal and neonatal care. With a background from IIT Bombay and extensive experience in medical device innovation, he bridges the gap between cutting-edge research and real-world healthcare solutions across India and beyond.",
-    services: ["Consulting", "Medical Devices", "Health-Tech"],
-    expertise: ["Maternal Health Technology", "Medical Device Design", "Health-Tech Startups", "Product Strategy", "Regulatory Compliance"],
+    services: ["Maternal Health Technology", "Medical Device Design", "Health-Tech Startups", "Product Strategy", "Regulatory Compliance"],
+    expertise: ["Consulting", "Medical Devices", "Health-Tech"],
     institution: "CareMother / IIT Bombay",
     image: "/images/notes/challenges/shantanu-pathak.png",
+    stats: { projects: 12, satisfaction: "96%", experience: "15y" },
   },
   "2": {
     name: "Prof. Suman Chakraborty",
@@ -35,10 +37,11 @@ const gigs: Record<
     description:
       "Fluid mechanics expert offering research collaboration and academic mentorship.",
     bio: "Prof. Suman Chakraborty is a distinguished professor at IIT Kharagpur, renowned for his groundbreaking work in micro and nano-scale fluid dynamics. His research spans biomedical microfluidics, energy systems, and computational methods, with over 400 publications in leading journals.",
-    services: ["Research", "Mentorship", "Fluid Mechanics"],
-    expertise: ["Microfluidics", "Computational Fluid Dynamics", "Biomedical Engineering", "Academic Mentorship", "Research Strategy"],
+    services: ["Microfluidics", "Computational Fluid Dynamics", "Biomedical Engineering", "Academic Mentorship", "Research Strategy"],
+    expertise: ["Research", "Mentorship", "Fluid Mechanics"],
     institution: "IIT Kharagpur",
     image: "/images/notes/future/suman-chakraborty.png",
+    stats: { projects: 25, satisfaction: "98%", experience: "20y" },
   },
   "3": {
     name: "Viraj Kulkarni",
@@ -46,10 +49,11 @@ const gigs: Record<
     description:
       "Data analytics leader specializing in healthcare optimization and AI-driven solutions.",
     bio: "Viraj Kulkarni is the founder of IYASO, a data analytics company transforming healthcare delivery through AI. His work focuses on predictive analytics, operational optimization, and building data-driven decision frameworks for healthcare institutions.",
-    services: ["Data Analytics", "Healthcare AI", "Strategy"],
-    expertise: ["Healthcare Analytics", "Machine Learning", "Data Strategy", "AI Implementation", "Operational Optimization"],
+    services: ["Healthcare Analytics", "Machine Learning", "Data Strategy", "AI Implementation", "Operational Optimization"],
+    expertise: ["Data Analytics", "Healthcare AI", "Strategy"],
     institution: "IYASO",
     image: "/images/notes/challenges/viraj-kulkarni.png",
+    stats: { projects: 18, satisfaction: "94%", experience: "10y" },
   },
   "4": {
     name: "Dr. Richa Sharma",
@@ -57,10 +61,11 @@ const gigs: Record<
     description:
       "Environmental science researcher focused on sustainability and policy advocacy.",
     bio: "Dr. Richa Sharma is an environmental scientist at Vrije Universiteit Brussel, working at the intersection of sustainability research and policy. Her work focuses on developing evidence-based frameworks for environmental governance and corporate sustainability practices.",
-    services: ["Research", "Sustainability", "Policy"],
-    expertise: ["Environmental Policy", "Sustainability Frameworks", "Climate Research", "Corporate ESG", "Policy Advocacy"],
+    services: ["Environmental Policy", "Sustainability Frameworks", "Climate Research", "Corporate ESG", "Policy Advocacy"],
+    expertise: ["Research", "Sustainability", "Policy"],
     institution: "Vrije Universiteit Brussel",
     image: "/images/notes/movements/richa-sharma.png",
+    stats: { projects: 8, satisfaction: "92%", experience: "7y" },
   },
   "5": {
     name: "Dr. Bhaskar Paul",
@@ -68,10 +73,11 @@ const gigs: Record<
     description:
       "Chemical engineering specialist with expertise in catalysis and green chemistry.",
     bio: "Dr. Bhaskar Paul is a researcher at the Max Planck Institute for Chemical Energy Conversion, specializing in heterogeneous catalysis and sustainable chemistry. His research aims to develop novel catalytic materials for clean energy applications and green chemical processes.",
-    services: ["Chemical Engineering", "Green Tech", "R&D"],
-    expertise: ["Heterogeneous Catalysis", "Green Chemistry", "Clean Energy", "Materials Science", "Process Engineering"],
+    services: ["Heterogeneous Catalysis", "Green Chemistry", "Clean Energy", "Materials Science", "Process Engineering"],
+    expertise: ["Chemical Engineering", "Green Tech", "R&D"],
     institution: "MPI CEC, Germany",
     image: "/images/notes/movements/bhaskar-paul.jpg",
+    stats: { projects: 14, satisfaction: "97%", experience: "12y" },
   },
   "6": {
     name: "Raman Kumar",
@@ -79,10 +85,11 @@ const gigs: Record<
     description:
       "Technology strategist bridging academic research with industry applications.",
     bio: "Raman Kumar is a technology strategist with deep expertise in translating academic research into viable commercial products. He advises universities and research labs on technology transfer, IP strategy, and building industry partnerships.",
-    services: ["Strategy", "Tech Transfer", "Innovation"],
-    expertise: ["Technology Transfer", "IP Strategy", "Industry Partnerships", "Innovation Management", "Commercialization"],
+    services: ["Technology Transfer", "IP Strategy", "Industry Partnerships", "Innovation Management", "Commercialization"],
+    expertise: ["Strategy", "Tech Transfer", "Innovation"],
     institution: "Independent Consultant",
     image: "/images/team/raman.jpg",
+    stats: { projects: 20, satisfaction: "95%", experience: "18y" },
   },
 };
 
@@ -203,20 +210,41 @@ export default async function GigDetailPage({
                   )}
                 </div>
 
-                {/* Services */}
+                {/* Expertise */}
                 <div className="p-6 border-t border-gray-100">
                   <p className="text-[11px] uppercase tracking-[0.15em] font-bold text-gray-500 mb-3">
-                    Services
+                    Expertise
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    {gig.services.map((service) => (
+                    {gig.expertise.map((item) => (
                       <span
-                        key={service}
+                        key={item}
                         className="text-xs px-3 py-1 rounded-full bg-gray-100 text-gray-600"
                       >
-                        {service}
+                        {item}
                       </span>
                     ))}
+                  </div>
+                </div>
+
+                {/* Stats */}
+                <div className="p-6 border-t border-gray-100">
+                  <p className="text-[11px] uppercase tracking-[0.15em] font-bold text-gray-500 mb-3">
+                    Gig Metrics
+                  </p>
+                  <div className="grid grid-cols-3 gap-3">
+                    <div className="text-center p-3 rounded-xl bg-gray-50">
+                      <p className="text-lg font-semibold text-gray-900">{gig.stats.projects}</p>
+                      <p className="text-[10px] uppercase tracking-wider text-gray-500">Projects</p>
+                    </div>
+                    <div className="text-center p-3 rounded-xl bg-gray-50">
+                      <p className="text-lg font-semibold text-gray-900">{gig.stats.satisfaction}</p>
+                      <p className="text-[10px] uppercase tracking-wider text-gray-500">Satisfaction</p>
+                    </div>
+                    <div className="text-center p-3 rounded-xl bg-gray-50">
+                      <p className="text-lg font-semibold text-gray-900">{gig.stats.experience}</p>
+                      <p className="text-[10px] uppercase tracking-wider text-gray-500">Experience</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -232,13 +260,13 @@ export default async function GigDetailPage({
                 <p className="text-gray-600 leading-relaxed">{gig.bio}</p>
               </div>
 
-              {/* Expertise */}
+              {/* Services */}
               <div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                  Areas of Expertise
+                  Services
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {gig.expertise.map((item) => (
+                  {gig.services.map((item) => (
                     <div
                       key={item}
                       className="flex items-center gap-3 p-4 rounded-xl bg-[var(--light)] border border-gray-100"

@@ -20,28 +20,22 @@ const series = [
     articles: [
       {
         id: "1",
-        title: "India's Semiconductor Ambitions: From Design to Fabrication",
-        excerpt:
-          "With $10 billion committed to the India Semiconductor Mission, experts debate whether India can become a global chip manufacturing hub by 2030.",
-        date: "Jan 22, 2026",
+        title: "India's Semiconductor Ambitions",
+        affiliation: "IIT Delhi",
         author: "Prof. V. Ramgopal Rao",
         image: "/images/notes/future/v-ramgopal-rao.jpg",
       },
       {
         id: "2",
-        title: "Dimensions of Fluids: Micro to Macro Scale Phenomena",
-        excerpt:
-          "Exploring the fascinating world of fluid dynamics across scales — from microfluidics in medical diagnostics to large-scale energy systems.",
-        date: "Jan 18, 2026",
+        title: "Dimensions of Fluids",
+        affiliation: "IIT Kharagpur",
         author: "Prof. Suman Chakraborty",
         image: "/images/notes/future/suman-chakraborty.png",
       },
       {
         id: "3",
-        title: "Molecular Biophysics: Decoding Life's Machinery",
-        excerpt:
-          "How structural biology and biophysics are revealing the intricate molecular machines that power living cells.",
-        date: "Jan 15, 2026",
+        title: "Molecular Biophysics",
+        affiliation: "IISc Bangalore",
         author: "Prof. Dipankar Chatterji",
         image: "/images/notes/future/dipankar-chatterji.jpg",
       },
@@ -55,19 +49,15 @@ const series = [
     articles: [
       {
         id: "1",
-        title: "Water Scarcity in Urban India: Engineering Solutions at Scale",
-        excerpt:
-          "With 21 Indian cities expected to run out of groundwater, researchers and civic leaders discuss scalable solutions.",
-        date: "Jan 20, 2026",
+        title: "Urban Water Scarcity",
+        affiliation: "CareMother",
         author: "Dr. Shantanu Pathak",
         image: "/images/notes/challenges/shantanu-pathak.png",
       },
       {
         id: "2",
-        title: "IYASO: Transforming Healthcare with Data Analytics",
-        excerpt:
-          "How AI-driven diagnostics and data analytics platforms are optimising healthcare delivery across India.",
-        date: "Jan 16, 2026",
+        title: "Healthcare Data Analytics",
+        affiliation: "IYASO",
         author: "Viraj Kulkarni",
         image: "/images/notes/challenges/viraj-kulkarni.png",
       },
@@ -81,19 +71,15 @@ const series = [
     articles: [
       {
         id: "1",
-        title: "From IIT Kharagpur to Max Planck: Navigating Research Cultures",
-        excerpt:
-          "The transition from Indian academia to European research culture brings unexpected challenges and profound growth opportunities.",
-        date: "Jan 24, 2026",
+        title: "Navigating Research Cultures",
+        affiliation: "MPI CEC, Germany",
         author: "Dr. Bhaskar Paul",
         image: "/images/notes/movements/bhaskar-paul.jpg",
       },
       {
         id: "2",
-        title: "Finding Home in Brussels: A Researcher's Dual Identity",
-        excerpt:
-          "Building a research career while maintaining connections to roots — the journey of an Indian researcher in Belgium.",
-        date: "Jan 20, 2026",
+        title: "Finding Home in Brussels",
+        affiliation: "Vrije Universiteit Brussel",
         author: "Dr. Richa Sharma",
         image: "/images/notes/movements/richa-sharma.png",
       },
@@ -181,21 +167,12 @@ export default function NotesPage() {
                       )}
                     </div>
                     <div className="p-5">
-                      <h3 className="text-sm font-medium text-gray-900 group-hover:text-[var(--gold)] transition-colors line-clamp-2 mb-2">
+                      <h3 className="text-base font-medium text-gray-900 group-hover:text-[var(--gold)] transition-colors line-clamp-2 mb-3">
                         {article.title}
                       </h3>
-                      <p className="text-xs text-gray-500 line-clamp-2 mb-3">
-                        {article.excerpt}
-                      </p>
-                      <div className="flex items-center justify-between text-xs text-gray-400">
-                        <span className="flex items-center gap-1">
-                          <User size={10} />
-                          {article.author}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <Calendar size={10} />
-                          {article.date}
-                        </span>
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm text-gray-700">{article.author}</span>
+                        <span className="text-xs text-gray-400">{article.affiliation}</span>
                       </div>
                     </div>
                   </article>

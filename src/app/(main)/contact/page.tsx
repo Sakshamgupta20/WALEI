@@ -1,16 +1,19 @@
 "use client";
 
 import { useState, FormEvent } from "react";
-import { Mail, Users, Globe, Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
+import { Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 
 const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "";
 
 const SUBJECT_OPTIONS: { value: string; label: string }[] = [
-  { value: "partnership", label: "Partnership Inquiry" },
+  { value: "partnership", label: "Partnership / Collaboration" },
+  { value: "advisory", label: "Advisory Board" },
+  { value: "patents", label: "Patents" },
+  { value: "startup", label: "Start-up Inventory" },
+  { value: "gigs", label: "Gigs" },
+  { value: "media", label: "Media Enquiry" },
   { value: "sponsorship", label: "Sponsorship" },
-  { value: "collaboration", label: "Research Collaboration" },
-  { value: "media", label: "Media Inquiry" },
-  { value: "general", label: "General Question" },
+  { value: "general", label: "General" },
 ];
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
@@ -90,97 +93,7 @@ export default function ContactPage() {
       {/* Contact Content */}
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
-          <div className="grid lg:grid-cols-2 gap-16">
-            {/* Contact Info */}
-            <div>
-              <h2 className="text-2xl font-light text-gray-900 mb-8">
-                Reach Out
-              </h2>
-
-              <div className="space-y-6">
-                <div className="flex items-start gap-4 p-5 bg-[var(--light)] rounded-2xl">
-                  <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
-                    style={{ backgroundColor: "var(--gold)" }}
-                  >
-                    <Mail size={20} className="text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-semibold text-gray-900 mb-1">
-                      Email
-                    </h3>
-                    <a
-                      href="mailto:walei.office@gmail.com"
-                      className="text-base text-gray-600 hover:text-[var(--gold)] transition-colors"
-                    >
-                      walei.office@gmail.com
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4 p-5 bg-[var(--light)] rounded-2xl">
-                  <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
-                    style={{ backgroundColor: "var(--gold)" }}
-                  >
-                    <Globe size={20} className="text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-semibold text-gray-900 mb-1">
-                      Global Presence
-                    </h3>
-                    <p className="text-base text-gray-600">
-                      349 Cities across 54 Countries
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4 p-5 bg-[var(--light)] rounded-2xl">
-                  <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
-                    style={{ backgroundColor: "var(--accent-movements)" }}
-                  >
-                    <Users size={20} className="text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-semibold text-gray-900 mb-1">
-                      Community
-                    </h3>
-                    <p className="text-base text-gray-600">
-                      IIT K, IIT B, IISc, IIT KGP, MPI, SDU, VUB...
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Stats Card */}
-              <div className="mt-10 p-8 rounded-2xl bg-[var(--dark)] text-white">
-                <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-400 mb-6">
-                  Our Reach
-                </h3>
-                <div className="grid grid-cols-2 gap-8">
-                  <div>
-                    <p
-                      className="text-4xl font-light"
-                      style={{ color: "var(--gold)" }}
-                    >
-                      349
-                    </p>
-                    <p className="text-sm text-gray-400 mt-1">Cities</p>
-                  </div>
-                  <div>
-                    <p
-                      className="text-4xl font-light"
-                      style={{ color: "var(--gold)" }}
-                    >
-                      54
-                    </p>
-                    <p className="text-sm text-gray-400 mt-1">Countries</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+          <div className="max-w-2xl mx-auto">
             {/* Contact Form */}
             <div className="bg-[var(--light)] rounded-3xl p-8 md:p-10">
               <h2 className="text-2xl font-light text-gray-900 mb-8">

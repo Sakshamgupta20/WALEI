@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, Calendar, User, Quote } from "lucide-react";
+import { ArrowLeft, User, Quote, Linkedin, Instagram, Share2 } from "lucide-react";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
@@ -24,7 +24,7 @@ const articles: Record<
   }
 > = {
   "1": {
-    title: "India's Semiconductor Ambitions: From Design to Fabrication",
+    title: "India's Semiconductor Ambitions",
     subtitle:
       "With $10 billion committed to the India Semiconductor Mission, experts debate whether India can become a global chip manufacturing hub by 2030.",
     date: "Jan 22, 2026",
@@ -44,7 +44,7 @@ const articles: Record<
     quoteAttribution: "Prof. V. Ramgopal Rao",
   },
   "2": {
-    title: "Dimensions of Fluids: Micro to Macro Scale Phenomena",
+    title: "Dimensions of Fluids",
     subtitle:
       "From lab-on-a-chip devices to large-scale industrial flows, the science of fluid dynamics is reshaping medicine, energy, and engineering at every scale.",
     date: "Jan 18, 2026",
@@ -65,7 +65,7 @@ const articles: Record<
     quoteAttribution: "Prof. Suman Chakraborty",
   },
   "3": {
-    title: "Molecular Biophysics: Decoding Life's Machinery",
+    title: "Molecular Biophysics",
     subtitle:
       "With over 200 peer-reviewed publications and a Padma Shri to his name, Prof. Dipankar Chatterji has spent decades unravelling the molecular mechanisms that govern bacterial life — and his work is far from finished.",
     date: "Jan 15, 2026",
@@ -86,7 +86,7 @@ const articles: Record<
     quoteAttribution: "Prof. Dipankar Chatterji",
   },
   "4": {
-    title: "Organic Chemistry's New Frontiers in Drug Discovery",
+    title: "Frontiers in Organic Chemistry",
     subtitle:
       "From metalloproteins to water-soluble nanocarbons derived from low-grade coal, Prof. Sabyasachi Sarkar's work at the intersection of bioinorganic chemistry and nanoscience is charting new paths for medicine and materials.",
     date: "Jan 12, 2026",
@@ -106,7 +106,7 @@ const articles: Record<
     quoteAttribution: "Prof. Sabyasachi Sarkar",
   },
   "5": {
-    title: "Urban Policy and the Future of Indian Cities",
+    title: "Future of Indian Cities",
     subtitle:
       "As India's urban population surges past half a billion, the decisions made today about governance, infrastructure, and inclusion will determine whether Indian cities become engines of prosperity or crucibles of inequality.",
     date: "Jan 8, 2026",
@@ -194,12 +194,9 @@ export default async function NotesOfFutureDetailPage({
               Notes of Future
             </span>
           </div>
-          <h1 className="text-3xl md:text-4xl font-light text-white mb-4">
-            Exploring Tomorrow
+          <h1 className="text-3xl md:text-4xl font-light text-white">
+            {article.title}
           </h1>
-          <p className="text-base text-gray-400 max-w-2xl">
-            Conversations with visionary leaders shaping what comes next.
-          </p>
         </div>
       </section>
 
@@ -219,7 +216,7 @@ export default async function NotesOfFutureDetailPage({
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
             {/* Left: Article Text (2/3) */}
             <div className="lg:col-span-2">
-              {/* Title & Meta */}
+              {/* Author & Meta */}
               <div className="mb-8">
                 <span
                   className="text-[10px] uppercase tracking-wider font-bold px-3 py-1 rounded-full inline-block mb-4"
@@ -230,22 +227,22 @@ export default async function NotesOfFutureDetailPage({
                 >
                   Future
                 </span>
-                <h2 className="text-2xl font-light text-slate-900 mb-3">
-                  {article.title}
+                <h2 className="text-2xl md:text-3xl font-light text-slate-900 mb-2">
+                  {article.author}
                 </h2>
-                <p className="text-sm text-slate-600 leading-relaxed mb-4">
+                <p className="text-sm text-slate-500">
+                  {article.designation} · {article.institution}
+                </p>
+              </div>
+
+              {/* Introduction */}
+              <div className="mb-8">
+                <h3 className="text-xs uppercase tracking-wider font-semibold text-slate-400 mb-3">
+                  Introduction
+                </h3>
+                <p className="text-base text-slate-700 leading-relaxed">
                   {article.subtitle}
                 </p>
-                <div className="flex items-center gap-4 text-sm text-slate-500">
-                  <span className="flex items-center gap-1.5">
-                    <User size={12} />
-                    {article.author}
-                  </span>
-                  <span className="flex items-center gap-1.5">
-                    <Calendar size={12} />
-                    {article.date}
-                  </span>
-                </div>
               </div>
 
               {/* Body */}
@@ -257,33 +254,14 @@ export default async function NotesOfFutureDetailPage({
                 ))}
               </div>
 
-              {/* Quote Card */}
-              <div className="mt-8 rounded-xl bg-white border border-slate-200 p-6 md:p-8">
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 mt-1">
-                    <Quote
-                      size={24}
-                      className="text-[var(--gold)] opacity-60"
-                    />
-                  </div>
-                  <div>
-                    <p className="text-lg text-slate-800 italic leading-relaxed mb-3 font-serif">
-                      &ldquo;{article.quote}&rdquo;
-                    </p>
-                    <p className="text-sm text-slate-500 font-medium">
-                      &mdash; {article.quoteAttribution}
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
 
             {/* Right: Professor Image & Info (1/3) */}
             <div className="lg:col-span-1">
               <div className="sticky top-24">
-                <div className="rounded-xl overflow-hidden bg-white border border-slate-200">
+                <div className="rounded-2xl overflow-hidden bg-white border border-slate-200">
                   {/* Image */}
-                  <div className="aspect-[3/4] relative bg-gradient-to-br from-slate-100 to-slate-200">
+                  <div className="aspect-square relative bg-gradient-to-br from-slate-100 to-slate-200">
                     {article.image ? (
                       <Image
                         src={`${basePath}${article.image}`}
@@ -312,9 +290,46 @@ export default async function NotesOfFutureDetailPage({
                   </div>
                 </div>
 
+                {/* Quote */}
+                <div className="mt-6 rounded-2xl bg-white border border-slate-200 p-5">
+                  <Quote size={20} className="text-[var(--gold)] opacity-60 mb-3" />
+                  <p className="text-sm text-slate-700 italic leading-relaxed mb-2 font-serif">
+                    &ldquo;{article.quote}&rdquo;
+                  </p>
+                  <p className="text-xs text-slate-500">
+                    &mdash; {article.quoteAttribution}
+                  </p>
+                </div>
+
+                {/* Social Share */}
+                <div className="mt-6 flex items-center gap-3">
+                  <a
+                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://walei.org/notes-of-future/${id}`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center w-10 h-10 rounded-full bg-white border border-slate-200 text-slate-500 hover:text-[#0077b5] hover:border-[#0077b5] transition-colors"
+                  >
+                    <Linkedin size={16} />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/walei_official/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center w-10 h-10 rounded-full bg-white border border-slate-200 text-slate-500 hover:text-[#E4405F] hover:border-[#E4405F] transition-colors"
+                  >
+                    <Instagram size={16} />
+                  </a>
+                  <a
+                    href={`mailto:?subject=${encodeURIComponent(article.title)}&body=${encodeURIComponent(`https://walei.org/notes-of-future/${id}`)}`}
+                    className="flex items-center justify-center w-10 h-10 rounded-full bg-white border border-slate-200 text-slate-500 hover:text-[var(--gold)] hover:border-[var(--gold)] transition-colors"
+                  >
+                    <Share2 size={16} />
+                  </a>
+                </div>
+
                 {/* LinkedIn Card */}
                 {article.linkedinCard && (
-                  <div className="mt-6 rounded-xl overflow-hidden border border-slate-200 shadow-sm">
+                  <div className="mt-6 rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
                     <Image
                       src={`${basePath}${article.linkedinCard}`}
                       alt={`${article.author} - Featured on LinkedIn`}

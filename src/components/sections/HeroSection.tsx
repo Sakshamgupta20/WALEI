@@ -46,9 +46,10 @@ export function HeroSection() {
             </h1>
 
             <p className="text-base md:text-lg text-gray-400 mb-10 max-w-lg leading-relaxed">
-              A global platform where scientists and researchers deliver
-              evidence-based insights to policymakers — shaping climate action,
-              AI governance, and the future of humanity.
+              WALEI is generation of innovation infrastructure for the lifecycle
+              of an idea accessible to everyone. Experimentation, advances into
+              protected assets, skilled collaborations, strategic alliances, and
+              scalable ventures for the future
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">

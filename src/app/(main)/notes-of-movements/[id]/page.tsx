@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, Calendar, User, Quote } from "lucide-react";
+import { ArrowLeft, User, Quote, Linkedin, Instagram, Share2 } from "lucide-react";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
@@ -24,7 +24,7 @@ const articles: Record<
   }
 > = {
   "1": {
-    title: "From IIT Kharagpur to Max Planck: Navigating Research Cultures",
+    title: "Navigating Research Cultures",
     subtitle:
       "The transition from Indian academia to European research culture brings unexpected challenges and profound growth opportunities.",
     date: "Jan 24, 2026",
@@ -46,7 +46,7 @@ const articles: Record<
     quoteAttribution: "Dr. Bhaskar Paul",
   },
   "2": {
-    title: "Finding Home in Brussels: A Researcher's Dual Identity",
+    title: "Finding Home in Brussels",
     subtitle:
       "An environmental scientist reflects on building a life between continents while pursuing sustainability research in the heart of Europe.",
     date: "Jan 20, 2026",
@@ -66,7 +66,7 @@ const articles: Record<
     quoteAttribution: "Dr. Richa Sharma",
   },
   "3": {
-    title: "The German Research Landscape: Precision Meets Intuition",
+    title: "German Research Landscape",
     subtitle:
       "Adapting to German academic culture reveals surprising complementarities between methodical European approaches and the intuitive problem-solving fostered by Indian training.",
     date: "Jan 15, 2026",
@@ -86,7 +86,7 @@ const articles: Record<
     quoteAttribution: "Dr. Kartikay Sharma",
   },
   "4": {
-    title: "Alpine Perspectives: Science at EPFL",
+    title: "Science at EPFL",
     subtitle:
       "At one of Europe's premier technical universities, an Indian researcher discovers that Swiss precision and Indian intuition can coexist — and that the mountains have lessons of their own.",
     date: "Jan 10, 2026",
@@ -106,7 +106,7 @@ const articles: Record<
     quoteAttribution: "Dr. Deepika Sardana",
   },
   "5": {
-    title: "The Fellowship Journey: Marie Curie in Copenhagen",
+    title: "Marie Curie in Copenhagen",
     subtitle:
       "A Marie Sk\u0142odowska-Curie fellowship takes an Indian researcher to Denmark, where Scandinavian research culture and the art of building a life abroad converge.",
     date: "Jan 6, 2026",
@@ -194,13 +194,9 @@ export default async function NotesOfMovementsDetailPage({
               Notes of Movements
             </span>
           </div>
-          <h1 className="text-3xl md:text-4xl font-light text-white mb-4">
-            Living Between Places
+          <h1 className="text-3xl md:text-4xl font-light text-white">
+            {article.title}
           </h1>
-          <p className="text-base text-gray-400 max-w-2xl">
-            Personal reflections from NRIs abroad. Stories of transition,
-            cross-cultural identity, and becoming across borders.
-          </p>
         </div>
       </section>
 
@@ -220,7 +216,7 @@ export default async function NotesOfMovementsDetailPage({
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
             {/* Left: Article Text (2/3) */}
             <div className="lg:col-span-2">
-              {/* Title & Meta */}
+              {/* Author & Meta */}
               <div className="mb-8">
                 <span
                   className="text-[10px] uppercase tracking-wider font-bold px-3 py-1 rounded-full inline-block mb-4"
@@ -231,22 +227,22 @@ export default async function NotesOfMovementsDetailPage({
                 >
                   Movement
                 </span>
-                <h2 className="text-2xl font-light text-gray-900 mb-3">
-                  {article.title}
+                <h2 className="text-2xl md:text-3xl font-light text-gray-900 mb-2">
+                  {article.author}
                 </h2>
-                <p className="text-sm text-gray-600 leading-relaxed mb-4">
+                <p className="text-sm text-gray-500">
+                  {article.designation} · {article.institution}
+                </p>
+              </div>
+
+              {/* Introduction */}
+              <div className="mb-8">
+                <h3 className="text-xs uppercase tracking-wider font-semibold text-gray-400 mb-3">
+                  Introduction
+                </h3>
+                <p className="text-base text-gray-700 leading-relaxed">
                   {article.subtitle}
                 </p>
-                <div className="flex items-center gap-4 text-sm text-gray-500">
-                  <span className="flex items-center gap-1.5">
-                    <User size={12} />
-                    {article.author}
-                  </span>
-                  <span className="flex items-center gap-1.5">
-                    <Calendar size={12} />
-                    {article.date}
-                  </span>
-                </div>
               </div>
 
               {/* Body */}
@@ -258,30 +254,14 @@ export default async function NotesOfMovementsDetailPage({
                 ))}
               </div>
 
-              {/* Quote Card */}
-              <div className="mt-8 rounded-xl bg-white border border-gray-200 p-6 md:p-8">
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 mt-1">
-                    <Quote size={24} className="text-[#6B5B95] opacity-60" />
-                  </div>
-                  <div>
-                    <p className="text-lg text-gray-800 italic leading-relaxed mb-3 font-serif">
-                      &ldquo;{article.quote}&rdquo;
-                    </p>
-                    <p className="text-sm text-gray-500 font-medium">
-                      &mdash; {article.quoteAttribution}
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
 
             {/* Right: Professor Image & Info (1/3) */}
             <div className="lg:col-span-1">
               <div className="sticky top-24">
-                <div className="rounded-xl overflow-hidden bg-white border border-gray-200">
+                <div className="rounded-2xl overflow-hidden bg-white border border-gray-200">
                   {/* Image */}
-                  <div className="aspect-[3/4] relative bg-gradient-to-br from-gray-100 to-gray-200">
+                  <div className="aspect-square relative bg-gradient-to-br from-gray-100 to-gray-200">
                     {article.image ? (
                       <Image
                         src={`${basePath}${article.image}`}
@@ -310,9 +290,46 @@ export default async function NotesOfMovementsDetailPage({
                   </div>
                 </div>
 
+                {/* Quote */}
+                <div className="mt-6 rounded-2xl bg-white border border-gray-200 p-5">
+                  <Quote size={20} className="text-[#6B5B95] opacity-60 mb-3" />
+                  <p className="text-sm text-gray-700 italic leading-relaxed mb-2 font-serif">
+                    &ldquo;{article.quote}&rdquo;
+                  </p>
+                  <p className="text-xs text-gray-500">
+                    &mdash; {article.quoteAttribution}
+                  </p>
+                </div>
+
+                {/* Social Share */}
+                <div className="mt-6 flex items-center gap-3">
+                  <a
+                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://walei.org/notes-of-movements/${id}`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center w-10 h-10 rounded-full bg-white border border-gray-200 text-gray-500 hover:text-[#0077b5] hover:border-[#0077b5] transition-colors"
+                  >
+                    <Linkedin size={16} />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/walei_official/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center w-10 h-10 rounded-full bg-white border border-gray-200 text-gray-500 hover:text-[#E4405F] hover:border-[#E4405F] transition-colors"
+                  >
+                    <Instagram size={16} />
+                  </a>
+                  <a
+                    href={`mailto:?subject=${encodeURIComponent(article.title)}&body=${encodeURIComponent(`https://walei.org/notes-of-movements/${id}`)}`}
+                    className="flex items-center justify-center w-10 h-10 rounded-full bg-white border border-gray-200 text-gray-500 hover:text-[var(--gold)] hover:border-[var(--gold)] transition-colors"
+                  >
+                    <Share2 size={16} />
+                  </a>
+                </div>
+
                 {/* LinkedIn Card */}
                 {article.linkedinCard && (
-                  <div className="mt-6 rounded-xl overflow-hidden border border-gray-200 shadow-sm">
+                  <div className="mt-6 rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
                     <Image
                       src={`${basePath}${article.linkedinCard}`}
                       alt={`${article.author} - Featured on LinkedIn`}
