@@ -63,12 +63,12 @@ export function PerspectivesSection() {
               className="group overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-xl transition-all duration-500"
             >
               {/* Image */}
-              <div className="aspect-[16/10] relative overflow-hidden">
+              <div className="aspect-[4/3] relative overflow-hidden">
                 <Image
                   src={`${basePath}${item.image}`}
                   alt={item.author}
                   fill
-                  className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                  className="object-cover object-[center_20%] group-hover:scale-105 transition-transform duration-700"
                 />
                 {/* Category badge */}
                 <div

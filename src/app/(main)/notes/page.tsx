@@ -8,7 +8,7 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 export const metadata: Metadata = {
   title: "Notes | WALEI",
   description:
-    "All notes across Future, Challenges, and Movements — conversations with leaders shaping science, policy, and identity.",
+    "All notes across Future, Challenges, and Movements, conversations with leaders shaping science, policy, and identity.",
 };
 
 const series = [
@@ -108,7 +108,7 @@ export default function NotesPage() {
           </h1>
           <p className="text-base text-gray-400 max-w-2xl">
             Conversations with leaders across science, innovation, and identity
-            — spanning Future, Challenges, and Movements.
+            , spanning Future, Challenges, and Movements.
           </p>
         </div>
       </section>
@@ -152,7 +152,7 @@ export default function NotesPage() {
                       style={{ backgroundColor: s.color }}
                     />
                     <div
-                      className="h-44 relative overflow-hidden"
+                      className="h-64 relative overflow-hidden"
                       style={{
                         background: `linear-gradient(135deg, ${s.color}15 0%, ${s.color}30 100%)`,
                       }}
@@ -162,7 +162,7 @@ export default function NotesPage() {
                           src={`${basePath}${article.image}`}
                           alt={article.author}
                           fill
-                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                          className="object-cover object-[center_20%] group-hover:scale-105 transition-transform duration-500"
                         />
                       )}
                     </div>

@@ -92,7 +92,7 @@ export default function NotesOfChallengesPage() {
           </h1>
           <p className="text-base text-gray-400 max-w-2xl">
             Discover how scientists and leaders tackle India&apos;s most pressing
-            challenges — from water scarcity and public health to climate adaptation.
+            challenges, from water scarcity and public health to climate adaptation.
           </p>
         </div>
       </section>
@@ -162,7 +162,7 @@ export default function NotesOfChallengesPage() {
                 <article className="rounded-xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all hover:-translate-y-1">
                   <div className="h-1 w-full" style={{ backgroundColor: accentColor }} />
                   <div
-                    className="h-48 relative overflow-hidden"
+                    className="h-64 relative overflow-hidden"
                     style={{ background: `linear-gradient(135deg, ${accentColor}15 0%, ${accentColor}30 100%)` }}
                   >
                     {article.image && (
@@ -170,7 +170,7 @@ export default function NotesOfChallengesPage() {
                         src={`${basePath}${article.image}`}
                         alt={article.author}
                         fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="object-cover object-[center_20%] group-hover:scale-105 transition-transform duration-500"
                       />
                     )}
                     <div

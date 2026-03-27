@@ -105,7 +105,7 @@ export async function generateMetadata({
   const { id } = await params;
   const gig = gigs[id];
   return {
-    title: gig ? `${gig.name} | Gigs` : "Gig Detail",
+    title: gig ? `${gig.name} | Foundry` : "Foundry Detail",
     description: gig?.description || "",
   };
 }
@@ -133,7 +133,7 @@ export default async function GigDetailPage({
             className="inline-flex items-center gap-2 text-sm font-medium text-[var(--gold)] hover:gap-3 transition-all"
           >
             <ArrowLeft size={14} />
-            Back to Gigs
+            Back to Foundry
           </Link>
         </div>
       </section>
@@ -154,7 +154,7 @@ export default async function GigDetailPage({
             className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors mb-6"
           >
             <ArrowLeft size={14} />
-            Back to Gigs
+            Back to Foundry
           </Link>
           <div className="flex items-center gap-3 mb-4">
             <div className="w-8 h-[2px] bg-gradient-to-r from-transparent to-[var(--gold)]" />
@@ -283,7 +283,7 @@ export default async function GigDetailPage({
                 <div className="flex items-center gap-3 mb-2">
                   <Mail size={20} className="text-[var(--gold)]" />
                   <h3 className="text-xl font-semibold text-gray-900">
-                    Get in Touch
+                    Connect
                   </h3>
                 </div>
                 <p className="text-sm text-gray-600 mb-6 leading-relaxed">

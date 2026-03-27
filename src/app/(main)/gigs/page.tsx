@@ -95,7 +95,7 @@ export default function GigsPage() {
             </span>
           </div>
           <h1 className="text-3xl md:text-4xl font-light text-white mb-6">
-            Gigs
+            Foundry
           </h1>
           <p className="text-lg text-gray-400 max-w-2xl leading-relaxed">
             Connect with verified experts for consulting, research collaboration, and specialized services.
@@ -188,7 +188,7 @@ export default function GigsPage() {
                 <Search size={24} className="text-gray-400" />
               </div>
               <p className="text-gray-500">
-                No gigs found matching your search.
+                No results found matching your search.
               </p>
             </div>
           )}

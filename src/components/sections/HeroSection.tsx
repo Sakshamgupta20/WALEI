@@ -62,7 +62,7 @@ export function HeroSection() {
                 href="/publish"
                 className="px-8 py-4 text-white border border-white/30 font-semibold text-sm tracking-wide hover:bg-white/10 hover:border-white/50 transition-all duration-300 text-center"
               >
-                Tell us what you think?
+                Do you have Notes?
               </Link>
             </div>
 
@@ -97,7 +97,7 @@ export function HeroSection() {
               {/* Center label */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <p className="text-[11px] uppercase tracking-[0.2em] text-white/25 font-semibold text-center leading-relaxed">
-                  Science<br />&amp; Innovation
+                  WALEI
                 </p>
               </div>
 

@@ -7,9 +7,12 @@ export function MilieuSection() {
       <div className="max-w-[1200px] mx-auto px-5 md:px-8">
         {/* Section Header */}
         <div className="mb-10">
-          <h2 className="font-serif text-3xl md:text-4xl font-light text-gray-900">
+          <h2 className="font-serif text-3xl md:text-4xl font-light text-gray-900 mb-3">
             Milieu
           </h2>
+          <p className="text-gray-500 max-w-2xl leading-relaxed">
+            Explore innovations and advanced technologies from India&apos;s leading institutions for industrial licensing and strategic collaboration.
+          </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
@@ -49,10 +52,18 @@ export function MilieuSection() {
                   Short-term research solutions for specialized research projects.
                 </p>
               </div>
-              <span className="text-sm font-semibold text-[var(--accent-challenges)] flex-shrink-0">
+              <span className="text-sm font-semibold flex-shrink-0" style={{ color: "var(--gold)" }}>
                 42 New
               </span>
             </Link>
+
+            {/* Foundry card */}
+            <div className="p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Foundry</h3>
+              <p className="text-sm text-gray-500 leading-relaxed">
+                Connect with verified specialized expertise across the innovation landscape, from operational mandates, consulting, and research synergy to talent development.
+              </p>
+            </div>
           </div>
 
           {/* Right column - Startups featured card */}
@@ -68,14 +79,17 @@ export function MilieuSection() {
                 </span>
               </div>
               <h3 className="text-2xl md:text-3xl font-semibold text-white mb-3 leading-tight">
-                High-Growth Frontiers
+                Deep-tech Frontiers
               </h3>
               <p className="text-sm text-gray-400 leading-relaxed max-w-sm">
-                Incubating the next generation of deep-tech ventures transforming laboratory breakthroughs into market-ready solutions.
+                Explore science-based ventures emerging from India&apos;s premier research ecosystem, navigating the path from discovery to impact.
               </p>
             </div>
             <div className="mt-6">
-              <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[var(--accent-challenges)] text-white text-xs font-bold uppercase tracking-wider group-hover:opacity-90 transition-opacity">
+              <span
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-white text-xs font-bold uppercase tracking-wider group-hover:opacity-90 transition-opacity"
+                style={{ backgroundColor: "var(--gold)" }}
+              >
                 Explore Ventures
               </span>
             </div>

@@ -87,7 +87,7 @@ export default function AboutPage() {
                   wisdom of visionary leaders from across industries and disciplines.
                 </p>
                 <p>
-                  We believe that every leader has a unique story—a journey filled with
+                  We believe that every leader has a unique story, a journey filled with
                   challenges overcome, lessons learned, and insights gained. These
                   experiences, when shared, have the power to inspire and guide the
                   next generation of innovators and changemakers.

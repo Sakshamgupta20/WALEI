@@ -29,33 +29,150 @@ const patents: Record<
     abstract: string[];
     usps: string[];
     collaborationOptions: string[];
+    email?: string;
+    link?: string;
+    authors?: string[];
   }
 > = {
-  "1": {
-    title: "Nano-scale Drug Delivery System",
-    patentNo: "IN202341045678",
-    patentee: "Dr. Suman Chakraborty",
-    designation: "Professor, Department of Mechanical Engineering",
-    institution: "IIT Kharagpur",
-    domain: "Biomedical Engineering",
+  "SS001-1": {
+    title: "Process for H2O2-Mediated Near Ambient Condition Conversion of Nitrogen Source to Ammonia",
+    patentNo: "568389",
+    patentee: "Dr. Sumit Kumar Sonkar",
+    designation: "Professor",
+    institution: "Malaviya National Institute of Technology, Jaipur, India",
+    domain: "Chemical / Green / Agriculture",
     status: "Granted",
-    duration: "2023 - 2043",
-    jurisdiction: "India",
+    duration: "20 years from 19th December 2024",
+    jurisdiction: "India (Indian Patent Office)",
+    authors: ["Vishrant Kumar", "Rohit", "Anjali Kumari Garg", "Sumit Kumar Sonkar"],
     abstract: [
-      "The present invention relates to a novel nano-scale drug delivery system comprising biocompatible polymer nanoparticles functionalised with targeting ligands for site-specific therapeutic delivery. The system utilises a microfluidic fabrication process that enables precise control over particle size distribution (50-200 nm), drug encapsulation efficiency (>85%), and surface charge characteristics.",
-      "The drug delivery vehicle employs a pH-responsive release mechanism that remains stable under physiological conditions (pH 7.4) while triggering controlled drug release in the acidic tumour microenvironment (pH 5.5-6.5). This selective release profile minimises systemic toxicity while maximising therapeutic concentration at the target site.",
-      "In vitro studies demonstrate a 4.7-fold improvement in drug bioavailability compared to conventional formulations, with sustained release kinetics extending over 72 hours. In vivo studies in murine models show significant tumour regression with reduced off-target effects. The microfluidic fabrication approach enables scalable, reproducible manufacturing suitable for clinical translation.",
-      "The invention further encompasses a surface modification strategy using PEGylation and antibody conjugation that extends circulation half-life by 3.2x while maintaining targeting specificity. This dual-functional coating addresses two of the most significant challenges in nanomedicine: rapid clearance by the reticuloendothelial system and insufficient accumulation at disease sites.",
+      "Aspects of present disclosure relate to H₂O₂-mediated near ambient condition thermal conversion of nitrogen source to Ammonia over iron filings. The process comprising of mixing H₂O₂ and H₂O to form a solution; adding a nitrogen source and iron fillings; packing resulting mixture into a reactor and heating at a pre-defined temperature to enable reduction reaction; and cooling down the reactor at a pre-defined time for stopping the reaction.",
+      "This approach aims to develop methods for H₂O₂ mediated near ambient conditioned NO₃⁻ and nitrogen gas (N₂) into ammonia (NH₃) effectively. A promising strategy involves the thermal reduction of NO₃⁻ and N₂ using low-cost iron metal filings in the presence of hydrogen peroxide (H₂O₂) at 100°C.",
+      "This method has demonstrated significant yields, with approximately 65 mM and 40 mM of produced NH₃ in reduction NO₃⁻ and N₂, respectively. The produced NH₃ is quantified and identified by using the Indophenol blue method and ¹H NMR spectroscopy, respectively.",
     ],
     usps: [
-      "pH-responsive release mechanism with >85% encapsulation efficiency",
-      "4.7x improvement in drug bioavailability vs. conventional formulations",
-      "Scalable microfluidic manufacturing process for clinical translation",
-      "PEGylated surface with antibody conjugation for extended circulation (3.2x half-life)",
-      "Sustained release kinetics over 72 hours with precise dosage control",
-      "Biocompatible and biodegradable polymer matrix with minimal toxicity",
+      "Low-energy, ambient-condition synthesis",
+      "H₂O₂-mediated waste-to-ammonia chemistry",
+      "Scalable, decentralized, onsite modularity",
+      "Renewable-ready, zero-carbon production",
+    ],
+    collaborationOptions: ["Joint Venture", "Licensing"],
+    email: "sksonkar.chy@mnit.ac.in",
+  },
+  "SS001-2": {
+    title: "A Method of Utilization of Waste Industrial Iron Dust for Sunlight-Assisted Photoreduction of Toxic Cr(VI)",
+    patentNo: "573068",
+    patentee: "Dr. Sumit Kumar Sonkar",
+    designation: "Professor",
+    institution: "Malaviya National Institute of Technology, Jaipur, India",
+    domain: "Chemical / Catalyst / Magnetic",
+    status: "Granted",
+    duration: "20 years from 5th September 2022",
+    jurisdiction: "India (Indian Patent Office)",
+    authors: ["Sumit Kumar Sonkar", "Jaidev Kaushik", "Twinkle", "Satyesh Raj Anand"],
+    abstract: [
+      "The present invention provides reduced iron nano particles as photo catalyst synthesized from industrial iron dust for treating toxic Cr(VI) ions present in the wastewater.",
+      "The present invention provides the most sustainable way that can not only remove the hazardous heavy Cr(VI) metal ion from wastewater but also solves the problem of inert waste iron dust that is liberated in tons from industry on regular basis and cause various diseases.",
+    ],
+    usps: [
+      "Solar-driven reduction",
+      "100% Magnetic recovery",
+      "High-load treatment",
+      "Zero-waste valorization",
+    ],
+    collaborationOptions: ["Joint Venture", "Licensing"],
+    email: "sksonkar.chy@mnit.ac.in",
+  },
+  "RR002-1": {
+    title: "Polymer Anchored Microelectromechanical System (MEMS) Cantilever and Method of Fabricating the Same",
+    patentNo: "435267 / US20150203345A1",
+    patentee: "Prof. Ramgopal Rao",
+    designation: "Professor",
+    institution: "Indian Institute of Technology Bombay",
+    domain: "Electronic / Polymer / Piezo",
+    status: "Granted",
+    duration: "15 August 2017 – 21 January 2035",
+    jurisdiction: "USA",
+    authors: ["Patkar Rajul Sachin", "Apte Prakash Ramchandra", "Rao Valipe Ramgopal"],
+    link: "https://patents.google.com/patent/US20150203345A1/en",
+    abstract: [
+      "A microelectromechanical system (MEMS) cantilever includes a base and a cantilever beam projecting from the base. The cantilever beam includes a piezo layer sandwiched between an inorganic material structural layer and an inorganic material encapsulating and immobilising layer. A pair of electrical contacts are formed in the encapsulating and immobilising layer in contact with the piezo layer. The base consists of polymer.",
+      "A method includes depositing a sacrificial layer on a substrate; forming a MEMS cantilever beam on the sacrificial layer by depositing an inorganic material structural layer thereon; depositing a piezo layer on the structural layer; and depositing an inorganic material encapsulating and immobilising layer on the piezo layer; forming a pair of electrical contacts in the encapsulating and immobilising layer in contact with the piezo layer; forming a polymer base for the cantilever beam; and etching the sacrificial layer to release the MEMS cantilever beam from the substrate.",
+    ],
+    usps: [
+      "High resonant frequency of 23.5 KHz",
+      "Low spring constant of 0.9 N/m",
+      "Reliable stability across 3 distinct mediums",
+      "Simple 5-step surface micromachining fabrication process",
+    ],
+    collaborationOptions: ["Tech Transfer"],
+  },
+  "RR002-2": {
+    title: "Micro Electro Mechanical System (MEMS) Based Wide-Band Polymer Photo-Detector",
+    patentNo: "459569 / US9786855B2",
+    patentee: "Prof. Ramgopal Rao",
+    designation: "Professor",
+    institution: "Indian Institute of Technology Bombay",
+    domain: "Photonics / MEMS / Polymers",
+    status: "Granted",
+    duration: "10 October 2017 – 28 December 2035",
+    jurisdiction: "USA",
+    authors: ["Sangita Chaki Roy", "Tapanendu Kundu", "V. Ramgopal Rao"],
+    link: "https://patents.google.com/patent/US9786855B2/en",
+    abstract: [
+      "A polymer based photo-detector has photoresponsivity in Ultraviolet, Visible, Near and Mid Infrared regions. The photo-detector comprises a single layer of polyvinyl alcohol (PVA) as a photoactive layer; with no additional buffer layer for accepting Ultraviolet, Visible and Infrared radiation as well as no buffer layer to block charge carrier injection.",
+      "The PVA layer's photoresponsivity is extended from Ultraviolet to Near Infrared by changing its nano-morphology on a low thermal device structure. The primarily photo-generated charge carriers diffuse through the amorphous part of the polymer layer and split into charge carriers on the electrodes or by the charge traps in the layer.",
+      "The charge carrier generation is in the picosecond range; thus the exciton and Polaron drift diffusion cause electrical conduction of the polymer layer under Ultraviolet illumination. The low thermal mass of the MEMS based structure reduces localized heating effect due to Infrared radiation, increasing responsivity of the photo-detector.",
+    ],
+    usps: [
+      "Broad spectral range from 200nm to 12 microns",
+      "High peak responsivity of 0.53 A/W",
+      "Fast rise time of 441ns signal recorded",
+      "Single 350nm layer simplifies the fabrication process",
+    ],
+    collaborationOptions: ["Tech Transfer"],
+  },
+  "SC003-1": {
+    title: "Point of Care (POC) Device for Facilitating Nucleic Acid Based Testing and Method Thereof",
+    patentNo: "US11440014B2",
+    patentee: "Prof. Suman Chakraborty",
+    designation: "Professor",
+    institution: "Indian Institute of Technology Kharagpur / Healthledger Diagnostics Pvt. Ltd.",
+    domain: "Biotechnology / Medical",
+    status: "Granted",
+    duration: "20 years from 13 September 2022",
+    jurisdiction: "USA",
+    authors: ["Nandita Kedia", "Sujay Kumar Biswas", "Saptarshi Banerjee", "Aditya Bandopadhyay", "Arindam Mondal", "Suman Chakraborty"],
+    link: "https://patents.google.com/patent/US11440014B2/en",
+    abstract: [
+      "A generic point of care based portable device and method thereof as a platform technology for detecting pathogenic infection via nucleic acid based testing achieving sample-to-result integration, comprising interconnected stand-alone modules: a thermal unit for executing piece-wise isothermal reactions in a pre-programmable concomitant fashion without necessitating in-between operative intervention; a colorimetric detection unit seamlessly interfaced with smartphone-app based analytics for detecting the target analyte.",
+      "The said platform technology is capable of detecting targeted pathogen-associated RNA by coupling additional complementary DNA probe hybridization combined with isothermal reaction purposed for reverse transcription of RNA followed by amplification of the resulting c-DNA as well as subsequent specific binding of the same in a single user-step in a concomitant fashion and its smartphone-enabled interpretation, in a generic modular format that renders operative suitability outside controlled laboratory environment in a user-friendly manner, with predictive accuracy favorably comparable with gold standard RT-PCR tests.",
+    ],
+    usps: [
+      "Integrated sample-to-result in one single step",
+      "Gold-standard accuracy with simple 50°C hybridization",
+      "Ultra-low-cost replacement for expensive Peltier thermocyclers",
+      "Rapid 4-step process eliminates manual pipetting",
     ],
     collaborationOptions: ["Tech Transfer", "Joint Venture", "Licensing"],
+  },
+  "SC003-2": {
+    title: "Hydrogel Microbeads Including Agarose Microbeads and a Process for Preparing the Same",
+    patentNo: "426258",
+    patentee: "Prof. Suman Chakraborty",
+    designation: "Professor",
+    institution: "Indian Institute of Technology Kharagpur",
+    domain: "Chemical / Hydrogel / Polymer",
+    status: "Granted",
+    duration: "20 years from 4th February 2022",
+    jurisdiction: "India",
+    authors: ["Jyotsana Priyadarshani", "Prasoon Awasthi", "Suman Chakraborty", "Soumen Das"],
+    abstract: [
+      "Hydrogel beads including agarose microbeads and a process of preparing the same is provided free of any oil, emulsifier and any other residual substances including solvents, chemical cross linkers, metal cations and specialized equipment.",
+      "The process could be attained out of sol-gel transition of polysaccharide polymer free of use of any oil or emulsifier followed by liquifying the gel and breaking into microbeads based on Rayleigh-Plateau based instability phenomena on a hydrophobic substrate, preferably PDMS substrate.",
+    ],
+    usps: [],
+    collaborationOptions: [],
   },
 };
 
@@ -188,26 +305,32 @@ export default async function PatentDetailPage({
                 </h3>
               </div>
               <div className="space-y-3 mb-6">
-                {patent.collaborationOptions.map((option, idx) => (
-                  <div
-                    key={idx}
-                    className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/10"
-                  >
-                    {option === "Tech Transfer" && (
-                      <Shield size={16} className="text-[var(--gold)]" />
-                    )}
-                    {option === "Joint Venture" && (
-                      <Handshake size={16} className="text-[var(--gold)]" />
-                    )}
-                    {option === "Licensing" && (
-                      <Award size={16} className="text-[var(--gold)]" />
-                    )}
-                    <span className="text-sm text-gray-200">{option}</span>
-                  </div>
-                ))}
+                {["Tech Transfer", "Joint Venture", "Licensing"].map((option, idx) => {
+                  const isOpen = patent.collaborationOptions.includes(option);
+                  return (
+                    <div
+                      key={idx}
+                      className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/10"
+                    >
+                      {option === "Tech Transfer" && (
+                        <Shield size={16} className="text-[var(--gold)]" />
+                      )}
+                      {option === "Joint Venture" && (
+                        <Handshake size={16} className="text-[var(--gold)]" />
+                      )}
+                      {option === "Licensing" && (
+                        <Award size={16} className="text-[var(--gold)]" />
+                      )}
+                      <span className="text-sm text-gray-200 flex-1">{option}</span>
+                      {isOpen && (
+                        <span className="w-2.5 h-2.5 rounded-full bg-green-500 flex-shrink-0" />
+                      )}
+                    </div>
+                  );
+                })}
               </div>
               <a
-                href={`mailto:walei.office@gmail.com?subject=Patent Inquiry - ${patent.patentNo}`}
+                href={`mailto:${patent.email || "walei.office@gmail.com"}?subject=Patent Inquiry - ${patent.patentNo}`}
                 className="inline-flex items-center gap-2 w-full justify-center px-5 py-3 rounded-xl bg-[var(--gold)] text-white text-sm font-medium hover:bg-[var(--primary-dark)] transition-colors"
               >
                 <Mail size={14} />

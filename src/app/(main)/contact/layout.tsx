@@ -3,7 +3,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with WALEI. Reach out for partnerships, collaborations, or general inquiries.",
+    "Connect with WALEI. Reach out for partnerships, collaborations, or general inquiries.",
 };
 
 export default function ContactLayout({

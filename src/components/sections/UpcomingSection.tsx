@@ -3,8 +3,6 @@ import { ArrowUpRight } from "lucide-react";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
-const WALEI_INSTAGRAM = "https://www.instagram.com/walei.official/";
-
 const upcomingNotes = [
   {
     category: "Notes of Future",
@@ -13,6 +11,7 @@ const upcomingNotes = [
     institution: "IIT KGP",
     color: "var(--accent-future)",
     image: "/images/notes/future/suman-chakraborty.png",
+    link: "https://www.linkedin.com/company/walei/",
   },
   {
     category: "Notes of Challenges",
@@ -21,6 +20,7 @@ const upcomingNotes = [
     institution: "Founder & CEO",
     color: "var(--accent-challenges)",
     image: "/images/notes/challenges/viraj-kulkarni.png",
+    link: "https://www.instagram.com/walei_official?igsh=cXFiYTR4c2tsOGZy",
   },
 ];
 
@@ -62,9 +62,9 @@ export function UpcomingSection() {
                   </span>
                 </div>
 
-                {/* Instagram arrow top-right */}
+                {/* Social link arrow top-right */}
                 <a
-                  href={WALEI_INSTAGRAM}
+                  href={note.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="absolute top-5 right-5"

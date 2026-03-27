@@ -48,7 +48,7 @@ const dropdownMenus = [
 ];
 
 const flatNavItems = [
-  { name: "Gigs", href: "/gigs" },
+  { name: "Foundry", href: "/gigs" },
   { name: "H&T", href: "/headlines" },
   { name: "Team", href: "/team" },
   // { name: "NEWS", href: "/news" },
@@ -180,7 +180,7 @@ export function Header() {
               className="ml-3 px-4 py-2 text-xs font-semibold text-white rounded-lg flex items-center gap-1.5 hover:opacity-90 transition-all"
               style={{ backgroundColor: "var(--gold)" }}
             >
-              Get in Touch
+              Connect
               <ArrowRight size={12} />
             </Link>
           </nav>
@@ -276,7 +276,7 @@ export function Header() {
             style={{ backgroundColor: "var(--gold)" }}
             onClick={() => setMobileMenuOpen(false)}
           >
-            Get in Touch
+            Connect
             <ArrowRight size={14} />
           </Link>
         </div>

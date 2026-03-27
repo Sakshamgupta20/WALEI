@@ -55,25 +55,17 @@ const advisors = [
 
 const partners = [
   {
-    name: "IIT Kharagpur",
-    role: "Academic Partner",
-    description: "Research collaboration and student engagement",
-  },
-  {
-    name: "IISc Bangalore",
-    role: "Research Partner",
-    description: "Scientific content and expert network",
-  },
-  {
-    name: "Max Planck Institute",
-    role: "International Partner",
-    description: "Global research network and NRI connections",
+    name: "Sivarsa",
+    role: "Strategic Partner",
+    description: "A strategy-driven digital agency specializing in growth and identity",
+    contact: "hello@sivarsa.com",
+    website: "sivarsa.com",
   },
 ];
 
 const tabs = [
   { id: "team", label: "CORE TEAM" },
-  { id: "advisors", label: "ADVISORS" },
+  // { id: "advisors", label: "ADVISORS" },
   { id: "partners", label: "STRATEGIC PARTNERS" },
   { id: "anthem", label: "ANTHEM" },
 ];
@@ -164,7 +156,7 @@ function TeamContent() {
                     The architect of our scientific consciousness and the visionary who
                     taught a young nation to dream in the language of atoms and stars.
                     This work is humbly dedicated to the spirit of &quot;Bhabha&apos;s
-                    India&quot; — a land not defined by its limitations, but by the
+                    India&quot;, a land not defined by its limitations, but by the
                     boundless horizon of its indigenous genius.
                   </p>
                   <p className="text-base text-gray-600 leading-relaxed">
@@ -188,7 +180,7 @@ function TeamContent() {
                       own borders.&quot;
                     </p>
                     <footer className="mt-3 text-sm font-medium text-gray-500">
-                      — Dr. Homi Jehangir Bhabha
+                      - Dr. Homi Jehangir Bhabha
                     </footer>
                   </blockquote>
                 </div>
@@ -201,38 +193,61 @@ function TeamContent() {
         <section className="py-10 md:py-14 bg-white">
           <div className="max-w-[1200px] mx-auto px-5 md:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {getActiveMembers().map((member, index) => (
-                <article
-                  key={index}
-                  className="rounded-xl overflow-hidden bg-white border border-gray-200 hover:shadow-lg transition-shadow"
-                >
-                  <div className="aspect-square bg-gradient-to-br from-gray-100 to-gray-200 relative overflow-hidden">
-                    {"image" in member && member.image ? (
-                      <Image
-                        src={`${basePath}${member.image}`}
-                        alt={member.name}
-                        fill
-                        className="object-cover object-top"
-                      />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center">
-                        <div className="w-20 h-20 rounded-full bg-gray-300 flex items-center justify-center text-2xl font-light text-gray-500">
-                          {member.name.charAt(0)}
-                        </div>
-                      </div>
-                    )}
+              {activeTab === "partners" ? (
+                /* Sivarsa Strategic Partner Card */
+                <article className="rounded-xl overflow-hidden bg-white border border-gray-200 hover:shadow-lg transition-shadow p-8 flex flex-col items-center text-center">
+                  <div className="w-24 h-24 relative rounded-full overflow-hidden bg-black mb-5">
+                    <Image
+                      src={`${basePath}/images/partners/sivarsa.png`}
+                      alt="Sivarsa"
+                      fill
+                      className="object-contain p-3"
+                    />
                   </div>
-                  <div className="p-5">
-                    <h3 className="text-base font-bold capitalize text-gray-900">
-                      {member.name}
-                    </h3>
-                    <p className="text-sm text-gray-500 uppercase tracking-wide">
-                      {member.role}
-                    </p>
-                    <p className="mt-2 text-sm text-gray-600">{member.description}</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-1">Sivarsa</h3>
+                  <p className="text-sm text-gray-500 uppercase tracking-wide mb-4">Strategic Partner</p>
+                  <p className="text-sm text-gray-600 leading-relaxed mb-5">
+                    A strategy-driven digital agency specializing in growth and identity
+                  </p>
+                  <div className="text-sm text-gray-500 space-y-1">
+                    <p>contact@sivarsa.com</p>
+                    <a href="https://sivarsa.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-700 transition-colors">sivarsa.com</a>
                   </div>
                 </article>
-              ))}
+              ) : (
+                getActiveMembers().map((member, index) => (
+                  <article
+                    key={index}
+                    className="rounded-xl overflow-hidden bg-white border border-gray-200 hover:shadow-lg transition-shadow"
+                  >
+                    <div className="aspect-square bg-gradient-to-br from-gray-100 to-gray-200 relative overflow-hidden">
+                      {"image" in member && member.image ? (
+                        <Image
+                          src={`${basePath}${member.image}`}
+                          alt={member.name}
+                          fill
+                          className="object-cover object-top"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center">
+                          <div className="w-20 h-20 rounded-full bg-gray-300 flex items-center justify-center text-2xl font-light text-gray-500">
+                            {member.name.charAt(0)}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                    <div className="p-5">
+                      <h3 className="text-base font-bold capitalize text-gray-900">
+                        {member.name}
+                      </h3>
+                      <p className="text-sm text-gray-500 uppercase tracking-wide">
+                        {member.role}
+                      </p>
+                      <p className="mt-2 text-sm text-gray-600">{member.description}</p>
+                    </div>
+                  </article>
+                ))
+              )}
 
               {/* About WALEI Card - constant across all tabs */}
               <article className="rounded-xl overflow-hidden bg-[var(--dark)] text-white p-6 flex flex-col justify-between">

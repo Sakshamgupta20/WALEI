@@ -14,7 +14,7 @@ export function TaglineSection() {
           </h2>
           <p className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
             WALEI brings together visionary leaders from across industries to
-            share their journeys, challenges, and insights—creating a platform
+            share their journeys, challenges, and insights, creating a platform
             where wisdom flows freely and inspiration knows no bounds.
           </p>
         </div>

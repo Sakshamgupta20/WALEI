@@ -27,7 +27,7 @@ const articles = [
     id: "2",
     title: "Dimensions of Fluids",
     excerpt:
-      "Exploring the fascinating world of fluid dynamics across scales — from microfluidics in medical diagnostics to large-scale energy systems.",
+      "Exploring the fascinating world of fluid dynamics across scales, from microfluidics in medical diagnostics to large-scale energy systems.",
     date: "Jan 18, 2026",
     author: "Prof. Suman Chakraborty",
     affiliation: "IIT Kharagpur",
@@ -94,7 +94,7 @@ export default function NotesOfFuturePage() {
             Exploring Tomorrow
           </h1>
           <p className="text-base text-gray-400 max-w-2xl">
-            Conversations with visionary leaders shaping what comes next — from
+            Conversations with visionary leaders shaping what comes next, from
             semiconductor policy and AI governance to clean energy and digital infrastructure.
           </p>
         </div>
@@ -166,7 +166,7 @@ export default function NotesOfFuturePage() {
                   {/* Series color accent line */}
                   <div className="h-1 w-full" style={{ backgroundColor: accentColor }} />
                   <div
-                    className="h-48 relative overflow-hidden"
+                    className="h-64 relative overflow-hidden"
                     style={{ background: `linear-gradient(135deg, ${accentColor}15 0%, ${accentColor}30 100%)` }}
                   >
                     {article.image && (
@@ -174,7 +174,7 @@ export default function NotesOfFuturePage() {
                         src={`${basePath}${article.image}`}
                         alt={article.author}
                         fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="object-cover object-[center_20%] group-hover:scale-105 transition-transform duration-500"
                       />
                     )}
                     <div

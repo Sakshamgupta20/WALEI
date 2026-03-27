@@ -27,7 +27,7 @@ const articles = [
     id: "2",
     title: "Finding Home in Brussels",
     excerpt:
-      "Building a research career while maintaining connections to roots — the journey of an Indian researcher in Belgium.",
+      "Building a research career while maintaining connections to roots, the journey of an Indian researcher in Belgium.",
     date: "Jan 20, 2026",
     author: "Dr. Richa Sharma",
     affiliation: "Vrije Universiteit Brussel",
@@ -48,7 +48,7 @@ const articles = [
     id: "4",
     title: "Science at EPFL",
     excerpt:
-      "Life at one of Europe's top technical universities — bridging Indian intuition with Swiss precision.",
+      "Life at one of Europe's top technical universities, bridging Indian intuition with Swiss precision.",
     date: "Jan 10, 2026",
     author: "Dr. Deepika Sardana",
     affiliation: "EPFL, Switzerland",
@@ -162,7 +162,7 @@ export default function NotesOfMomentsPage() {
                 <article className="rounded-xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all hover:-translate-y-1">
                   <div className="h-1 w-full" style={{ backgroundColor: accentColor }} />
                   <div
-                    className="h-48 relative overflow-hidden"
+                    className="h-64 relative overflow-hidden"
                     style={{ background: `linear-gradient(135deg, ${accentColor}15 0%, ${accentColor}30 100%)` }}
                   >
                     {article.image && (
@@ -170,7 +170,7 @@ export default function NotesOfMomentsPage() {
                         src={`${basePath}${article.image}`}
                         alt={article.author}
                         fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="object-cover object-[center_20%] group-hover:scale-105 transition-transform duration-500"
                       />
                     )}
                     <div

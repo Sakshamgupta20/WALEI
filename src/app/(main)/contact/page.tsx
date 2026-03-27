@@ -10,7 +10,7 @@ const SUBJECT_OPTIONS: { value: string; label: string }[] = [
   { value: "advisory", label: "Advisory Board" },
   { value: "patents", label: "Patents" },
   { value: "startup", label: "Start-up Inventory" },
-  { value: "gigs", label: "Gigs" },
+  { value: "gigs", label: "Foundry" },
   { value: "media", label: "Media Enquiry" },
   { value: "sponsorship", label: "Sponsorship" },
   { value: "general", label: "General" },
@@ -77,7 +77,7 @@ export default function ContactPage() {
               className="text-[11px] uppercase tracking-[0.2em] font-semibold"
               style={{ color: "var(--gold)" }}
             >
-              Get in Touch
+              Connect
             </span>
           </div>
           <h1 className="text-3xl md:text-4xl font-light text-white mb-6">
