@@ -39,6 +39,14 @@ const series = [
         author: "Prof. Dipankar Chatterji",
         image: "/images/notes/future/dipankar-chatterji.jpg",
       },
+      {
+        id: "5",
+        title: "Future of Indian Cities",
+        affiliation: "IIT Bombay",
+        author: "Prof. Shishir K. Jha",
+        image: "/images/notes/future/shishir-jha.jpg",
+        comingSoon: true,
+      },
     ],
   },
   {
@@ -60,6 +68,7 @@ const series = [
         affiliation: "IYASO",
         author: "Viraj Kulkarni",
         image: "/images/notes/challenges/viraj-kulkarni.png",
+        comingSoon: true,
       },
     ],
   },
@@ -140,13 +149,10 @@ export default function NotesPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {s.articles.map((article) => (
-                <Link
-                  key={article.id}
-                  href={`${s.href}/${article.id}`}
-                  className="group"
-                >
-                  <article className="rounded-xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all hover:-translate-y-1">
+              {s.articles.map((article) => {
+                const comingSoon = "comingSoon" in article && article.comingSoon;
+                const inner = (
+                  <article className={`rounded-xl overflow-hidden border border-gray-100 transition-all ${comingSoon ? "opacity-80" : "hover:shadow-lg hover:-translate-y-1"}`}>
                     <div
                       className="h-1 w-full"
                       style={{ backgroundColor: s.color }}
@@ -165,6 +171,13 @@ export default function NotesPage() {
                           className="object-cover object-[center_20%] group-hover:scale-105 transition-transform duration-500"
                         />
                       )}
+                      {comingSoon && (
+                        <div className="absolute inset-0 bg-black/50 flex items-center justify-center z-10">
+                          <span className="px-5 py-2 bg-white/90 text-gray-900 text-sm font-bold uppercase tracking-widest rounded-full">
+                            Coming Soon
+                          </span>
+                        </div>
+                      )}
                     </div>
                     <div className="p-5">
                       <h3 className="text-base font-medium text-gray-900 group-hover:text-[var(--gold)] transition-colors line-clamp-2 mb-3">
@@ -176,8 +189,13 @@ export default function NotesPage() {
                       </div>
                     </div>
                   </article>
-                </Link>
-              ))}
+                );
+                return comingSoon ? (
+                  <div key={article.id} className="group cursor-default">{inner}</div>
+                ) : (
+                  <Link key={article.id} href={`${s.href}/${article.id}`} className="group">{inner}</Link>
+                );
+              })}
             </div>
           </div>
         </section>

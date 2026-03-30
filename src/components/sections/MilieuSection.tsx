@@ -58,13 +58,6 @@ export function MilieuSection() {
               />
             </Link>
 
-            {/* Foundry card */}
-            <div className="p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Foundry</h3>
-              <p className="text-sm text-gray-500 leading-relaxed">
-                Connect with verified specialized expertise across the innovation landscape, from operational mandates, consulting, and research synergy to talent development.
-              </p>
-            </div>
           </div>
 
           {/* Right column - Startups featured card */}
