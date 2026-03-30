@@ -48,6 +48,7 @@ jobs:
           NEXT_PUBLIC_STATIC_EXPORT: "true"
           NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
           NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.NEXT_PUBLIC_SANITY_DATASET }}
+          NEXT_PUBLIC_WEB3FORMS_KEY: ${{ secrets.NEXT_PUBLIC_WEB3FORMS_KEY }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
