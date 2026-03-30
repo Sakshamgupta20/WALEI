@@ -279,35 +279,7 @@ export default async function GigDetailPage({
               </div>
 
               {/* Contact / CTA */}
-              <div className="rounded-xl bg-[var(--light)] border border-gray-100 p-8">
-                <div className="flex items-center gap-3 mb-2">
-                  <Mail size={20} className="text-[var(--gold)]" />
-                  <h3 className="text-xl font-semibold text-gray-900">
-                    Connect
-                  </h3>
-                </div>
-                <p className="text-sm text-gray-600 mb-6 leading-relaxed">
-                  Interested in working with {gig.name.split(" ")[0]}? Reach out
-                  to start a conversation about collaboration or to make an
-                  enquiry.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <a
-                    href={`mailto:walei.office@gmail.com?subject=Collaboration Request: ${gig.name}&body=Hi, I am interested in collaborating with ${gig.name}. Please share more details.`}
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[var(--gold)] text-white font-semibold rounded-xl hover:bg-[var(--gold-light)] transition-all text-sm"
-                  >
-                    <Handshake size={16} />
-                    Collaborate
-                  </a>
-                  <a
-                    href={`mailto:walei.office@gmail.com?subject=Enquiry: ${gig.name}&body=Hi, I have an enquiry regarding the services offered by ${gig.name}. Please share more details.`}
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-[var(--gold)] text-[var(--gold)] font-semibold rounded-xl hover:bg-[var(--gold)] hover:text-white transition-all text-sm"
-                  >
-                    <MessageSquare size={16} />
-                    Enquiry
-                  </a>
-                </div>
-              </div>
+              {/* Connect section - hidden for now */}
             </div>
           </div>
         </div>

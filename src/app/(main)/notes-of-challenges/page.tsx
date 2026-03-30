@@ -33,36 +33,7 @@ const articles = [
     affiliation: "IYASO",
     image: "/images/notes/challenges/viraj-kulkarni.png",
     featured: false,
-  },
-  {
-    id: "3",
-    title: "The Brain Drain Dilemma",
-    excerpt:
-      "An honest conversation about why top scientists leave India and what systemic changes could reverse the trend.",
-    date: "Jan 12, 2026",
-    author: "Prof. Ashutosh Sharma",
-    affiliation: "IIT Kanpur",
-    featured: false,
-  },
-  {
-    id: "4",
-    title: "Coastal Climate Adaptation",
-    excerpt:
-      "Mumbai, Chennai, and Kolkata face existential flooding risks. Scientists map out survival strategies.",
-    date: "Jan 8, 2026",
-    author: "Dr. Roxy Mathew Koll",
-    affiliation: "IITM Pune",
-    featured: false,
-  },
-  {
-    id: "5",
-    title: "Antibiotic Resistance Crisis",
-    excerpt:
-      "With over 58,000 newborns dying annually from drug-resistant infections, microbiologists urge immediate action.",
-    date: "Jan 5, 2026",
-    author: "Prof. Dipankar Chatterji",
-    affiliation: "IISc Bangalore",
-    featured: false,
+    comingSoon: true,
   },
 ];
 
@@ -153,13 +124,9 @@ export default function NotesOfChallengesPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {otherArticles.map((article) => (
-              <Link
-                key={article.id}
-                href={`/notes-of-challenges/${article.id}`}
-                className="group"
-              >
-                <article className="rounded-xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all hover:-translate-y-1">
+            {otherArticles.map((article) => {
+              const inner = (
+                <article className={`rounded-xl overflow-hidden border border-gray-100 transition-all ${article.comingSoon ? "opacity-80" : "hover:shadow-lg hover:-translate-y-1"}`}>
                   <div className="h-1 w-full" style={{ backgroundColor: accentColor }} />
                   <div
                     className="h-64 relative overflow-hidden"
@@ -172,6 +139,13 @@ export default function NotesOfChallengesPage() {
                         fill
                         className="object-cover object-[center_20%] group-hover:scale-105 transition-transform duration-500"
                       />
+                    )}
+                    {article.comingSoon && (
+                      <div className="absolute inset-0 bg-black/50 flex items-center justify-center z-10">
+                        <span className="px-5 py-2 bg-white/90 text-gray-900 text-sm font-bold uppercase tracking-widest rounded-full">
+                          Coming Soon
+                        </span>
+                      </div>
                     )}
                     <div
                       className="absolute top-3 left-3 px-2 py-1 rounded-full text-xs font-bold uppercase text-white z-10"
@@ -191,8 +165,13 @@ export default function NotesOfChallengesPage() {
                     </div>
                   </div>
                 </article>
-              </Link>
-            ))}
+              );
+              return article.comingSoon ? (
+                <div key={article.id} className="group cursor-default">{inner}</div>
+              ) : (
+                <Link key={article.id} href={`/notes-of-challenges/${article.id}`} className="group">{inner}</Link>
+              );
+            })}
           </div>
 
           <div className="mt-10 text-center">

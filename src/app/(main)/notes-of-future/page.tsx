@@ -66,6 +66,7 @@ const articles = [
     affiliation: "IIT Bombay",
     image: "/images/notes/future/shishir-jha.jpg",
     featured: false,
+    comingSoon: true,
   },
 ];
 
@@ -156,14 +157,9 @@ export default function NotesOfFuturePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {otherArticles.map((article) => (
-              <Link
-                key={article.id}
-                href={`/notes-of-future/${article.id}`}
-                className="group"
-              >
-                <article className="rounded-xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all hover:-translate-y-1">
-                  {/* Series color accent line */}
+            {otherArticles.map((article) => {
+              const inner = (
+                <article className={`rounded-xl overflow-hidden border border-gray-100 transition-all ${article.comingSoon ? "opacity-80" : "hover:shadow-lg hover:-translate-y-1"}`}>
                   <div className="h-1 w-full" style={{ backgroundColor: accentColor }} />
                   <div
                     className="h-64 relative overflow-hidden"
@@ -176,6 +172,13 @@ export default function NotesOfFuturePage() {
                         fill
                         className="object-cover object-[center_20%] group-hover:scale-105 transition-transform duration-500"
                       />
+                    )}
+                    {article.comingSoon && (
+                      <div className="absolute inset-0 bg-black/50 flex items-center justify-center z-10">
+                        <span className="px-5 py-2 bg-white/90 text-gray-900 text-sm font-bold uppercase tracking-widest rounded-full">
+                          Coming Soon
+                        </span>
+                      </div>
                     )}
                     <div
                       className="absolute top-3 left-3 px-2 py-1 rounded-full text-xs font-bold uppercase text-white z-10"
@@ -195,8 +198,13 @@ export default function NotesOfFuturePage() {
                     </div>
                   </div>
                 </article>
-              </Link>
-            ))}
+              );
+              return article.comingSoon ? (
+                <div key={article.id} className="group cursor-default">{inner}</div>
+              ) : (
+                <Link key={article.id} href={`/notes-of-future/${article.id}`} className="group">{inner}</Link>
+              );
+            })}
           </div>
 
           <div className="mt-10 text-center">

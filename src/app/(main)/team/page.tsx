@@ -26,7 +26,7 @@ const teamMembers = [
     image: "/images/team/raman.jpg",
   },
   {
-    name: "Vishrant",
+    name: "Vishrant Kumar",
     role: "Chemical Engineer",
     description: "Platform development and infrastructure",
     image: "/images/team/vishrant.jpg",

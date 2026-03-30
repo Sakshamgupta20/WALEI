@@ -65,66 +65,6 @@ const articles: Record<
       "Dual identity is not a deficit. It is a research methodology. The ability to see a problem from two cultural vantage points simultaneously is a form of intellectual depth that monocultural perspectives simply cannot achieve.",
     quoteAttribution: "Dr. Richa Sharma",
   },
-  "3": {
-    title: "German Research Landscape",
-    subtitle:
-      "Adapting to German academic culture reveals surprising complementarities between methodical European approaches and the intuitive problem-solving fostered by Indian training.",
-    date: "Jan 15, 2026",
-    author: "Dr. Kartikay Sharma",
-    designation: "Researcher",
-    institution: "MPI, Germany",
-    image: "",
-    body: [
-      "The Max Planck Society has a phrase that captures its ethos: 'insight must precede application.' When I arrived at my institute in Germany after completing my doctorate in India, I thought I understood what rigorous research looked like. I was quickly humbled. German academic culture operates with a level of procedural precision that can feel almost philosophical. Every experiment is designed not just to answer a question but to answer it in a way that is reproducible, falsifiable, and exhaustively documented. Coming from an Indian research environment where resourcefulness and improvisation are prized, the adjustment was profound.",
-      "In Indian labs, we learn to work with constraints. Equipment breaks down, reagents arrive late, power cuts interrupt experiments mid-run. This environment breeds a particular kind of scientific creativity. You learn to design experiments that are robust against disruption, and you develop an intuitive feel for when something is working even before the data confirms it. In Germany, the infrastructure is near-flawless, but the expectations shift accordingly. Without the excuse of logistical challenges, the focus falls entirely on the quality of your thinking. There is nowhere to hide behind circumstance, and this transparency has made me a sharper, more self-critical researcher.",
-      "The collaboration culture in German academia deserves particular attention. Unlike the hierarchical structures I was accustomed to in India, German research groups operate with a surprising degree of flatness. Doctoral students are expected to have independent scientific opinions, and group meetings resemble Socratic seminars more than status updates. The first time a master's student questioned the theoretical framework of my project in a group meeting, I felt a jolt of defensiveness. But I soon recognised that this culture of open intellectual challenge is one of the most powerful features of the German system. Ideas are stress-tested collectively, and the result is science that is remarkably robust.",
-      "What surprised me most, however, was how much my Indian training complemented the German approach rather than conflicting with it. The intuitive, pattern-recognition style of thinking that Indian scientific education cultivates turns out to be an excellent complement to German methodical rigour. I find that I often spot connections between disparate datasets that my German colleagues miss, not because they are less talented, but because their training emphasises depth within a narrow domain, while Indian training tends to produce broader, more associative thinkers. The best science in our group happens when these two cognitive styles converge.",
-      "Living in Germany as an Indian researcher has also taught me about the subtler dimensions of cultural integration. Germans value directness, punctuality, and clear boundaries between professional and personal life. These norms, while initially jarring to someone raised in a culture where professional relationships are deeply personal and time is treated more fluidly, have their own wisdom. I have learned to appreciate the German respect for personal boundaries, even as I gently introduce my colleagues to the Indian tradition of hospitality that makes no distinction between a work friend and a life friend. The cultural exchange goes both ways, and the research is richer for it.",
-    ],
-    quote:
-      "The intuitive, pattern-recognition style of thinking that Indian scientific education cultivates turns out to be an excellent complement to German methodical rigour. The best science happens when these two cognitive styles converge.",
-    quoteAttribution: "Dr. Kartikay Sharma",
-  },
-  "4": {
-    title: "Science at EPFL",
-    subtitle:
-      "At one of Europe's premier technical universities, an Indian researcher discovers that Swiss precision and Indian intuition can coexist, and that the mountains have lessons of their own.",
-    date: "Jan 10, 2026",
-    author: "Dr. Deepika Sardana",
-    designation: "Researcher",
-    institution: "EPFL, Switzerland",
-    image: "",
-    body: [
-      "There is a particular quality of light in Lausanne that I have never encountered anywhere else. On clear mornings, Lake Geneva reflects the Alps with such precision that the boundary between water and mountain dissolves. I often think this landscape is a metaphor for my own experience at EPFL, the dissolution of boundaries between disciplines, between cultures, between the researcher I was trained to be in India and the one I am becoming in Switzerland. It is disorienting and beautiful in equal measure.",
-      "EPFL operates at a pace and scale that took my breath away when I first arrived. The laboratories are equipped with instruments I had only read about in journals. The computing infrastructure allows simulations that would have taken weeks on Indian university systems to run in hours. But the most significant resource is not technological. It is the density of talent. In any given corridor, you might pass a Nobel laureate, a startup founder, and a doctoral student whose side project could reshape a field. This concentration of intellectual energy creates a kind of ambient pressure that pushes everyone to think bigger and move faster.",
-      "Swiss precision is real and it permeates everything, from the trains that arrive to the second to the laboratory protocols that specify procedures down to the microlitre. For someone trained in Indian universities where jugaad, the art of creative improvisation, is a survival skill, this level of systematisation initially felt constraining. Where was the room for the happy accidents that drive discovery? What I eventually understood is that Swiss precision does not eliminate serendipity; it creates the conditions for more meaningful serendipity. When your baseline is perfectly controlled, the anomalies that appear are genuinely significant rather than artefacts of sloppy methodology.",
-      "The cross-cultural dimension of science at EPFL is one of its greatest strengths. My research group alone includes members from eleven countries, and our weekly meetings are conducted in a fluid mixture of English, French, and the universal language of equations. This diversity is not merely demographic. It produces genuinely different approaches to the same problem. I have watched a Swiss colleague and a Brazilian postdoc arrive at the same result through completely different mathematical frameworks, each reflecting the pedagogical traditions of their home countries. My own Indian training, with its emphasis on analytical problem-solving and pattern recognition, adds another dimension to this tapestry.",
-      "What EPFL has taught me above all is that excellence is not the property of any single culture or tradition. The Swiss contribute precision and infrastructure, the Americans bring entrepreneurial ambition, the Indians offer frugal innovation and associative thinking, and the result is a scientific culture that is genuinely greater than the sum of its parts. Living in Switzerland as an Indian researcher is an exercise in holding multiple truths simultaneously, that home is both Chandigarh and Lausanne, that rigour and intuition are not opposites but partners, and that the best view always comes after the hardest climb. The Alps remind me of this every morning.",
-    ],
-    quote:
-      "Swiss precision does not eliminate serendipity; it creates the conditions for more meaningful serendipity. When your baseline is perfectly controlled, the anomalies that appear are genuinely significant rather than artefacts of sloppy methodology.",
-    quoteAttribution: "Dr. Deepika Sardana",
-  },
-  "5": {
-    title: "Marie Curie in Copenhagen",
-    subtitle:
-      "A Marie Sk\u0142odowska-Curie fellowship takes an Indian researcher to Denmark, where Scandinavian research culture and the art of building a life abroad converge.",
-    date: "Jan 6, 2026",
-    author: "Dr. Ananya Krishnan",
-    designation: "Marie Curie Fellow",
-    institution: "SDU, Denmark",
-    image: "",
-    body: [
-      "The letter arrived on a Tuesday afternoon in Bangalore. I had applied for the Marie Sk\u0142odowska-Curie Individual Fellowship almost on a whim. The success rate hovers around twelve percent, and the application process is notoriously demanding. When I saw the word 'awarded' in the subject line, I sat very still for a long time. Within three months, I would be living in Odense, Denmark, a city I could not have placed on a map with confidence. The fellowship would take me to the University of Southern Denmark, and it would change everything I thought I knew about research, community, and belonging.",
-      "The Scandinavian research ecosystem operates on principles that are quietly revolutionary. The emphasis on work-life balance is not a concession to comfort. It is treated as a precondition for intellectual productivity. My Danish colleagues leave the lab at five, take their full vacation allowances, and spend weekends cycling with their families. And yet, the quality and volume of research output is extraordinary. Coming from an Indian academic culture where long hours are worn as a badge of honour and where burnout is treated as an inevitable cost of serious scholarship, this was a paradigm shift. I learned that creativity does not require exhaustion; in fact, it requires the opposite.",
-      "The Marie Curie fellowship itself is a masterclass in how research funding can be structured to maximise impact. Beyond the generous financial support, the fellowship includes a comprehensive training programme, mandatory secondments at partner institutions across Europe, and a strong emphasis on public engagement and science communication. I found myself presenting my research to schoolchildren in Copenhagen, to policymakers in Brussels, and to industry leaders in Berlin, experiences that transformed me from a bench scientist into a public intellectual. The fellowship does not just fund research; it builds researchers.",
-      "Building a personal life in Denmark as an Indian woman presented its own unique set of challenges and rewards. Danish culture prizes a concept called hygge, a kind of cosy togetherness that is central to social life. But accessing Danish social circles as a foreigner requires patience and persistence. The Danes are warm but reserved, and friendships develop slowly compared to the instant intimacy that characterises Indian social interactions. I learned to appreciate the depth of Danish friendships precisely because they are not given lightly. The Indian community in Odense, though small, provided the immediate warmth I needed while I learned to navigate the longer rhythms of Scandinavian social life.",
-      "Looking back on my fellowship journey, I am struck by how profoundly it has reshaped my understanding of what a scientific career can look like. In India, the path is relatively linear: study, publish, secure a permanent position, repeat. The European research landscape, and the Marie Curie programme in particular, showed me that a career can be a mosaic, a fellowship here, a collaboration there, a policy engagement somewhere else, and that this diversity of experience does not dilute your expertise but enriches it. I carry Bangalore in my bones and Copenhagen in my thinking, and the research I produce is unmistakably shaped by both. The Marie Curie fellowship gave me not just funding but permission to be a scientist without borders.",
-    ],
-    quote:
-      "I carry Bangalore in my bones and Copenhagen in my thinking, and the research I produce is unmistakably shaped by both. The Marie Curie fellowship gave me not just funding but permission to be a scientist without borders.",
-    quoteAttribution: "Dr. Ananya Krishnan",
-  },
 };
 
 export function generateStaticParams() {

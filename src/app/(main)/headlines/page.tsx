@@ -33,7 +33,7 @@ const timelineData = [
     event: "Notes of Future: Interview with Prof. Suman Chakraborty",
   },
   { date: "Nov 2025", event: "Patent database launched with 50+ entries" },
-  { date: "Oct 2025", event: "WALEI Gigs platform beta release" },
+  { date: "Oct 2025", event: "WALEI Foundry platform beta release" },
 ];
 
 const tabs = [

@@ -67,6 +67,75 @@ const startups: Record<
       },
     ],
   },
+  "2": {
+    name: "IYASO",
+    tagline: "Data analytics platform for healthcare optimization and AI-driven diagnostics",
+    founder: "Viraj Kulkarni",
+    founderDesignation: "Founder & CEO",
+    institution: "Startup",
+    teamSize: 10,
+    location: "India",
+    website: "https://iyaso.in",
+    sector: "Healthcare AI",
+    logo: "/images/notes/challenges/viraj-kulkarni.png",
+    story: [
+      "IYASO is building an AI-driven healthcare data analytics platform that transforms how healthcare providers understand and act on patient data. By combining advanced machine learning with deep domain expertise, IYASO helps hospitals and clinics optimize their operations and improve patient outcomes.",
+      "The platform integrates seamlessly with existing hospital management systems, providing real-time insights on patient flow, resource utilization, and clinical decision support. This enables healthcare institutions to reduce wait times, optimize bed management, and identify potential health risks early.",
+    ],
+    products: [
+      {
+        name: "IYASO Analytics Platform",
+        description:
+          "AI-powered healthcare data analytics for hospitals and clinics. Provides real-time insights on patient flow, resource utilization, and clinical decision support.",
+      },
+    ],
+  },
+  "3": {
+    name: "NanoClean",
+    tagline: "Nanotechnology-based air purification solutions for urban environments",
+    founder: "Dr. Prateek Sharma",
+    founderDesignation: "Founder & CEO",
+    institution: "IIT Delhi",
+    teamSize: 15,
+    location: "New Delhi, India",
+    website: "https://nanoclean.in",
+    sector: "Clean Tech",
+    logo: "",
+    story: [
+      "NanoClean leverages cutting-edge nanotechnology to develop air purification solutions that are effective, affordable, and scalable for urban environments. Born out of research at IIT Delhi, the company addresses one of the most pressing environmental challenges facing Indian cities.",
+      "Their flagship nanotechnology-based filters offer superior filtration efficiency at a fraction of the cost of conventional HEPA filters, making clean air accessible to millions of urban residents.",
+    ],
+    products: [
+      {
+        name: "NanoClean Air Filter",
+        description:
+          "Nanotechnology-based air purification filter that offers superior filtration efficiency at a fraction of the cost of conventional solutions.",
+      },
+    ],
+  },
+  "4": {
+    name: "AgriSense",
+    tagline: "IoT sensors for precision agriculture and crop monitoring at scale",
+    founder: "Dr. Meera Gupta",
+    founderDesignation: "Founder & CEO",
+    institution: "IISc Bangalore",
+    teamSize: 12,
+    location: "Bangalore, India",
+    website: "https://agrisense.in",
+    sector: "AgriTech",
+    logo: "",
+    story: [
+      "AgriSense is transforming Indian agriculture through IoT-based precision farming solutions. Founded by Dr. Meera Gupta from IISc Bangalore, the company develops affordable sensor networks that help farmers monitor soil health, weather patterns, and crop conditions in real time.",
+      "By making precision agriculture accessible to smallholder farmers, AgriSense is helping increase crop yields while reducing water and fertilizer usage, contributing to both food security and environmental sustainability.",
+    ],
+    products: [
+      {
+        name: "AgriSense Sensor Kit",
+        description:
+          "IoT sensor network for real-time monitoring of soil moisture, temperature, humidity, and nutrient levels. Includes mobile app with AI-powered recommendations for irrigation and fertilization.",
+      },
+    ],
+  },
 };
 
 export function generateStaticParams() {
@@ -304,23 +373,7 @@ export default async function StartupDetailPage({
                 </div>
               )}
 
-              {/* Action Buttons */}
-              <div className="mt-10 flex flex-wrap gap-4">
-                <a
-                  href="mailto:walei.office@gmail.com?subject=Collaboration Inquiry - CareMother"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[var(--gold)] text-white text-sm font-medium hover:bg-[var(--primary-dark)] transition-colors"
-                >
-                  <Mail size={16} />
-                  Collaborate
-                </a>
-                <a
-                  href="mailto:walei.office@gmail.com?subject=Enquiry - CareMother"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-gray-200 text-gray-700 text-sm font-medium hover:border-[var(--gold)] hover:text-[var(--gold)] transition-colors"
-                >
-                  <MessageSquare size={16} />
-                  Enquiry
-                </a>
-              </div>
+              {/* Action Buttons - hidden for now */}
             </div>
           </div>
         </div>

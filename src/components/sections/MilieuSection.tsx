@@ -38,23 +38,24 @@ export function MilieuSection() {
               />
             </Link>
 
-            {/* Gigs & Micro-Tasks card */}
+            {/* Foundry card */}
             <Link
               href="/gigs"
-              className="group flex items-center gap-4 p-6 rounded-2xl border border-gray-200 hover:shadow-lg hover:border-gray-300 transition-all"
+              className="group flex items-start gap-4 p-6 rounded-2xl border border-gray-200 hover:shadow-lg hover:border-gray-300 transition-all"
             >
               <div className="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0">
                 <Briefcase size={20} className="text-gray-600" />
               </div>
               <div className="flex-1 min-w-0">
-                <h3 className="text-lg font-semibold text-gray-900">Gigs & Micro-Tasks</h3>
+                <h3 className="text-lg font-semibold text-gray-900">Foundry</h3>
                 <p className="text-sm text-gray-500">
                   Short-term research solutions for specialized research projects.
                 </p>
               </div>
-              <span className="text-sm font-semibold flex-shrink-0" style={{ color: "var(--gold)" }}>
-                42 New
-              </span>
+              <ArrowRight
+                size={16}
+                className="text-gray-400 group-hover:text-gray-700 group-hover:translate-x-1 transition-all mt-1 flex-shrink-0"
+              />
             </Link>
 
             {/* Foundry card */}

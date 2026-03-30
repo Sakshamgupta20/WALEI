@@ -63,66 +63,6 @@ const articles: Record<
       "The biggest bottleneck in healthcare AI isn't the technology. It's the data. Clean, standardised, interoperable health data is the foundation everything else depends on.",
     quoteAttribution: "Viraj Kulkarni",
   },
-  "3": {
-    title: "The Brain Drain Dilemma",
-    subtitle:
-      "An honest conversation about why top scientists leave India and what systemic changes could reverse the trend.",
-    date: "Jan 12, 2026",
-    author: "Prof. Ashutosh Sharma",
-    designation: "Former Secretary, Department of Science & Technology",
-    institution: "Government of India",
-    image: "",
-    body: [
-      "Every year, thousands of India's brightest scientific minds leave the country for research positions in the United States, Europe, and East Asia. The numbers are stark: India produces roughly 30,000 PhD graduates annually, yet a significant fraction, estimates range from 30% to 40% of those in STEM fields, eventually seek careers abroad. This is not merely a loss of trained individuals; it represents a systematic haemorrhage of intellectual capital that India has invested decades and billions of rupees in developing.",
-      "The reasons behind brain drain are well-documented but rarely addressed with the urgency they deserve. Inadequate research funding, bureaucratic obstacles to procurement and collaboration, poor laboratory infrastructure, and a pervasive culture of seniority over merit all contribute to an environment where ambitious young researchers feel stifled. When a postdoctoral researcher in India earns a fraction of what their counterpart receives in Singapore or Germany, and faces months of paperwork to import a basic reagent, the decision to emigrate becomes almost rational.",
-      "Reversing brain drain requires more than competitive salaries, though compensation certainly matters. It demands a fundamental rethinking of how India structures its research ecosystem. The most impactful reforms would include granting principal investigators genuine autonomy over their budgets and hiring, streamlining customs and procurement processes for scientific equipment, and creating transparent, merit-based pathways for career advancement that do not depend on patronage or institutional politics.",
-      "There are encouraging signs of change. Programmes like the Ramanujan Fellowship and the INSPIRE Faculty scheme have attracted some researchers back to India, and institutions like IISERs and TIFR have built pockets of genuine research excellence. The new National Research Foundation, if implemented with adequate funding and independence, could be transformative. But these efforts remain insufficient against the scale of the problem. India's total R&D spending hovers around 0.7% of GDP, compared to over 2% in China and nearly 3% in South Korea.",
-      "Perhaps the most underappreciated dimension of brain drain is its effect on mentorship and intellectual culture. When senior researchers leave, they take with them not just their expertise but their networks, their standards, and their ability to train the next generation. India risks entering a vicious cycle where the absence of world-class mentors makes it harder to produce world-class students, which in turn accelerates further emigration. Breaking this cycle requires sustained political will, substantial financial commitment, and an honest reckoning with the structural barriers that make Indian academia inhospitable to its own talent.",
-    ],
-    quote:
-      "We cannot build a knowledge economy by training our best minds and then making it impossible for them to do meaningful work at home. Retention starts with respect, for researchers, for the scientific process, and for the time it takes to produce real breakthroughs.",
-    quoteAttribution: "Prof. Ashutosh Sharma",
-  },
-  "4": {
-    title: "Coastal Climate Adaptation",
-    subtitle:
-      "Mumbai, Chennai, and Kolkata face existential flooding risks. Scientists map out survival strategies.",
-    date: "Jan 8, 2026",
-    author: "Dr. Roxy Mathew Koll",
-    designation: "Climate Scientist",
-    institution: "Indian Institute of Tropical Meteorology",
-    image: "",
-    body: [
-      "India's coastline stretches over 7,500 kilometres, and along it live more than 170 million people whose lives and livelihoods are increasingly threatened by rising seas, intensifying cyclones, and erratic monsoon patterns. The three megacities most at risk, Mumbai, Chennai, and Kolkata, collectively house over 50 million residents, many of them in low-lying areas that flood with alarming regularity. Climate adaptation for these communities is no longer a distant planning exercise; it is an immediate survival imperative.",
-      "Mumbai's flooding challenges illustrate the compounding nature of climate risk. The city sits on reclaimed land, its natural drainage systems, creeks, mangroves, and wetlands, systematically destroyed by decades of unchecked construction. When heavy rainfall coincides with high tides, as it increasingly does due to sea-level rise, the city has nowhere to send its water. The catastrophic floods of 2005 killed over 1,000 people, and yet the fundamental vulnerabilities that caused that disaster remain largely unaddressed. Climate projections suggest that what was once a once-in-a-century rainfall event may become a once-in-a-decade occurrence by 2040.",
-      "Chennai's experience with the 2015 floods revealed a different but equally dangerous pattern: the destruction of water-absorbing landscapes on the city's periphery. Lakes, tanks, and marshlands that historically served as natural flood buffers have been paved over for housing developments and IT parks. The result is a city that can neither absorb heavy rainfall nor channel it safely to the sea. Restoration of these traditional water bodies, combined with modern stormwater management infrastructure, is essential but requires the kind of coordinated urban planning that Indian cities have historically struggled to execute.",
-      "Kolkata faces perhaps the most existential threat of any Indian megacity. Built on deltaic sediments along the Hooghly River, the city is subsiding even as sea levels rise, a double jeopardy that could render large portions uninhabitable within decades. The Sundarbans, the vast mangrove forest that has long served as a natural barrier against storm surges from the Bay of Bengal, is itself retreating due to rising salinity and coastal erosion. Protecting Kolkata means protecting the Sundarbans, yet the communities who depend on the Sundarbans for their livelihoods are among India's poorest and most vulnerable.",
-      "Effective climate adaptation requires moving beyond engineered defences alone. Nature-based solutions, mangrove restoration, urban wetland conservation, permeable urban surfaces, and green corridors, offer cost-effective resilience that grey infrastructure cannot match. Equally important is investing in early warning systems, community preparedness programmes, and climate-resilient housing for the urban poor who bear the greatest burden of flooding. The science is clear; the solutions are known. What remains is the political and institutional will to act at the scale the crisis demands.",
-    ],
-    quote:
-      "Coastal cities cannot engineer their way out of climate change. We need a fundamental shift toward living with water rather than fighting it, and that means restoring the natural systems we have spent decades destroying.",
-    quoteAttribution: "Dr. Roxy Mathew Koll",
-  },
-  "5": {
-    title: "Antibiotic Resistance Crisis",
-    subtitle:
-      "With over 58,000 newborns dying annually from drug-resistant infections, microbiologists urge immediate action.",
-    date: "Jan 5, 2026",
-    author: "Prof. Dipankar Chatterji",
-    designation: "Emeritus Professor, Molecular Biophysics Unit",
-    institution: "IISc Bangalore",
-    image: "/images/notes/future/dipankar-chatterji.jpg",
-    body: [
-      "Antibiotic resistance is arguably the most underappreciated public health crisis facing India today. Each year, drug-resistant infections claim the lives of over 58,000 newborns in India alone, a staggering figure that exceeds the death toll of many diseases that receive far greater attention and funding. The World Health Organisation has identified antimicrobial resistance as one of the top ten global public health threats, and India, with its unique combination of high antibiotic consumption, inadequate sanitation, and dense population, sits at the epicentre of this crisis.",
-      "The roots of India's antibiotic resistance problem are systemic. Antibiotics are available over the counter in most Indian pharmacies, often dispensed without prescriptions and frequently in incorrect dosages. The poultry and livestock industries use antibiotics as growth promoters on a massive scale, creating reservoirs of resistant bacteria that enter the human food chain. Hospital-acquired infections, particularly in intensive care units, are increasingly caused by organisms resistant to multiple drug classes, including carbapenems, often considered the antibiotics of last resort.",
-      "From a molecular biology perspective, the mechanisms of resistance are both fascinating and terrifying. Bacteria share resistance genes not only through vertical inheritance but through horizontal gene transfer, plasmids, transposons, and integrons that can spread resistance determinants across species boundaries with alarming speed. The NDM-1 gene, first identified in a patient in New Delhi, has since been found in bacteria on every continent, a stark illustration of how resistance genes respect no borders. Understanding these molecular mechanisms is essential for developing strategies to slow the spread of resistance and identify new therapeutic targets.",
-      "India's pharmaceutical industry, paradoxically, is both part of the problem and potentially part of the solution. India manufactures a large share of the world's generic antibiotics, and effluent from pharmaceutical manufacturing facilities in Hyderabad and other hubs has been found to contain antibiotic concentrations high enough to promote resistance in environmental bacteria. At the same time, Indian researchers and drug companies have the expertise and infrastructure to contribute meaningfully to the development of novel antimicrobials, bacteriophage therapies, and diagnostic tools that could help combat resistance.",
-      "Addressing antibiotic resistance in India requires a coordinated One Health approach that bridges human medicine, veterinary practice, environmental science, and public policy. Immediate priorities include enforcing prescription-only sales of critical antibiotics, establishing robust national surveillance of resistance patterns, investing in rapid diagnostic technologies that reduce empirical prescribing, and strengthening infection prevention and control in hospitals. The scientific community has been sounding the alarm for years; what is needed now is decisive action before the post-antibiotic era, in which common infections become untreatable, becomes a reality.",
-    ],
-    quote:
-      "We are running out of effective antibiotics faster than we are developing new ones. If we do not act now, we risk returning to a pre-antibiotic era where a simple wound infection could be a death sentence.",
-    quoteAttribution: "Prof. Dipankar Chatterji",
-  },
 };
 
 export function generateStaticParams() {

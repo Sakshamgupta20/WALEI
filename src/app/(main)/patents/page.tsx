@@ -2,7 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Search, FileText, CheckCircle, Clock, User } from "lucide-react";
+
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const patents = [
   {
@@ -15,6 +18,7 @@ const patents = [
     status: "Granted",
     duration: "2024-2044",
     jurisdiction: "India",
+    image: "/images/patents/SS1-H2O2.png",
   },
   {
     id: "SS001-2",
@@ -26,6 +30,7 @@ const patents = [
     status: "Granted",
     duration: "2022-2042",
     jurisdiction: "India",
+    image: "/images/patents/SS2-iron-oxide.jpg",
   },
   {
     id: "RR002-1",
@@ -37,6 +42,7 @@ const patents = [
     status: "Granted",
     duration: "2017-2035",
     jurisdiction: "USA",
+    image: "/images/patents/US20150203345A1.png",
   },
   {
     id: "RR002-2",
@@ -48,6 +54,7 @@ const patents = [
     status: "Granted",
     duration: "2017-2035",
     jurisdiction: "USA",
+    image: "/images/patents/US9786855B2.png",
   },
   {
     id: "SC003-1",
@@ -59,6 +66,7 @@ const patents = [
     status: "Granted",
     duration: "2022-2042",
     jurisdiction: "USA",
+    image: "/images/patents/US11440014B2.png",
   },
   {
     id: "SC003-2",
@@ -70,6 +78,7 @@ const patents = [
     status: "Granted",
     duration: "2022-2042",
     jurisdiction: "India",
+    image: "",
   },
 ];
 
@@ -130,12 +139,21 @@ export default function PatentsPage() {
             {filteredPatents.map((patent) => (
               <Link key={patent.id} href={`/patents/${patent.id}`} className="group">
                 <article className="rounded-xl overflow-hidden bg-white border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                  <div className="aspect-[4/3] bg-gradient-to-br from-[var(--gold)]/10 to-[var(--gold)]/20 relative overflow-hidden">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-16 h-16 rounded-xl bg-white/80 backdrop-blur-sm flex items-center justify-center shadow-lg">
-                        <FileText size={28} className="text-[var(--gold)]" />
+                  <div className="aspect-[4/3] bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden">
+                    {patent.image ? (
+                      <Image
+                        src={`${basePath}${patent.image}`}
+                        alt={patent.title}
+                        fill
+                        className="object-contain p-4"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-16 h-16 rounded-xl bg-white/80 backdrop-blur-sm flex items-center justify-center shadow-lg">
+                          <FileText size={28} className="text-[var(--gold)]" />
+                        </div>
                       </div>
-                    </div>
+                    )}
                     <div className="absolute top-4 right-4">
                       <span
                         className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold uppercase ${

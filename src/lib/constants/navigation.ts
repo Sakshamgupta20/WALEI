@@ -16,7 +16,7 @@ export const navigation = {
     { name: "Strategic Partners", href: "/team?tab=partners" },
   ],
   flat: [
-    { name: "Gigs", href: "/gigs" },
+    { name: "Foundry", href: "/gigs" },
     { name: "H&T", href: "/headlines" },
     { name: "NEWS", href: "/news" },
     { name: "Calendar", href: "/calendar" },

@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowLeft,
@@ -13,6 +14,8 @@ import {
   Shield,
   Award,
 } from "lucide-react";
+
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const patents: Record<
   string,
@@ -32,6 +35,7 @@ const patents: Record<
     email?: string;
     link?: string;
     authors?: string[];
+    image?: string;
   }
 > = {
   "SS001-1": {
@@ -58,6 +62,7 @@ const patents: Record<
     ],
     collaborationOptions: ["Joint Venture", "Licensing"],
     email: "sksonkar.chy@mnit.ac.in",
+    image: "/images/patents/SS1-H2O2.png",
   },
   "SS001-2": {
     title: "A Method of Utilization of Waste Industrial Iron Dust for Sunlight-Assisted Photoreduction of Toxic Cr(VI)",
@@ -82,6 +87,7 @@ const patents: Record<
     ],
     collaborationOptions: ["Joint Venture", "Licensing"],
     email: "sksonkar.chy@mnit.ac.in",
+    image: "/images/patents/SS2-iron-oxide.jpg",
   },
   "RR002-1": {
     title: "Polymer Anchored Microelectromechanical System (MEMS) Cantilever and Method of Fabricating the Same",
@@ -105,7 +111,8 @@ const patents: Record<
       "Reliable stability across 3 distinct mediums",
       "Simple 5-step surface micromachining fabrication process",
     ],
-    collaborationOptions: ["Tech Transfer"],
+    collaborationOptions: [],
+    image: "/images/patents/US20150203345A1.png",
   },
   "RR002-2": {
     title: "Micro Electro Mechanical System (MEMS) Based Wide-Band Polymer Photo-Detector",
@@ -130,7 +137,8 @@ const patents: Record<
       "Fast rise time of 441ns signal recorded",
       "Single 350nm layer simplifies the fabrication process",
     ],
-    collaborationOptions: ["Tech Transfer"],
+    collaborationOptions: [],
+    image: "/images/patents/US9786855B2.png",
   },
   "SC003-1": {
     title: "Point of Care (POC) Device for Facilitating Nucleic Acid Based Testing and Method Thereof",
@@ -154,7 +162,8 @@ const patents: Record<
       "Ultra-low-cost replacement for expensive Peltier thermocyclers",
       "Rapid 4-step process eliminates manual pipetting",
     ],
-    collaborationOptions: ["Tech Transfer", "Joint Venture", "Licensing"],
+    collaborationOptions: [],
+    image: "/images/patents/US11440014B2.png",
   },
   "SC003-2": {
     title: "Hydrogel Microbeads Including Agarose Microbeads and a Process for Preparing the Same",
@@ -413,6 +422,16 @@ export default async function PatentDetailPage({
                   Abstract
                 </h2>
               </div>
+              {patent.image && (
+                <div className="relative w-full aspect-[16/9] rounded-lg overflow-hidden mb-6 bg-gray-50">
+                  <Image
+                    src={`${basePath}${patent.image}`}
+                    alt={`Graphical abstract — ${patent.title}`}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+              )}
               <div className="prose-walei">
                 {patent.abstract.map((paragraph, idx) => (
                   <p key={idx} className="text-gray-700 leading-relaxed mb-4">
@@ -424,6 +443,7 @@ export default async function PatentDetailPage({
           </div>
 
           {/* USP Section */}
+          {patent.usps.length > 0 && (
           <div className="rounded-xl bg-[var(--light)] border border-gray-100 p-6 md:p-8">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-6 h-[2px] bg-[var(--gold)]" />
@@ -445,6 +465,7 @@ export default async function PatentDetailPage({
               ))}
             </div>
           </div>
+          )}
         </div>
       </section>
     </>

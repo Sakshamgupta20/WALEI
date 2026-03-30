@@ -34,36 +34,6 @@ const articles = [
     image: "/images/notes/movements/richa-sharma.png",
     featured: false,
   },
-  {
-    id: "3",
-    title: "German Research Landscape",
-    excerpt:
-      "Adapting to the structure of German academia after years in India's more flexible research environment.",
-    date: "Jan 15, 2026",
-    author: "Dr. Kartikay Sharma",
-    affiliation: "MPI, Germany",
-    featured: false,
-  },
-  {
-    id: "4",
-    title: "Science at EPFL",
-    excerpt:
-      "Life at one of Europe's top technical universities, bridging Indian intuition with Swiss precision.",
-    date: "Jan 10, 2026",
-    author: "Dr. Deepika Sardana",
-    affiliation: "EPFL, Switzerland",
-    featured: false,
-  },
-  {
-    id: "5",
-    title: "Marie Curie in Copenhagen",
-    excerpt:
-      "Reflections on securing a prestigious fellowship and building a life in Scandinavia's research ecosystem.",
-    date: "Jan 6, 2026",
-    author: "Dr. Ananya Krishnan",
-    affiliation: "SDU, Denmark",
-    featured: false,
-  },
 ];
 
 const accentColor = "var(--accent-movements)";
