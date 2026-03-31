@@ -30,7 +30,7 @@ export function HeroSection() {
         }
       `}</style>
 
-      <div className="relative max-w-[1200px] mx-auto px-5 md:px-8 py-20 md:py-28">
+      <div className="relative max-w-[1400px] mx-auto px-5 md:px-8 py-20 md:py-28">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
           <div>
