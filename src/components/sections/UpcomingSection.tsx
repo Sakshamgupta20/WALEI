@@ -27,7 +27,7 @@ const upcomingNotes = [
 export function UpcomingSection() {
   return (
     <section className="py-20 md:py-28 bg-white">
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+      <div className="max-w-[1400px] mx-auto px-5 md:px-8">
         {/* Section Header */}
         <div className="mb-12">
           <h2 className="text-3xl md:text-4xl font-light text-gray-900">

@@ -99,7 +99,7 @@ export default function PatentsPage() {
           <div className="absolute top-10 right-10 w-64 h-64 rounded-full border border-white/5" />
           <div className="absolute bottom-10 left-10 w-48 h-48 rounded-full border border-white/5" />
         </div>
-        <div className="relative max-w-[1200px] mx-auto px-5 md:px-8">
+        <div className="relative max-w-[1400px] mx-auto px-5 md:px-8">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-8 h-[2px] bg-gradient-to-r from-transparent to-[var(--gold)]" />
             <span className="text-xs uppercase tracking-[0.2em] font-semibold" style={{ color: "var(--gold)" }}>
@@ -118,7 +118,7 @@ export default function PatentsPage() {
 
       {/* Search Only */}
       <section className="py-4 bg-[var(--light)] border-b border-gray-200 sticky top-14 md:top-16 z-40">
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+        <div className="max-w-[1400px] mx-auto px-5 md:px-8">
           <div className="relative max-w-md">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
             <input
@@ -134,7 +134,7 @@ export default function PatentsPage() {
 
       {/* Patent Grid */}
       <section className="py-16 md:py-24 bg-white">
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+        <div className="max-w-[1400px] mx-auto px-5 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredPatents.map((patent) => (
               <Link key={patent.id} href={`/patents/${patent.id}`} className="group">

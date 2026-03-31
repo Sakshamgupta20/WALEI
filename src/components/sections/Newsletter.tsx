@@ -52,7 +52,7 @@ export function Newsletter() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-white/5 blur-3xl" />
       </div>
 
-      <div className="relative max-w-[1200px] mx-auto px-5 md:px-8">
+      <div className="relative max-w-[1400px] mx-auto px-5 md:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left - Content */}
           <div>

@@ -42,7 +42,7 @@ export default function AboutPage() {
             style={{ background: "radial-gradient(circle, var(--gold) 0%, transparent 70%)" }}
           />
         </div>
-        <div className="relative max-w-[1200px] mx-auto px-5 md:px-8 text-center">
+        <div className="relative max-w-[1400px] mx-auto px-5 md:px-8 text-center">
           <div className="flex items-center justify-center gap-3 mb-6">
             <div className="w-8 h-[2px] bg-gradient-to-r from-transparent to-[var(--gold)]" />
             <span className="text-[11px] uppercase tracking-[0.2em] font-semibold" style={{ color: "var(--gold)" }}>
@@ -65,7 +65,7 @@ export default function AboutPage() {
 
       {/* Mission */}
       <section className="py-20 md:py-28 bg-white">
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+        <div className="max-w-[1400px] mx-auto px-5 md:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <div className="flex items-center gap-3 mb-6">
@@ -118,7 +118,7 @@ export default function AboutPage() {
 
       {/* What We Do */}
       <section className="py-20 md:py-28 bg-[var(--light)]">
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+        <div className="max-w-[1400px] mx-auto px-5 md:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-4">
               The Notes Series
@@ -161,7 +161,7 @@ export default function AboutPage() {
           <div className="absolute top-10 left-10 w-64 h-64 rounded-full border border-white/10" />
           <div className="absolute bottom-10 right-10 w-48 h-48 rounded-full border border-white/10" />
         </div>
-        <div className="relative max-w-[1200px] mx-auto px-5 md:px-8 text-center">
+        <div className="relative max-w-[1400px] mx-auto px-5 md:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-light text-white mb-6">
             Join Our Community
           </h2>

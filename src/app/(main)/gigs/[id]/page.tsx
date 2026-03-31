@@ -121,7 +121,7 @@ export default async function GigDetailPage({
   if (!gig) {
     return (
       <section className="py-32 bg-white text-center">
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+        <div className="max-w-[1400px] mx-auto px-5 md:px-8">
           <h1 className="text-2xl font-light text-gray-900 mb-4">
             Gig Not Found
           </h1>
@@ -148,7 +148,7 @@ export default async function GigDetailPage({
           <div className="absolute top-10 right-10 w-64 h-64 rounded-full border border-white/5" />
           <div className="absolute bottom-10 left-10 w-48 h-48 rounded-full border border-white/5" />
         </div>
-        <div className="relative max-w-[1200px] mx-auto px-5 md:px-8">
+        <div className="relative max-w-[1400px] mx-auto px-5 md:px-8">
           <Link
             href="/gigs"
             className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors mb-6"
@@ -176,7 +176,7 @@ export default async function GigDetailPage({
 
       {/* Profile Section */}
       <section className="py-16 md:py-24 bg-white">
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+        <div className="max-w-[1400px] mx-auto px-5 md:px-8">
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Left: Profile Card */}
             <div className="lg:col-span-1">

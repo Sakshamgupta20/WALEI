@@ -12,7 +12,7 @@ export function AboutWaleiSection() {
     <>
       {/* Dark section - About + Cards */}
       <section className="py-20 md:py-28 bg-[var(--dark)] text-white overflow-hidden">
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+        <div className="max-w-[1400px] mx-auto px-5 md:px-8">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
             {/* Left - About */}
             <div className="lg:col-span-5">
@@ -131,7 +131,7 @@ export function AboutWaleiSection() {
 
       {/* Testimonial - White/cream background */}
       <section className="py-16 md:py-20 bg-[var(--light)]">
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+        <div className="max-w-[1400px] mx-auto px-5 md:px-8">
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-[var(--gold)]/5 to-transparent rounded-xl" />
             <div className="relative bg-white rounded-xl p-8 md:p-10 border border-gray-200 shadow-sm">

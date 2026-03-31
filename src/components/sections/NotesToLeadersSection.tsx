@@ -25,7 +25,7 @@ const features = [
 export function NotesToLeadersSection() {
   return (
     <section className="py-14 md:py-20" style={{ backgroundColor: "var(--dark)" }}>
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+      <div className="max-w-[1400px] mx-auto px-5 md:px-8">
         <div className="max-w-3xl mx-auto text-center mb-10">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-white mb-4">
             Notes to Leaders

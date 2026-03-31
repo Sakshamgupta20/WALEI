@@ -4,7 +4,7 @@ import { ArrowRight, Scale, Briefcase, Triangle } from "lucide-react";
 export function MilieuSection() {
   return (
     <section className="py-20 md:py-28 bg-white">
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+      <div className="max-w-[1400px] mx-auto px-5 md:px-8">
         {/* Section Header */}
         <div className="mb-10">
           <h2 className="font-serif text-3xl md:text-4xl font-light text-gray-900 mb-3">

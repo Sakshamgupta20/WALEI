@@ -95,7 +95,7 @@ export default async function NotesOfMovementsDetailPage({
   if (!article) {
     return (
       <section className="py-24 bg-gray-50">
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8 text-center">
+        <div className="max-w-[1400px] mx-auto px-5 md:px-8 text-center">
           <h1 className="text-2xl font-light text-gray-900 mb-4">
             Story not found
           </h1>
@@ -119,7 +119,7 @@ export default async function NotesOfMovementsDetailPage({
           <div className="absolute top-10 right-10 w-64 h-64 rounded-full border border-white/5" />
           <div className="absolute bottom-10 left-10 w-48 h-48 rounded-full border border-white/5" />
         </div>
-        <div className="relative max-w-[1200px] mx-auto px-5 md:px-8">
+        <div className="relative max-w-[1400px] mx-auto px-5 md:px-8">
           <div className="flex items-center gap-3 mb-4">
             <div
               className="w-8 h-[2px]"
@@ -142,7 +142,7 @@ export default async function NotesOfMovementsDetailPage({
 
       {/* Article Content */}
       <section className="py-10 md:py-14 bg-gray-50">
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+        <div className="max-w-[1400px] mx-auto px-5 md:px-8">
           {/* Back Link */}
           <Link
             href="/notes-of-movements"

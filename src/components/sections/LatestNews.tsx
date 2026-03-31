@@ -33,7 +33,7 @@ const newsItems = [
 export function LatestNews() {
   return (
     <section className="py-14 md:py-20 bg-white">
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+      <div className="max-w-[1400px] mx-auto px-5 md:px-8">
         <div className="border-t border-gray-200 pt-10 mb-10">
           <span className="text-overline" style={{ color: "var(--gold)" }}>
             Latest News

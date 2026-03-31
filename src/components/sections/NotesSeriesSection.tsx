@@ -37,7 +37,7 @@ const notesSeries = [
 export function NotesSeriesSection() {
   return (
     <section className="py-20 md:py-28" style={{ backgroundColor: "var(--light)" }}>
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+      <div className="max-w-[1400px] mx-auto px-5 md:px-8">
         {/* Section Header */}
         <div className="text-center mb-14">
           <h2 className="font-serif text-3xl md:text-4xl font-light text-gray-900 mb-3">

@@ -94,7 +94,7 @@ function ContactContent() {
     <>
       {/* Tabs */}
       <section className="bg-white border-b border-gray-200">
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+        <div className="max-w-[1400px] mx-auto px-5 md:px-8">
           <div className="flex gap-8 overflow-x-auto">
             {tabs.map((tab) => (
               <button
@@ -115,7 +115,7 @@ function ContactContent() {
 
       {activeTab === "connect" && (
         <section className="py-16 md:py-24 bg-white">
-          <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+          <div className="max-w-[1400px] mx-auto px-5 md:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
               {/* Left - Reach Out */}
               <div className="lg:col-span-2">
@@ -690,7 +690,7 @@ export default function ContactPage() {
           <div className="absolute top-10 right-10 w-64 h-64 rounded-full border border-white/5" />
           <div className="absolute bottom-10 left-10 w-48 h-48 rounded-full border border-white/5" />
         </div>
-        <div className="relative max-w-[1200px] mx-auto px-5 md:px-8">
+        <div className="relative max-w-[1400px] mx-auto px-5 md:px-8">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-8 h-[2px] bg-gradient-to-r from-transparent to-[var(--gold)]" />
             <span className="text-[11px] uppercase tracking-[0.2em] font-semibold" style={{ color: "var(--gold)" }}>

@@ -50,7 +50,7 @@ export default function NotesOfMomentsPage() {
           <div className="absolute top-10 right-10 w-64 h-64 rounded-full border border-white/5" />
           <div className="absolute bottom-10 left-10 w-48 h-48 rounded-full border border-white/5" />
         </div>
-        <div className="relative max-w-[1200px] mx-auto px-5 md:px-8">
+        <div className="relative max-w-[1400px] mx-auto px-5 md:px-8">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-8 h-[2px]" style={{ background: `linear-gradient(to right, transparent, ${accentColor})` }} />
             <span className="text-[11px] uppercase tracking-[0.2em] font-semibold" style={{ color: accentColor }}>
@@ -70,7 +70,7 @@ export default function NotesOfMomentsPage() {
       {/* Featured Article */}
       {featuredArticle && (
         <section className="py-10 bg-white">
-          <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+          <div className="max-w-[1400px] mx-auto px-5 md:px-8">
             <Link
               href={`/notes-of-movements/${featuredArticle.id}`}
               className="group block"
@@ -116,7 +116,7 @@ export default function NotesOfMomentsPage() {
 
       {/* Article Grid */}
       <section className="py-12 md:py-16 bg-white">
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+        <div className="max-w-[1400px] mx-auto px-5 md:px-8">
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-lg font-medium text-gray-900">All Stories</h2>
             <p className="text-xs text-gray-500">{articles.length} stories</p>

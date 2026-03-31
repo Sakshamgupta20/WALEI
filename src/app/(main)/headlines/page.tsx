@@ -163,7 +163,7 @@ function HAndTContent() {
     <>
       {/* Tabs */}
       <section className="bg-white border-b border-gray-200">
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+        <div className="max-w-[1400px] mx-auto px-5 md:px-8">
           <div className="flex gap-8">
             {tabs.map((tab) => (
               <button
@@ -185,7 +185,7 @@ function HAndTContent() {
       {activeTab === "headlines" ? (
         /* Headlines Section */
         <section className="py-12 md:py-16 bg-white">
-          <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+          <div className="max-w-[1400px] mx-auto px-5 md:px-8">
             {/* Category filter */}
             <div className="flex flex-wrap gap-2 mb-8">
               {allCategories.map((cat) => (
@@ -231,7 +231,7 @@ function HAndTContent() {
       ) : (
         /* Timeline Section */
         <section className="py-16 md:py-20 bg-[var(--light)]">
-          <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+          <div className="max-w-[1400px] mx-auto px-5 md:px-8">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-[2px]" style={{ backgroundColor: "var(--gold)" }} />
               <h2 className="text-2xl font-light text-gray-900">Timeline</h2>
@@ -308,7 +308,7 @@ export default function HeadlinesPage() {
           <div className="absolute top-10 right-10 w-64 h-64 rounded-full border border-white/5" />
           <div className="absolute bottom-10 left-10 w-48 h-48 rounded-full border border-white/5" />
         </div>
-        <div className="relative max-w-[1200px] mx-auto px-5 md:px-8">
+        <div className="relative max-w-[1400px] mx-auto px-5 md:px-8">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-8 h-[2px] bg-gradient-to-r from-transparent to-[var(--gold)]" />
             <span

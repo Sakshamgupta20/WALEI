@@ -7,7 +7,7 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 export function FeaturedScientist() {
   return (
     <section className="py-20 md:py-28 bg-white">
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+      <div className="max-w-[1400px] mx-auto px-5 md:px-8">
         {/* Section Header */}
         <div className="flex items-center gap-4 mb-12">
           <div className="flex items-center gap-3">

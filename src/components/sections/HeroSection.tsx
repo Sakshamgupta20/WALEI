@@ -30,12 +30,11 @@ export function HeroSection() {
         }
       `}</style>
 
-      <div className="relative max-w-[1400px] mx-auto px-5 md:px-8 py-20 md:py-28">
+      <div className="relative w-full max-w-[1400px] mx-auto px-5 md:px-8 py-20 md:py-28">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-[1px] bg-gradient-to-r from-transparent to-[var(--gold)]" />
               <span
                 className="text-[11px] uppercase tracking-[0.2em] font-semibold"
                 style={{ color: "var(--gold)" }}

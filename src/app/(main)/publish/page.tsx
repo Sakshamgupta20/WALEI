@@ -11,7 +11,7 @@ export default function PublishPage() {
     <>
       {/* Hero */}
       <section className="pt-16 pb-10 md:pt-20 md:pb-14" style={{ backgroundColor: "var(--light)" }}>
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+        <div className="max-w-[1400px] mx-auto px-5 md:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-3xl md:text-4xl font-light text-gray-900">
               Share Your Experience
@@ -26,7 +26,7 @@ export default function PublishPage() {
 
       {/* Guidelines */}
       <section className="py-10 bg-white border-b border-gray-100">
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+        <div className="max-w-[1400px] mx-auto px-5 md:px-8">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-lg font-normal text-gray-900 mb-4" style={{ fontFamily: "Georgia, serif" }}>
               What We&apos;re Looking For
@@ -55,7 +55,7 @@ export default function PublishPage() {
 
       {/* Form */}
       <section className="py-12 md:py-16" style={{ backgroundColor: "var(--light)" }}>
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+        <div className="max-w-[1400px] mx-auto px-5 md:px-8">
           <div className="max-w-2xl mx-auto">
             <form className="bg-white rounded-lg shadow-sm p-6 md:p-8">
               <h2 className="text-lg font-normal text-gray-900 mb-6" style={{ fontFamily: "Georgia, serif" }}>

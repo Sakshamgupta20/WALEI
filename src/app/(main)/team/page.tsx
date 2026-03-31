@@ -98,7 +98,7 @@ function TeamContent() {
     <>
       {/* Tabs */}
       <section className="bg-white border-b border-gray-200">
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+        <div className="max-w-[1400px] mx-auto px-5 md:px-8">
           <div className="flex gap-8">
             {tabs.map((tab) => (
               <button
@@ -120,7 +120,7 @@ function TeamContent() {
       {activeTab === "anthem" ? (
         /* Anthem Section */
         <section className="py-10 md:py-14 bg-white">
-          <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+          <div className="max-w-[1400px] mx-auto px-5 md:px-8">
             <div className="grid md:grid-cols-2 gap-10 items-start">
               {/* Left: Bhabha Portrait + Dedication */}
               <div className="space-y-6">
@@ -191,7 +191,7 @@ function TeamContent() {
       ) : (
         /* Grid */
         <section className="py-10 md:py-14 bg-white">
-          <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+          <div className="max-w-[1400px] mx-auto px-5 md:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {activeTab === "partners" ? (
                 /* Sivarsa Strategic Partner Card */
@@ -291,7 +291,7 @@ export default function TeamPage() {
     <>
       {/* Hero */}
       <section className="pt-16 pb-10 md:pt-20 md:pb-14" style={{ backgroundColor: "var(--light)" }}>
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+        <div className="max-w-[1400px] mx-auto px-5 md:px-8">
           <span className="text-overline" style={{ color: "var(--gold)" }}>
             Team WALEI
           </span>

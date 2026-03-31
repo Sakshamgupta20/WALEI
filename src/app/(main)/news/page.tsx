@@ -64,7 +64,7 @@ export default function NewsPage() {
           <div className="absolute top-10 right-10 w-64 h-64 rounded-full border border-white/5" />
           <div className="absolute bottom-10 left-10 w-48 h-48 rounded-full border border-white/5" />
         </div>
-        <div className="relative max-w-[1200px] mx-auto px-5 md:px-8">
+        <div className="relative max-w-[1400px] mx-auto px-5 md:px-8">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-8 h-[2px] bg-gradient-to-r from-transparent to-[var(--gold)]" />
             <span className="text-[11px] uppercase tracking-[0.2em] font-semibold" style={{ color: "var(--gold)" }}>
@@ -82,7 +82,7 @@ export default function NewsPage() {
 
       {/* Main Content */}
       <section className="py-16 md:py-24 bg-white">
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+        <div className="max-w-[1400px] mx-auto px-5 md:px-8">
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Main News Column */}
             <div className="lg:col-span-2">
