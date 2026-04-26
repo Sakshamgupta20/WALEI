@@ -14,12 +14,12 @@ export const metadata: Metadata = {
 const articles = [
   {
     id: "1",
-    title: "Urban Water Scarcity",
+    title: "CareMother: Technology with Compassion",
     excerpt:
-      "With 21 Indian cities expected to run out of groundwater, researchers and civic leaders discuss scalable solutions.",
+      "From a personal loss to over 600,000 pregnancies touched: how Dr. Shantanu Pathak is using AI-powered last-mile kits to transform maternal and newborn care across underserved communities.",
     date: "Jan 20, 2026",
     author: "Dr. Shantanu Pathak",
-    affiliation: "CareMother",
+    affiliation: "CareMother / Doto Health",
     image: "/images/notes/challenges/shantanu-pathak.png",
     featured: true,
   },

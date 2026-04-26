@@ -14,12 +14,12 @@ export const metadata: Metadata = {
 const articles = [
   {
     id: "1",
-    title: "India's Semiconductor Ambitions",
+    title: "Electrons Into Order",
     excerpt:
-      "With $10 billion committed to the India Semiconductor Mission, experts debate whether India can become a global chip manufacturing hub by 2030.",
+      "From the peak of Moore's Law to molecular logic, Prof. V. Ramgopal Rao reflects on the next era of nanoelectronics, India's semiconductor promise, and the patient capital deep tech demands.",
     date: "Jan 22, 2026",
     author: "Prof. V. Ramgopal Rao",
-    affiliation: "IIT Delhi",
+    affiliation: "BITS Pilani",
     image: "/images/notes/future/v-ramgopal-rao.jpg",
     featured: true,
   },
@@ -27,7 +27,7 @@ const articles = [
     id: "2",
     title: "Dimensions of Fluids",
     excerpt:
-      "Exploring the fascinating world of fluid dynamics across scales, from microfluidics in medical diagnostics to large-scale energy systems.",
+      "From COVIRAP to acoustofluidic cell sorting, Prof. Suman Chakraborty traces how microfluidics is moving toward adaptive, “living” technologies that combine engineering rigour with empathy.",
     date: "Jan 18, 2026",
     author: "Prof. Suman Chakraborty",
     affiliation: "IIT Kharagpur",
@@ -36,9 +36,9 @@ const articles = [
   },
   {
     id: "3",
-    title: "Molecular Biophysics",
+    title: "Instructing Microbe Genes",
     excerpt:
-      "How structural biology and biophysics are revealing the intricate molecular machines that power living cells.",
+      "Molecular recognition, the gut–brain axis, and AI-driven drug design: Prof. Dipankar Chatterji on the frontiers of bacterial genetics and the policy fight to protect Indian science.",
     date: "Jan 15, 2026",
     author: "Prof. Dipankar Chatterji",
     affiliation: "IISc Bangalore",
@@ -47,9 +47,9 @@ const articles = [
   },
   {
     id: "4",
-    title: "Frontiers in Organic Chemistry",
+    title: "Nature's Action Chemistry",
     excerpt:
-      "Novel synthetic methodologies are opening doors to previously inaccessible molecular architectures for pharmaceutical development.",
+      "From a “Nano-box” inspired by Bombay's dabbawalas to biomimetic nitrogen fixation, Prof. Sabyasachi Sarkar makes the case for a national scientific renaissance built on original discovery.",
     date: "Jan 12, 2026",
     author: "Prof. Sabyasachi Sarkar",
     affiliation: "IIT Kanpur",

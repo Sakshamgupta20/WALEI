@@ -16,7 +16,9 @@ const gigs: Record<
     expertise: string[];
     institution: string;
     image: string | null;
-    stats: { projects: number; satisfaction: string; experience: string };
+    isLogo?: boolean;
+    founder?: { name: string; role: string; image: string };
+    stats: { label: string; value: string }[];
   }
 > = {
   "1": {
@@ -29,7 +31,11 @@ const gigs: Record<
     expertise: ["Consulting", "Medical Devices", "Health-Tech"],
     institution: "CareMother / IIT Bombay",
     image: "/images/notes/challenges/shantanu-pathak.png",
-    stats: { projects: 12, satisfaction: "96%", experience: "15y" },
+    stats: [
+      { label: "Projects", value: "12" },
+      { label: "Satisfaction", value: "96%" },
+      { label: "Experience", value: "15y" },
+    ],
   },
   "2": {
     name: "Prof. Suman Chakraborty",
@@ -41,7 +47,11 @@ const gigs: Record<
     expertise: ["Research", "Mentorship", "Fluid Mechanics"],
     institution: "IIT Kharagpur",
     image: "/images/notes/future/suman-chakraborty.png",
-    stats: { projects: 25, satisfaction: "98%", experience: "20y" },
+    stats: [
+      { label: "Projects", value: "25" },
+      { label: "Satisfaction", value: "98%" },
+      { label: "Experience", value: "20y" },
+    ],
   },
   "3": {
     name: "Viraj Kulkarni",
@@ -53,7 +63,11 @@ const gigs: Record<
     expertise: ["Data Analytics", "Healthcare AI", "Strategy"],
     institution: "IYASO",
     image: "/images/notes/challenges/viraj-kulkarni.png",
-    stats: { projects: 18, satisfaction: "94%", experience: "10y" },
+    stats: [
+      { label: "Projects", value: "18" },
+      { label: "Satisfaction", value: "94%" },
+      { label: "Experience", value: "10y" },
+    ],
   },
   "4": {
     name: "Dr. Richa Sharma",
@@ -65,7 +79,11 @@ const gigs: Record<
     expertise: ["Research", "Sustainability", "Policy"],
     institution: "Vrije Universiteit Brussel",
     image: "/images/notes/movements/richa-sharma.png",
-    stats: { projects: 8, satisfaction: "92%", experience: "7y" },
+    stats: [
+      { label: "Projects", value: "8" },
+      { label: "Satisfaction", value: "92%" },
+      { label: "Experience", value: "7y" },
+    ],
   },
   "5": {
     name: "Dr. Bhaskar Paul",
@@ -77,7 +95,11 @@ const gigs: Record<
     expertise: ["Chemical Engineering", "Green Tech", "R&D"],
     institution: "MPI CEC, Germany",
     image: "/images/notes/movements/bhaskar-paul.jpg",
-    stats: { projects: 14, satisfaction: "97%", experience: "12y" },
+    stats: [
+      { label: "Projects", value: "14" },
+      { label: "Satisfaction", value: "97%" },
+      { label: "Experience", value: "12y" },
+    ],
   },
   "6": {
     name: "Raman Kumar",
@@ -89,7 +111,62 @@ const gigs: Record<
     expertise: ["Strategy", "Tech Transfer", "Innovation"],
     institution: "Independent Consultant",
     image: "/images/team/raman.jpg",
-    stats: { projects: 20, satisfaction: "95%", experience: "18y" },
+    stats: [
+      { label: "Projects", value: "20" },
+      { label: "Satisfaction", value: "95%" },
+      { label: "Experience", value: "18y" },
+    ],
+  },
+  "7": {
+    name: "Sivarsa",
+    verified: true,
+    description:
+      "A strategy-driven digital agency specializing in growth and identity.",
+    bio: "Sivarsa is built on the idea of being scientific growth partners rather than just service providers. We are a multifaceted digital firm that navigates the intersection of marketing, design, and technology. Sivarsa focuses on scaling a brand through operating at the intersection of data-backed marketing and high-end creative design, ensuring that every digital touchpoint serves a broader business goal.",
+    services: [
+      "SEO, Paid Search, Social Media",
+      "Website Design, Visual Identity",
+      "Web Development, API Integrations",
+      "Hiring, Contractual Roles, and Team Augmentation",
+    ],
+    expertise: ["UI/UX Design", "Brand Identity", "Talent Acquisition"],
+    institution: "Sivarsa",
+    image: "/images/partners/sivarsa_black.png",
+    isLogo: true,
+    stats: [
+      { label: "Cohorts", value: "10+" },
+      { label: "CFTIs", value: "10+" },
+      { label: "Partner Growth", value: "3-4X" },
+    ],
+  },
+  "8": {
+    name: "The Clarity Project",
+    verified: true,
+    description:
+      "Helping STEM undergraduates find research positions through tactical, mentor-led guidance.",
+    bio: "The Clarity Project is an online research mentorship platform designed to dismantle the barriers between ambitious STEM undergraduates and world-class research opportunities. Operating from directly inside the system, the project focuses on students from tier 2 and tier 3 colleges who possess the drive for discovery but lack a clear roadmap to their first internship. The Clarity Project moves beyond generic advice, offering a tactical, battle-tested approach to navigating the competitive academic landscape. Founded by Rwitacheta of IISER Berhampur.",
+    services: [
+      "Cold email/matching strategy",
+      "CV building/applications",
+      "Field-specific groups",
+      "PhD student pairings",
+      "One-to-one mentorship",
+      "Step-by-step navigation",
+    ],
+    expertise: ["Consulting", "Soft skills development", "Strategy building"],
+    institution: "Rwitacheta · IISER Berhampur",
+    image: "/images/gigs/tcp-logo.png",
+    isLogo: true,
+    founder: {
+      name: "Rwitacheta",
+      role: "Founder · IISER Berhampur",
+      image: "/images/gigs/rwitacheta.jpg",
+    },
+    stats: [
+      { label: "Workshops", value: "2" },
+      { label: "Sessions", value: "30+" },
+      { label: "Community", value: "2k+" },
+    ],
   },
 };
 
@@ -184,13 +261,17 @@ export default async function GigDetailPage({
                 {/* Avatar Area */}
                 <div className="bg-gradient-to-br from-[var(--gold)]/10 to-[var(--gold)]/25 p-8 flex flex-col items-center text-center">
                   {gig.image ? (
-                    <Image
-                      src={basePath + gig.image}
-                      alt={gig.name}
-                      width={96}
-                      height={96}
-                      className="w-24 h-24 rounded-full object-cover shadow-lg mb-4"
-                    />
+                    <div
+                      className={`w-24 h-24 rounded-full overflow-hidden shadow-lg mb-4 flex items-center justify-center ${gig.isLogo ? "bg-white p-3" : ""}`}
+                    >
+                      <Image
+                        src={basePath + gig.image}
+                        alt={gig.name}
+                        width={96}
+                        height={96}
+                        className={`w-full h-full ${gig.isLogo ? "object-contain" : "object-cover"}`}
+                      />
+                    </div>
                   ) : (
                     <div className="w-24 h-24 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center shadow-lg mb-4">
                       <User size={40} className="text-[var(--gold)]" />
@@ -233,18 +314,12 @@ export default async function GigDetailPage({
                     Gig Metrics
                   </p>
                   <div className="grid grid-cols-3 gap-3">
-                    <div className="text-center p-3 rounded-xl bg-gray-50">
-                      <p className="text-lg font-semibold text-gray-900">{gig.stats.projects}</p>
-                      <p className="text-[10px] uppercase tracking-wider text-gray-500">Projects</p>
-                    </div>
-                    <div className="text-center p-3 rounded-xl bg-gray-50">
-                      <p className="text-lg font-semibold text-gray-900">{gig.stats.satisfaction}</p>
-                      <p className="text-[10px] uppercase tracking-wider text-gray-500">Satisfaction</p>
-                    </div>
-                    <div className="text-center p-3 rounded-xl bg-gray-50">
-                      <p className="text-lg font-semibold text-gray-900">{gig.stats.experience}</p>
-                      <p className="text-[10px] uppercase tracking-wider text-gray-500">Experience</p>
-                    </div>
+                    {gig.stats.map((stat) => (
+                      <div key={stat.label} className="text-center p-3 rounded-xl bg-gray-50">
+                        <p className="text-lg font-semibold text-gray-900">{stat.value}</p>
+                        <p className="text-[10px] uppercase tracking-wider text-gray-500">{stat.label}</p>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -259,6 +334,31 @@ export default async function GigDetailPage({
                 </h3>
                 <p className="text-gray-600 leading-relaxed">{gig.bio}</p>
               </div>
+
+              {/* Founder */}
+              {gig.founder && (
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                    Founder
+                  </h3>
+                  <div className="flex items-center gap-4 p-4 rounded-xl bg-[var(--light)] border border-gray-100">
+                    <Image
+                      src={basePath + gig.founder.image}
+                      alt={gig.founder.name}
+                      width={72}
+                      height={72}
+                      className="w-18 h-18 rounded-full object-cover flex-shrink-0"
+                      style={{ width: 72, height: 72 }}
+                    />
+                    <div>
+                      <p className="text-base font-semibold text-gray-900">
+                        {gig.founder.name}
+                      </p>
+                      <p className="text-sm text-gray-500">{gig.founder.role}</p>
+                    </div>
+                  </div>
+                </div>
+              )}
 
               {/* Services */}
               <div>

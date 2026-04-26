@@ -62,6 +62,26 @@ const gigs = [
     services: ["Strategy", "Tech Transfer", "Innovation"],
     image: "/images/team/raman.jpg",
   },
+  {
+    id: "7",
+    name: "Sivarsa",
+    verified: true,
+    description:
+      "A strategy-driven digital agency specializing in growth and identity. Scientific growth partners operating at the intersection of marketing, design, and technology.",
+    services: ["UI/UX Design", "Brand Identity", "Talent Acquisition"],
+    image: "/images/partners/sivarsa_black.png",
+    isLogo: true,
+  },
+  {
+    id: "8",
+    name: "The Clarity Project",
+    verified: true,
+    description:
+      "Helping STEM undergraduates from tier 2 and tier 3 colleges find research positions through tactical, mentor-led guidance.",
+    services: ["Consulting", "Soft skills development", "Strategy building"],
+    image: "/images/gigs/tcp-logo.png",
+    isLogo: true,
+  },
 ];
 
 export default function GigsPage() {
@@ -134,13 +154,17 @@ export default function GigsPage() {
                     <div className="flex items-start gap-4 mb-4">
                       {/* Avatar */}
                       {gig.image ? (
-                        <Image
-                          src={basePath + gig.image}
-                          alt={gig.name}
-                          width={56}
-                          height={56}
-                          className="w-14 h-14 rounded-full object-cover flex-shrink-0"
-                        />
+                        <div
+                          className={`w-14 h-14 rounded-full overflow-hidden flex-shrink-0 flex items-center justify-center ${gig.isLogo ? "bg-white border border-gray-100 p-1.5" : ""}`}
+                        >
+                          <Image
+                            src={basePath + gig.image}
+                            alt={gig.name}
+                            width={56}
+                            height={56}
+                            className={`w-full h-full ${gig.isLogo ? "object-contain" : "object-cover"}`}
+                          />
+                        </div>
                       ) : (
                         <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[var(--gold)]/20 to-[var(--gold)]/40 flex items-center justify-center flex-shrink-0">
                           <User size={24} className="text-[var(--gold)]" />

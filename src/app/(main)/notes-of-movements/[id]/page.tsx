@@ -18,51 +18,100 @@ const articles: Record<
     institution: string;
     image: string;
     linkedinCard?: string;
-    body: string[];
+    body: { heading?: string; text: string }[];
     quote: string;
     quoteAttribution: string;
   }
 > = {
   "1": {
-    title: "Navigating Research Cultures",
+    title: "We Have a Molecular Recycling Challenge",
     subtitle:
-      "The transition from Indian academia to European research culture brings unexpected challenges and profound growth opportunities.",
+      "Dr. Bhaskar Paul began his journey in Medinipur, West Bengal, completed his graduation from Vidyasagar University, and earned his doctorate at IIT Kanpur under Prof. S. Kundu. His postdoctoral path took him to UC Riverside (Prof. R. Schrock) and Oxford (Prof. E. Anderson), and he is currently at the Max Planck Institute for Chemical Energy Conversion (MPI CEC) with Prof. W. Leitner. His research centres on sustainable catalysis, adaptive materials, and organometallic chemistry, designing catalytic systems for efficient transformations of CO₂ and hydrogen.",
     date: "Jan 24, 2026",
     author: "Dr. Bhaskar Paul",
-    designation: "Research Group Leader",
-    institution: "MPI CEC, Germany",
+    designation: "Researcher",
+    institution: "Max Planck Institute for Chemical Energy Conversion (MPI CEC)",
     image: "/images/notes/movements/bhaskar-paul.jpg",
     linkedinCard: "/images/linkedin/nom-bhaskar-paul.png",
     body: [
-      "When I left IIT Kharagpur for the Max Planck Institute for Chemical Energy Conversion in Muelheim, I thought the biggest adjustment would be the weather. I was wrong. The shift in research culture was far more profound, and ultimately more rewarding, than anything I had anticipated.",
-      "In Indian academia, the professor-student relationship is deeply hierarchical. You address your supervisor as 'Sir' or 'Ma'am,' and there's an implicit understanding that the senior researcher's direction is not to be openly questioned. At Max Planck, I found myself in meetings where doctoral students would respectfully but firmly challenge their group leader's hypotheses. The first time a second-year PhD student questioned my experimental design in a group meeting, I felt a flash of discomfort. Within weeks, I recognised this culture of constructive questioning as one of the most powerful tools for doing better science.",
-      "The administrative differences were equally striking. In India, a significant portion of a researcher's time goes into navigating bureaucratic processes, from procurement to travel approvals. In Germany, the institutional support infrastructure handles most of this, freeing researchers to focus almost entirely on their work. I found myself gaining nearly 10-15 hours per week that would have been consumed by paperwork in India.",
-      "But the transition wasn't all gains. I deeply missed the organic collaboration that happens in Indian labs, the casual chai-time discussions that often spark the most creative ideas. German research culture, while excellent at structured collaboration, can feel isolating to someone accustomed to the constant social interaction of an Indian campus. Building community required deliberate effort.",
-      "The funding landscape also taught me important lessons. While German research is generously funded compared to India, the expectations for accountability and output are proportionally higher. Every euro spent must be justified, and the peer review process for grant renewal is rigorous. This discipline in research spending is something India's growing research ecosystem could benefit from adopting.",
-      "Looking back after five years, I see my journey as one of integration rather than assimilation. I've retained the intuitive, big-picture thinking that Indian scientific training emphasises, while adopting the meticulous documentation and systematic experimental design that German research culture demands. The best science happens when diverse approaches converge.",
+      {
+        heading: "We Have a Molecular Recycling Challenge",
+        text: "I've spent my career learning how to talk to molecules to make them work for us. My work focuses on designing sustainable catalysts that trigger low-energy transformations, essentially teaching hydrogen and carbon dioxide to dance. By blending surface chemistry with advanced characterization, I'm building the responsive systems our green-energy future actually needs.",
+      },
+      {
+        heading: "Carbon: Recycled, Not Released",
+        text: "The biggest hurdle to a sustainable future is energy efficiency. To solve this, I develop high-performance catalytic materials that make CO₂ and H₂ conversion faster, cheaper, and cleaner. It's about more than just a reaction in a flask; it's about creating recyclable, scalable solutions that move us toward a circular chemical economy.",
+      },
+      {
+        heading: "It's Not a Solution, It's a Prototype",
+        text: "CO₂ conversion is no longer just a laboratory curiosity, it's a rapidly maturing field of materials science. From electrochemical CO₂-to-ethylene systems to high-stability CO production, the focus is now on durability and precision. The chemical industry now needs to build faster, smarter, and more tunable systems.",
+      },
+      {
+        heading: "Sustainably Intelligent",
+        text: "We are entering the era of adaptive, multifunctional catalysts that think as fast as they react. By merging the precision of molecular chemistry with the durability of materials science, we are unlocking low-energy paths to turn CO₂ into fuels. Backed by renewable energy, these tunable systems are the final piece of the puzzle for a truly carbon-neutral world.",
+      },
+      {
+        heading: "Catalyst Can Switch",
+        text: "My research focuses on the sophisticated world of organometallic complexes as catalysts for change. By designing switchable systems that respond to CO₂ and H₂, we are seeing ways to make lignin hydrogenation more selective and polymer design more sustainable. Now the work isn't just about the reaction; it's about the “intelligence” of the material extending into precise deuteration and cutting-edge electrochemical capture.",
+      },
+      {
+        heading: "Perspective Shift",
+        text: "I used to think the lab work was everything, but I now see that a clear narrative and a creative approach are what actually move the needle. Learning to think like a researcher has meant realizing that a well-posed question is often more impactful than the data itself.",
+      },
+      {
+        heading: "Why & How",
+        text: "My transition from a Master's student to an award-winning PhD researcher was defined by a shift toward independence and advanced catalyst synthesis, particularly in the utilization of methanol as a sustainable C1 source. That foundation was only the beginning, my postdoctoral work across several world-leading institutions has broadened my expertise from olefin metathesis to heterogeneous catalysis and material design. This trajectory has shaped me into a versatile, interdisciplinary scientist driven by understanding the “why” behind the “how.”",
+      },
+      {
+        heading: "What Are Quick Wins",
+        text: "I've found that financial stability doesn't change why you do research, but it certainly changes how you do it. For me, it has enabled a more focused, long-term vision in sustainable catalysis. Instead of chasing quick wins, I am now able to invest in meticulous project planning and highly reproducible science. This stability has turned into a tool for efficiency, encouraging a more thoughtful use of materials and a deliberate focus on high-impact innovations.",
+      },
     ],
     quote:
-      "Moving abroad doesn't mean leaving home behind. It means carrying the best of what shaped you into new contexts where it can create unexpected value. The IIT system taught me resourcefulness; Max Planck taught me rigour. Together, they've made me a better scientist.",
+      "I've spent my career learning how to talk to molecules to make them work for us, essentially teaching hydrogen and carbon dioxide to dance.",
     quoteAttribution: "Dr. Bhaskar Paul",
   },
   "2": {
-    title: "Finding Home in Brussels",
+    title: "Bacteria Are Winning the Arms Race",
     subtitle:
-      "An environmental scientist reflects on building a life between continents while pursuing sustainability research in the heart of Europe.",
+      "Dr. Richa Sharma's journey began in Bhagpat, Uttar Pradesh. She completed her graduation from Hindu College, University of Delhi, and her doctorate at MNIT Jaipur, before moving to Vrije Universiteit Brussel as a Marie Skłodowska-Curie IMPACT Fellow. Her research focuses on antivirulence therapeutics, skeletal editing, and digital chemistry, developing chemical strategies to combat microbial resistance, explore new molecular transformations, and integrate computational approaches with experimental chemistry.",
     date: "Jan 20, 2026",
     author: "Dr. Richa Sharma",
-    designation: "Environmental Scientist",
+    designation: "Marie Skłodowska-Curie IMPACT Fellow",
     institution: "Vrije Universiteit Brussel",
     image: "/images/notes/movements/richa-sharma.png",
     body: [
-      "Brussels was never on my radar. Growing up in Jaipur, my mental map of research destinations included the usual suspects, the US, the UK, maybe Australia. But when an opportunity at Vrije Universiteit Brussel appeared in the form of a postdoctoral fellowship in environmental sustainability and policy, I found myself boarding a flight to a city I knew almost nothing about. That leap of faith has shaped both my science and my sense of self in ways I could never have predicted.",
-      "The first thing that struck me about Brussels was its multilayered identity. A city where French, Dutch, and English coexist on street signs, where the European Parliament sits alongside Art Nouveau facades, and where a researcher from Rajasthan can somehow feel both entirely foreign and oddly at home. This constant negotiation of identities, linguistic, cultural, institutional, mirrors my own experience as an Indian woman in European academia. I have learned to code-switch not just between languages but between worldviews, and this skill has unexpectedly enriched my research on sustainability policy.",
-      "My work focuses on the intersection of environmental science and public policy, specifically, how cities in the Global South can adapt European sustainability frameworks without losing their local context. It is research that demands dual literacy: you need to understand both the technocratic precision of EU environmental directives and the ground-level realities of water management in Indian cities. Being an Indian researcher in Brussels gives me a unique vantage point. I sit at the crossroads of two policy worlds, and my lived experience in both lends credibility and nuance to my analysis that no amount of desk research could replicate.",
-      "The personal side of this journey has been equally transformative. Building community in a new country as a researcher is a particular kind of challenge. Your colleagues become your first social circle, but the transient nature of academic life means people are constantly arriving and leaving. I have learned to invest deeply in relationships while holding them lightly, a paradox that mirrors the immigrant experience more broadly. The Indian community in Brussels, though small, has been a lifeline. Weekend gatherings over homemade dal and chai have become rituals that anchor me to a sense of belonging even as my professional life unfolds in seminar rooms and policy workshops conducted in languages I am still mastering.",
-      "What I have come to understand is that dual identity is not a deficit. It is a research methodology. The ability to see a problem from two cultural vantage points simultaneously is a form of intellectual depth that monocultural perspectives simply cannot achieve. When I present my work on sustainable urban planning, I bring not just data and models but a lived understanding of what it means to navigate scarcity, aspiration, and institutional complexity across very different societies. Brussels, with its own beautifully fractured identity, has taught me that wholeness does not require uniformity. You can be fully Indian and fully European in your scientific thinking, and the tension between these identities is where the most interesting questions live.",
+      {
+        heading: "Bacteria Are Winning the Arms Race",
+        text: "After 40 years of antibiotic stagnation, Acinetobacter baumannii has climbed to the top of the WHO's most-wanted list. My postdoc work focuses on a new chemical scout: strained cyclocarbamates designed to strip these superbugs of their power.",
+      },
+      {
+        heading: "Nature is the Ultimate Chemist",
+        text: "But she doesn't give up her secrets easily. Extracting complex molecules from natural sources is slow, wasteful, and inefficient. My research focuses on developing the “blueprints”: new synthetic methods that allow us to build these complex pharmacophores from scratch, faster and cleaner.",
+      },
+      {
+        heading: "Upgrading the OS",
+        text: "Synthetic organic chemistry is getting a massive “software update.” We're moving past the era of trial-and-error and entering the age of skeletal editing and AI-driven design. It's no longer about just mixing chemicals; it's about precision engineering at the atomic level.",
+      },
+      {
+        heading: "Real-World Impact",
+        text: "Method development for its own sake is evolving into “synthesis with a purpose.” We are entering a phase where the metrics of success aren't just yield and selectivity, but how quickly a new method can be scaled to treat a patient. The future of our field lies at the intersection of fundamental discovery and industrial reality.",
+      },
+      {
+        heading: "Perspective Shift",
+        text: "The most dangerous phrase in a lab is “we've always done it this way.” Recent conferences have been a wake-up call: there are a thousand ways to solve a chemical bottleneck, and the most unexpected perspectives often lead to the biggest wins. It's not just about what you know; it's about who you listen to.",
+      },
+      {
+        heading: "The Resilience",
+        text: "In a PhD, a failed experiment feels like a setback. In a postdoc, it's just data. My journey across continents and academic milestones has traded my “imposter syndrome” for a deep, battle-tested resilience that keeps me focused when the chemistry gets tough.",
+      },
+      {
+        heading: "Quality Over Quantity",
+        text: "In the beginning of my career, success was measured by the amount of data I could generate. Today, success is measured by the quality of the questions I ask. I've traded the “rush to get results” for the “wisdom to find the right path”, and that shift has changed everything about how I approach the bench.",
+      },
     ],
     quote:
-      "Dual identity is not a deficit. It is a research methodology. The ability to see a problem from two cultural vantage points simultaneously is a form of intellectual depth that monocultural perspectives simply cannot achieve.",
+      "The most dangerous phrase in a lab is “we've always done it this way.” The most unexpected perspectives often lead to the biggest wins.",
     quoteAttribution: "Dr. Richa Sharma",
   },
 };
@@ -187,10 +236,17 @@ export default async function NotesOfMovementsDetailPage({
 
               {/* Body */}
               <div className="prose-walei">
-                {article.body.map((paragraph, idx) => (
-                  <p key={idx} className="text-gray-700 leading-relaxed mb-4">
-                    {paragraph}
-                  </p>
+                {article.body.map((section, idx) => (
+                  <div key={idx} className="mb-6">
+                    {section.heading && (
+                      <h3 className="text-base md:text-lg font-semibold text-gray-900 mb-2">
+                        {section.heading}
+                      </h3>
+                    )}
+                    <p className="text-gray-700 leading-relaxed">
+                      {section.text}
+                    </p>
+                  </div>
                 ))}
               </div>
 

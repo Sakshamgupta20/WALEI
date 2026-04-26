@@ -18,29 +18,64 @@ const articles: Record<
     institution: string;
     image: string;
     linkedinCard?: string;
-    body: string[];
+    body: { heading?: string; text: string }[];
     quote: string;
     quoteAttribution: string;
   }
 > = {
   "1": {
-    title: "Urban Water Scarcity",
+    title: "CareMother: Technology with Compassion",
     subtitle:
-      "With 21 Indian cities expected to run out of groundwater, researchers and civic leaders discuss scalable solutions for one of India's most pressing crises.",
+      "Dr. Shantanu Pathak is a technology-driven entrepreneur and social innovator who founded CareMother in 2015 and Doto Health in 2023. With a PhD from IIT Bombay and a passion for women's and maternal health, he leads CareMother's mission to transform low-resource settings through AI-powered digital tools that improve maternal and neonatal care. Under his leadership, CareMother has been recognized for leveraging AI and digital innovation to tackle maternal health challenges, with installations across 200+ towns in India and six other developing countries.",
     date: "Jan 20, 2026",
     author: "Dr. Shantanu Pathak",
-    designation: "Researcher & Entrepreneur",
-    institution: "IIT Bombay",
+    designation: "CEO & Founder",
+    institution: "CareMother / Doto Health",
     image: "/images/notes/challenges/shantanu-pathak.png",
     body: [
-      "India is staring at a water crisis of unprecedented proportions. According to NITI Aayog, 21 major Indian cities are projected to run out of groundwater by 2030, affecting over 100 million people. The crisis isn't just about scarcity. It's about mismanagement, aging infrastructure, and a fundamental disconnect between water policy and ground reality.",
-      "Urban India consumes roughly 150 litres per capita per day, but nearly 40% of treated water is lost to leakage in distribution networks. Cities like Bangalore, which depend on water pumped from over 100 km away, spend enormous energy budgets on water transport while losing a significant portion to non-revenue water. The economics of urban water supply are broken, and engineering solutions must address both supply and demand sides.",
-      "Decentralised water treatment is emerging as a promising approach. Rather than depending solely on massive centralised plants, researchers are developing modular treatment systems that can be deployed at the ward or community level. These systems use membrane bioreactors, constructed wetlands, and advanced oxidation processes to treat greywater for reuse, reducing the load on freshwater sources by up to 30%.",
-      "Rainwater harvesting, once dismissed as insufficient for urban needs, is being reimagined through IoT-enabled smart collection systems. Chennai's experience after the 2019 water crisis demonstrated that systematic rainwater harvesting can recharge aquifers and provide meaningful supplementary supply. The key is moving from voluntary adoption to mandated, well-engineered systems integrated into building codes.",
-      "Perhaps the most critical intervention needed is in agricultural water use, which accounts for nearly 80% of India's total water consumption. Drip irrigation, soil moisture sensing, and crop pattern optimisation can dramatically reduce agricultural water demand, freeing up resources for urban centres. The challenge is not technological. It's about creating the right incentive structures and policy frameworks to drive adoption at scale.",
+      {
+        heading: "Building CareMother: Technology with Compassion",
+        text: "I founded Doto Health, better known as CareMother, a digital health company focused on maternal and newborn care. Our product suite includes last-mile kits for detecting high-risk pregnancies, integrated labour and fetal monitoring systems, newborn monitoring solutions, and a connected care platform with AI-based decision support. We've completed over 2,000 installations across 200+ towns in India and six other developing countries.",
+      },
+      {
+        heading: "Rooted in Resilience: From Vidarbha to Vision",
+        text: "I was raised in the Vidarbha region of Maharashtra, now classified as an aspirational district by the Indian government. My educational journey began at Navodaya Vidyalaya, a fully government-sponsored school that laid the foundation for my values and aspirations. Losing my father at age 13 made healthcare inaccessibility personal and deeply transformative, shaping my lifelong commitment to building equitable systems.",
+      },
+      {
+        heading: "Academic Excellence with Purpose",
+        text: "I earned my bachelor's degree in Electronics & Telecommunication Engineering from Mumbai University. I later pursued a PhD at IIT Bombay, a pivotal phase that allowed me to explore problem solving through technology. I also worked in Shenzhen, China, gaining early industry experience in telecom systems before returning to India with a focus on socially driven innovation.",
+      },
+      {
+        heading: "Personal Experiences, Not Professional Legacy, Fuelled My Direction",
+        text: "When people ask if I come from a family of doctors, I say: “No, I come from a family of patients.” This personal lens helped me understand the pain and delays in accessing basic healthcare, especially for mothers and newborns in underserved areas. These formative experiences led me to work on grassroots innovations as early as 2011, including water filters, solar dryers, and LED lighting systems.",
+      },
+      {
+        heading: "Discovery of a National Problem Worth Solving",
+        text: "I identified maternal and newborn health as a critical area. India contributes significantly to global maternal deaths, and over 50% of these are related to undetected high-risk pregnancies. The hypothesis was: if frontline workers were equipped to detect anaemia, gestational diabetes, and pregnancy-induced hypertension early, many of these deaths could be prevented.",
+      },
+      {
+        heading: "Research That Reaches Real Lives",
+        text: "At IIT Bombay, I had the opportunity to work with Professor Rohit Srivastava, whose support enabled me to conduct translational research. This unique approach allowed me to pilot solutions in the field while working on my PhD. During this period, we published impactful data and tested technology directly with health workers and communities to validate our approach, ensuring solutions were both practical and effective.",
+      },
+      {
+        heading: "The Shift to Entrepreneurship: Making Innovation Sustainable",
+        text: "I realized that innovation must be sustainable to scale. This insight led to my transition from researcher to entrepreneur. I had to learn business fundamentals like reading balance sheets, understanding P&L statements, hiring and building teams, all while staying grounded in my social mission. Entrepreneurship, I learned, is a dynamic blend of science, art, and constant adaptation.",
+      },
+      {
+        heading: "Human-Centered Innovation in Action Saves Lives",
+        text: "One case from Bengaluru during COVID-19 stands out: a third-trimester patient monitored at home using our fetal monitoring kit showed signs of distress. The alert led to a timely C-section, preventing what could have been a stillbirth. Another example in tribal India showed the emotional power of hearing a baby's heartbeat, so compelling that families returned just to hear it again. Over time, we even began sharing heartbeat audio clips via WhatsApp, deepening family engagement and making maternal care more personal and emotionally connected.",
+      },
+      {
+        heading: "Global Expansion with Local Impact",
+        text: "To date, CareMother has touched over 600,000 pregnancies. In the next five years, we aim to reach 5 million pregnancies worldwide. We've already piloted our solutions in three Asian and three African countries, with plans to enter developing markets like the Middle East, Africa, and Southeast Asia by 2026, and developed countries like the UK and US by 2027, using healthcare-provider-led or homecare-based models.",
+      },
+      {
+        heading: "Collaborations that Shape the Future",
+        text: "Key partnerships with government innovation programmes like DST, BIRAC, and incubation centres enabled early growth by funding R&D and field trials. We've also received grants to test global hypotheses. Attending events like the World Health Assembly in Geneva opened doors for international collaborations, strategic planning, and engagement with policymakers. These alliances are critical to scaling our vision for equitable maternal care across geographies.",
+      },
     ],
     quote:
-      "We don't have a water scarcity problem. We have a water management problem. India receives enough rainfall to meet its needs. The challenge is capturing, storing, and distributing it intelligently.",
+      "I don't come from a family of doctors. I come from a family of patients, and that lens shapes every product we build at CareMother.",
     quoteAttribution: "Dr. Shantanu Pathak",
   },
   "2": {
@@ -53,11 +88,21 @@ const articles: Record<
     institution: "IYASO",
     image: "/images/notes/challenges/viraj-kulkarni.png",
     body: [
-      "India's healthcare system serves over 1.4 billion people, yet it struggles with chronic inefficiencies, from misdiagnoses in rural clinics to overwhelmed urban hospitals that see hundreds of patients daily. The promise of data analytics in healthcare is not simply automation; it is the ability to surface patterns that human practitioners, constrained by time and cognitive bandwidth, inevitably miss. IYASO was founded on the conviction that well-structured data can bridge the gap between the healthcare India has and the healthcare India needs.",
-      "Predictive analytics is already reshaping how hospitals manage patient flow, anticipate disease outbreaks, and allocate scarce resources. By analysing admission records, lab results, and even regional weather data, IYASO's platform can forecast patient surges with remarkable accuracy, allowing hospital administrators to pre-position staff and supplies rather than scrambling reactively. In pilot deployments across three mid-sized hospitals in Maharashtra, the system reduced emergency department wait times by 22% and cut unnecessary diagnostic tests by nearly 15%.",
-      "The real challenge, however, is not building the algorithms. It is building trust. Indian healthcare providers, particularly senior clinicians, are understandably sceptical of AI-generated recommendations. IYASO's approach has been to position its tools as decision-support systems rather than decision-making systems, ensuring that the physician always retains final authority. This design philosophy has been critical to adoption: clinicians engage more willingly with a system that augments their judgement rather than one that appears to override it.",
-      "Data quality remains the single largest obstacle to scaling healthcare analytics in India. Unlike developed markets where electronic health records are standardised and comprehensive, Indian patient data is fragmented across handwritten prescriptions, incompatible hospital management systems, and informal record-keeping practices. IYASO invests heavily in data normalisation pipelines, unglamorous but essential infrastructure that converts messy, heterogeneous inputs into clean, analysable datasets.",
-      "Looking ahead, the convergence of wearable health devices, telemedicine platforms, and advanced analytics creates an unprecedented opportunity. India could leapfrog traditional healthcare delivery models entirely, moving toward a system where continuous monitoring and early intervention replace the current paradigm of late diagnosis and expensive treatment. The startup journey in health-tech is fraught with regulatory complexity and long sales cycles, but the scale of impact possible in a country of India's size makes the challenge worth pursuing.",
+      {
+        text: "India's healthcare system serves over 1.4 billion people, yet it struggles with chronic inefficiencies, from misdiagnoses in rural clinics to overwhelmed urban hospitals that see hundreds of patients daily. The promise of data analytics in healthcare is not simply automation; it is the ability to surface patterns that human practitioners, constrained by time and cognitive bandwidth, inevitably miss. IYASO was founded on the conviction that well-structured data can bridge the gap between the healthcare India has and the healthcare India needs.",
+      },
+      {
+        text: "Predictive analytics is already reshaping how hospitals manage patient flow, anticipate disease outbreaks, and allocate scarce resources. By analysing admission records, lab results, and even regional weather data, IYASO's platform can forecast patient surges with remarkable accuracy, allowing hospital administrators to pre-position staff and supplies rather than scrambling reactively. In pilot deployments across three mid-sized hospitals in Maharashtra, the system reduced emergency department wait times by 22% and cut unnecessary diagnostic tests by nearly 15%.",
+      },
+      {
+        text: "The real challenge, however, is not building the algorithms. It is building trust. Indian healthcare providers, particularly senior clinicians, are understandably sceptical of AI-generated recommendations. IYASO's approach has been to position its tools as decision-support systems rather than decision-making systems, ensuring that the physician always retains final authority. This design philosophy has been critical to adoption: clinicians engage more willingly with a system that augments their judgement rather than one that appears to override it.",
+      },
+      {
+        text: "Data quality remains the single largest obstacle to scaling healthcare analytics in India. Unlike developed markets where electronic health records are standardised and comprehensive, Indian patient data is fragmented across handwritten prescriptions, incompatible hospital management systems, and informal record-keeping practices. IYASO invests heavily in data normalisation pipelines, unglamorous but essential infrastructure that converts messy, heterogeneous inputs into clean, analysable datasets.",
+      },
+      {
+        text: "Looking ahead, the convergence of wearable health devices, telemedicine platforms, and advanced analytics creates an unprecedented opportunity. India could leapfrog traditional healthcare delivery models entirely, moving toward a system where continuous monitoring and early intervention replace the current paradigm of late diagnosis and expensive treatment. The startup journey in health-tech is fraught with regulatory complexity and long sales cycles, but the scale of impact possible in a country of India's size makes the challenge worth pursuing.",
+      },
     ],
     quote:
       "The biggest bottleneck in healthcare AI isn't the technology. It's the data. Clean, standardised, interoperable health data is the foundation everything else depends on.",
@@ -185,10 +230,17 @@ export default async function NotesOfChallengesDetailPage({
 
               {/* Body */}
               <div className="prose-walei">
-                {article.body.map((paragraph, idx) => (
-                  <p key={idx} className="text-gray-700 leading-relaxed mb-4">
-                    {paragraph}
-                  </p>
+                {article.body.map((section, idx) => (
+                  <div key={idx} className="mb-6">
+                    {section.heading && (
+                      <h3 className="text-base md:text-lg font-semibold text-gray-900 mb-2">
+                        {section.heading}
+                      </h3>
+                    )}
+                    <p className="text-gray-700 leading-relaxed">
+                      {section.text}
+                    </p>
+                  </div>
                 ))}
               </div>
 

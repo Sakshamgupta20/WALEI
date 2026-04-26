@@ -14,9 +14,9 @@ export const metadata: Metadata = {
 const articles = [
   {
     id: "1",
-    title: "Navigating Research Cultures",
+    title: "We Have a Molecular Recycling Challenge",
     excerpt:
-      "The transition from Indian academia to European research culture brings unexpected challenges and profound growth opportunities.",
+      "From IIT Kanpur to Oxford and now MPI CEC, Dr. Bhaskar Paul is teaching CO₂ and hydrogen to dance, designing switchable, sustainable catalysts for a circular chemical economy.",
     date: "Jan 24, 2026",
     author: "Dr. Bhaskar Paul",
     affiliation: "MPI CEC, Germany",
@@ -25,9 +25,9 @@ const articles = [
   },
   {
     id: "2",
-    title: "Finding Home in Brussels",
+    title: "Bacteria Are Winning the Arms Race",
     excerpt:
-      "Building a research career while maintaining connections to roots, the journey of an Indian researcher in Belgium.",
+      "After 40 years of antibiotic stagnation, Dr. Richa Sharma is using strained cyclocarbamates and skeletal editing to disarm WHO's most-wanted superbugs, from Bhagpat to Brussels.",
     date: "Jan 20, 2026",
     author: "Dr. Richa Sharma",
     affiliation: "Vrije Universiteit Brussel",
